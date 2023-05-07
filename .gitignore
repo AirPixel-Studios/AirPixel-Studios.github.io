@@ -2,5 +2,8 @@
 #Ignore random files
 .DS_Store
 
+#Ignore folders
+.vscode
+
 #Ignore video assets to save space
 assets/video
