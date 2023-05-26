@@ -22,10 +22,9 @@ License: https://themeforest.net/licenses/standard
 9. Countdown
 10. Magnific Popup
 11. Slider
-12. Subscribe Form
-13. Contact Form
-14. Bootstrap
-15. Typed Text
+12. Contact Form
+13. Bootstrap
+14. Typed Text
 -------------------------------------------------------------------*/
 
 (function ($) {
@@ -714,8 +713,7 @@ License: https://themeforest.net/licenses/standard
       document.querySelectorAll(".mfp-image").length > 0 ||
       document.querySelectorAll(".mfp-gallery").length > 0 ||
       document.querySelectorAll(".mfp-iframe").length > 0 ||
-      document.querySelectorAll(".mfp-ajax").length > 0 ||
-      document.querySelectorAll(".open-popup-link").length > 0
+      document.querySelectorAll(".mfp-ajax").length > 0
     ) {
       if (!$().magnificPopup) {
         console.log("MagnificPopup: magnificPopup not defined.");
@@ -792,15 +790,6 @@ License: https://themeforest.net/licenses/standard
         },
       });
 
-      $(".open-popup-link").magnificPopup({
-        type: "inline",
-        midClick: true,
-        closeMarkup:
-          '<button title="%title%" type="button" class="mfp-close"><i class="ion-android-close"></i></button>',
-        removalDelay: 300,
-        mainClass: "mfp-zoom-in",
-      });
-
       $(".popup-modal-dismiss").on("click", function (e) {
         e.preventDefault();
         $.magnificPopup.close();
@@ -832,40 +821,7 @@ License: https://themeforest.net/licenses/standard
     }
   }
 
-  // [12. Subscribe Form]
-  function ln_subscribeForm() {
-    var $subscribeForm = $(".subscribe-form");
-
-    if ($subscribeForm.length > 0) {
-      $subscribeForm.each(function () {
-        var el = $(this),
-          elResult = el.find(".subscribe-form-result");
-
-        el.find("form").validate({
-          submitHandler: function (form) {
-            elResult.fadeOut(500);
-
-            $(form).ajaxSubmit({
-              target: elResult,
-              dataType: "json",
-              resetForm: true,
-              success: function (data) {
-                elResult.html(data.message).fadeIn(500);
-                if (data.alert != "error") {
-                  $(form).clearForm();
-                  setTimeout(function () {
-                    elResult.fadeOut(500);
-                  }, 5000);
-                }
-              },
-            });
-          },
-        });
-      });
-    }
-  }
-
-  // [13. Contact Form]
+  // [12. Contact Form]
   function ln_contactForm() {
     var $contactForm = $(".contact-form");
 
@@ -897,7 +853,7 @@ License: https://themeforest.net/licenses/standard
     }
   }
 
-  // [14. Bootstrap]
+  // [13. Bootstrap]
   function ln_bootstrap() {
     // Botostrap Tootltips
     $('[data-toggle="tooltip"]').tooltip();
@@ -906,7 +862,7 @@ License: https://themeforest.net/licenses/standard
     $('[data-toggle="popover"]').popover();
   }
 
-  // [15. Typed Text]
+  // [14. Typed Text]
   function yose_typedText() {
     var toggle = document.querySelectorAll('[data-toggle="typed"]');
 
@@ -940,7 +896,6 @@ License: https://themeforest.net/licenses/standard
     ln_backgrounds();
     ln_magnificPopup();
     ln_countdown();
-    ln_subscribeForm();
     ln_contactForm();
     yose_typedText();
   });
