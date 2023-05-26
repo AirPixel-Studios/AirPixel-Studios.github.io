@@ -307,6 +307,78 @@ ul {
 }
 
 /*------------------------------------------------------------------
+[7.6 Social Icons]
+*/
+.socials-icons {
+	margin: 0;
+	height: 40px;
+}
+
+.socials-icons ul  {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: block;
+}
+	
+.socials-icons li {
+	margin: 0;
+	display: block;
+	float: left;
+}
+
+/* Icons */
+.social-icon {
+	display: block;
+	float: left;
+	margin: 0;
+	width: 40px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 38px !important;
+	color: #777;
+	overflow: hidden;
+	text-align: center;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.social-icon:last-child {
+	margin-right: 0;
+}
+
+.social-icon i {
+	color: #777;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+	opacity: 0.8;
+}
+
+.social-icon:hover,
+.social-icon:hover i {
+	color: #333;
+}
+
+.socials-icons.light .social-icon,
+.socials-icons.light .social-icon i ,
+.socials-icons.light .social-icon:hover,
+.socials-icons.light .social-icon:hover i {
+	color: #fff;
+}
+
+.socials-icons.dark .social-icon,
+.socials-icons.dark .social-icon i ,
+.socials-icons.dark .social-icon:hover,
+.socials-icons.dark .social-icon:hover i {
+	color: #333;
+}
+
+/*------------------------------------------------------------------
 [7.9 Divider]
 */
 .divider {
@@ -352,18 +424,17 @@ ul {
 /*------------------------------------------------------------------
 [7.12 Profile Card]
 */
+
 .profile-card {
 	position: relative;
-	background: #fff;
-	-webkit-box-shadow: 0 7px 40px rgba(0,0,0,.07);
-	box-shadow: 0 7px 40px rgba(0,0,0,.07);
 }
 
 .profile-card .user-image {
-	display: block;
+	display: table;
 	position: relative;
 	overflow: hidden;
-	margin: 0;
+	margin: 0 auto;
+	margin-bottom: 25px;
 }
 
 .profile-card .user-image img {
@@ -373,12 +444,8 @@ ul {
 	margin: 0;
 }
 
-.profile-card .user-info {
-	padding: 15px;
-}
-
 .profile-card h5 {
-    color: #000000;
+    color: white;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -386,9 +453,9 @@ ul {
 	transition: all 0.3s ease;
 }
 
-.profile-card:hover h5 {
+/* .profile-card:hover h5 {
 	color: #2951d5;
-}
+} */
 
 .profile-card .role {
 	font-size: 12px;
@@ -398,9 +465,89 @@ ul {
 	color: #979797;
 }
 
+.profile-card .user-detail {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+}
+
+.profile-card .ud-container {
+	display: table;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	padding: 15px;
+	z-index: 2;
+}
+
+.profile-card .ud-content {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 14px;
+	font-weight: 300;
+	color: #fff;
+	text-align: center;
+}
+
+.profile-card:hover .user-detail {
+	opacity: 1;
+}
+
+.profile-card .user-image:after {
+    content: '\A';
+    position: absolute;
+    width: 100%;
+	height:100%;
+    top: 0;
+	left: 0;
+    background: rgba(0,0,0,0.75);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.profile-card .user-image:hover:after {
+    opacity: 1;
+	transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+/*------------------------------------------------------------------
+[12. Utility]
+*/
+
+/*------------------------------------------------------------------
+[12.1 Helper Classes]
+*/
+
+/* Display */
+.display-block {
+	display: block;
+}
+
+.display-table {
+	display: table;
+}
+
 /*------------------------------------------------------------------
 [12.4 Spacing]
 */
+
+/* Margin */
+.margincenter {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.nomargin {
+	margin: 0;
+}
 
 /* Margin Top */
 .mt-20 {
@@ -786,6 +933,8 @@ input[type="checkbox"] {
 fieldset[disabled] .form-control {
 	background-color: #f7f7f7;
 }
+
+/* Misc */
 
 .hidden {
 	display: none !important;
