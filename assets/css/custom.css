@@ -459,6 +459,46 @@ ul {
 }
 
 /*------------------------------------------------------------------
+[7.11 Icon Box]
+*/
+
+.icon-box {
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.icon-box p:last-child {
+	margin-bottom: 0;
+}
+
+.icon-box.boxed {
+	padding: 45px 30px;
+}
+
+.icon-box.bordered {
+	padding: 45px 30px;
+	border: 1px solid #e7e7e7;
+}
+
+.icon-box.bordered:hover {
+	border-color: #2951d5;
+}
+
+.icon-box .icon-box-icon {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 10px;
+	font-size: 52px;
+	line-height: 64px;
+}
+
+/*------------------------------------------------------------------
 [7.12 Profile Card]
 */
 

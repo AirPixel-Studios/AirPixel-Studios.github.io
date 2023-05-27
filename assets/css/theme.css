@@ -12364,12 +12364,14 @@ button.bg-white:focus {
 .mx-lg-0 {
     margin-right: 0 !important;
   }
+*/
 
   .mb-lg-0,
 .my-lg-0 {
     margin-bottom: 0 !important;
   }
 
+  /*
   .ml-lg-0,
 .mx-lg-0 {
     margin-left: 0 !important;
@@ -13078,12 +13080,14 @@ button.bg-white:focus {
   .p-lg-8 {
     padding: 3rem !important;
   }
+*/
 
   .pt-lg-8,
 .py-lg-8 {
     padding-top: 3rem !important;
   }
 
+/*
   .pr-lg-8,
 .px-lg-8 {
     padding-right: 3rem !important;
