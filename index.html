@@ -29,6 +29,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/custom.css" />
+
+  <!-- Flag Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
 </head>
 
 <body class="layout-wide">
@@ -56,25 +59,26 @@
       <!-- Navigation Buttons -->
       <ul class="navbar-nav ml-auto" id="navigation">
         <li class="nav-item active" data-menuanchor="home">
-          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link heading-uppercase" href="#home">Home</a>
         </li>
-        <li class="nav-item" data-menuanchor="our-mission">
-          <a class="nav-link" href="#our-mission">Unsere Mission</a>
+        <li class="nav-item" data-menuanchor="mission">
+          <a class="nav-link heading-uppercase" href="#mission">Mission</a>
         </li>
-        <li class="nav-item" data-menuanchor="what-we-do">
-          <a class="nav-link" href="#what-we-do">Was wir machen</a>
+        <li class="nav-item" data-menuanchor="services">
+          <a class="nav-link heading-uppercase" href="#services">Services</a>
+        </li>
+        <li class="nav-item" data-menuanchor="projects">
+          <a class="nav-link heading-uppercase" href="#projects">Projekte</a>
         </li>
         <li class="nav-item" data-menuanchor="team">
-          <a class="nav-link" href="#team">Team</a>
+          <a class="nav-link heading-uppercase" href="#team">Team</a>
         </li>
-        <li class="nav-item" data-menuanchor="our-work">
-          <a class="nav-link" href="#our-work">Unsere Projekte</a>
+        <!-- Contact Button -->
+        <li class="nav-item" data-menuanchor="contact">
+          <a class="btn btn-soft-white btn-transparent heading-uppercase d-block d-lg-inline-block ml-lg-3" href="#contact">Kontakt</a>
         </li>
       </ul>
-
-      <!-- Contact Button -->
-      <a class="btn btn-primary d-block d-lg-inline-block ml-lg-3" href="#contact">Kontakt</a>
-
+      
     </div>
   </nav>
 
@@ -120,8 +124,8 @@
             <h1 class="mb-4 text-white animated" data-animation="fadeInUp" data-animation-delay="300">
               ELEVATE <span class="font-weight-regular" data-toggle="typed" data-options='{"strings": ["YOUR VISION TO NEW HEIGHTS."]}'></span>
             </h1>
-            <a href="#our-mission" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
-              data-animation-delay="400">Unsere Mission</a>
+            <a href="#projects" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
+              data-animation-delay="400">Aktuelle Projekte</a>
             <a href="#contact" class="btn btn-soft-white btn-transparent icon-right scrollto animated" data-animation="fadeInUp"
               data-animation-delay="600">Kontaktiere uns <i class="fa fa-angle-right" aria-hidden="true"></i></a>
           </div>
@@ -129,8 +133,8 @@
       </div>
     </section>
 
-    <!-- Section - Our mission -->
-    <section class="ln-section d-xl-flex" data-anchor="our-mission" data-tooltip="Our mission">
+    <!-- Section - Mission -->
+    <section class="ln-section d-xl-flex" data-anchor="mission" data-tooltip="Our mission">
       <div class="container align-self-xl-center text-white">
         <div class="row">
           <div class="col-12 col-lg-8 col-xl-7">
@@ -155,8 +159,59 @@
       </div>
     </section>
 
-    <!-- Section - What we do -->
-    <section class="ln-section d-xl-flex" data-anchor="what-we-do" data-tooltip="What we do">
+    <!-- <section class="ln-section d-xl-flex" data-anchor="team" data-tooltip="Team">
+      <div class="container align-self-xl-center text-white">
+        <div class="row mb-8">
+          <div class="col-12 col-lg-8 col-xl-7">
+            <h2 class="mb-4 animated" data-animation="fadeInUp">
+              Triff das Team
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="150">
+            <h4>Bei AirPixel Studios sind</h4>
+            <p class="mb-0">
+              ... wir leidenschaftlich daran interessiert, unseren Kunden einzigartige und beeindruckende
+              FPV-Drohnenaufnahmen zu bieten. Wir sind ein dynamisches und erfahrenes Team von Drohnenpiloten, die sich
+              darauf konzentrieren, kreative und professionelle Ergebnisse zu liefern.
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="300">
+            <h4>Unsere Pioten</h4>
+            <p class="mb-0">
+              ... sind alle zertifiziert und verfügen über umfassende Erfahrung in der Drohnenfliegerei, um
+              sicherzustellen, dass wir stets sicher und effektiv arbeiten. Wir sind bestrebt, unsere Fähigkeiten
+              kontinuierlich zu verbessern, indem wir uns auf dem neuesten Stand der Technologie halten und innovative
+              Techniken einsetzen, um unseren Kunden immer die besten Ergebnisse zu liefern.
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6 mb-8 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="450">
+            <h4>Unsere Leidenschaft</h4>
+            <p class="mb-0">
+              ... für FPV-Drohnenaufnahmen ist der Antrieb, der uns antreibt, immer die extra Meile zu gehen und
+              sicherzustellen, dass unsere Kunden mit unseren Dienstleistungen zufrieden sind. Wir sind stolz darauf,
+              mit unseren Kunden zusammenzuarbeiten, um ihre Visionen zum Leben zu erwecken und ihre Erinnerungen für
+              immer festzuhalten.
+            </p>
+          </div>
+
+          <div class="col-12 col-lg-6 animated" data-animation="fadeInUp" data-animation-delay="600">
+            <h4>Uns geht es darum</h4>
+            <p class="mb-0">
+              ... unseren Kunden ein erstklassiges Erlebnis zu bieten und sie zu begeistern. Wir sind stolz darauf, ein
+              Teil dieses aufregenden und sich schnell entwickelnden Feldes zu sein und freuen uns darauf, weiterhin
+              innovative und kreative Lösungen für unsere Kunden zu entwickeln.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Section - Services -->
+    <section class="ln-section d-xl-flex" data-anchor="services" data-tooltip="What we do">
       <div class="container align-self-xl-center text-white">
         <div class="row">
           <div class="col-12 col-xl-5 mb-8 mb-xl-0">
@@ -220,150 +275,8 @@
       </div>
     </section>
 
-    <!-- Section - Team -->
-    <section class="ln-section d-xl-flex" data-anchor="team" data-tooltip="Team">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 offset-md-1">
-            <h2 class="text-center text-white animated" data-animation="fadeInUp">
-              Triff das Team
-            </h2>
-            <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
-            <p class="lead text-center text-white mb-50 animated" data-animation="fadeInUp" data-animation-delay="150">
-              Unsere Piloten sind alle zertifiziert und verfügen über umfassende Erfahrung in der Drohnenfliegerei, um
-              sicherzustellen, dass wir stets sicher und effektiv arbeiten. Wir sind bestrebt, unsere Fähigkeiten
-              kontinuierlich zu verbessern, indem wir uns auf dem neuesten Stand der Technologie halten und innovative
-              Techniken einsetzen, um unseren Kunden immer die besten Ergebnisse zu liefern.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-
-          <!-- User Placeholder -->
-          <div class="col-md-3 col-sm-6 sm-mb-30"></div>
-
-          <!-- User 1 -->
-          <div class="col-md-3 col-sm-6 sm-mb-30 animated" data-animation="fadeInUp" data-animation-delay="400">
-            <div class="profile-card text-center">
-              <div class="user-image">
-                <img src="assets/images/team/user-1.jpg" alt="">
-                <div class="user-detail">
-                  <div class="ud-container">
-                    <div class="ud-content">
-                      <h5 class="heading-uppercase mb-15">Anh Duc Tran</h5>
-                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                      <nav class="socials-icons light display-table margincenter">
-                        <ul>
-                          <li><a href="https://www.instagram.com/adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                          <li><a href="https://www.tiktok.com/@adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
-                          <li><a href="https://www.linkedin.com/in/aductran" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="user-info text-center">
-                <h5 class="heading-uppercase mb-0">Anh Duc Tran</h5>
-                <p class="role mb-0">Co-Founder & Pilot</p>
-              </div>
-            </div>
-          </div>
-          
-
-          <!-- User 2 -->
-          <div class="col-md-3 col-sm-6 xs-mb-30 animated" data-animation="fadeInUp" data-animation-delay="600">
-            <div class="profile-card sm-text-center">
-              <div class="user-image">
-                <img src="assets/images/team/user-2.jpg" alt="">
-                <div class="user-detail">
-                  <div class="overlay">
-                    <div class="overlay-wrapper parallax-wrapper">
-                      <div class="overlay-inner background-dark-4 opacity-75"></div>
-                    </div>
-                  </div>
-                  <div class="ud-container">
-                    <div class="ud-content">
-                      <h5 class="heading-uppercase mb-15">Tom Bendrath</h5>
-                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                      <nav class="socials-icons light display-table margincenter">
-                        <ul>
-                          <li><a href="https://www.instagram.com/tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                          <li><a href="https://www.tiktok.com/@tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
-                          <li><a href="https://www.linkedin.com/in/tom-bendrath" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="user-info text-center">
-                <h5 class="heading-uppercase mb-0">Tom Bendrath</h5>
-                <p class="role mb-0">Co-Founder & Pilot</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- User Placeholder -->
-					<div class="col-md-3 col-sm-6"></div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- <section class="ln-section d-xl-flex" data-anchor="team" data-tooltip="Team">
-      <div class="container align-self-xl-center text-white">
-        <div class="row mb-8">
-          <div class="col-12 col-lg-8 col-xl-7">
-            <h2 class="mb-4 animated" data-animation="fadeInUp">
-              Triff das Team
-            </h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="150">
-            <h4>Bei AirPixel Studios sind</h4>
-            <p class="mb-0">
-              ... wir leidenschaftlich daran interessiert, unseren Kunden einzigartige und beeindruckende
-              FPV-Drohnenaufnahmen zu bieten. Wir sind ein dynamisches und erfahrenes Team von Drohnenpiloten, die sich
-              darauf konzentrieren, kreative und professionelle Ergebnisse zu liefern.
-            </p>
-          </div>
-
-          <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="300">
-            <h4>Unsere Pioten</h4>
-            <p class="mb-0">
-              ... sind alle zertifiziert und verfügen über umfassende Erfahrung in der Drohnenfliegerei, um
-              sicherzustellen, dass wir stets sicher und effektiv arbeiten. Wir sind bestrebt, unsere Fähigkeiten
-              kontinuierlich zu verbessern, indem wir uns auf dem neuesten Stand der Technologie halten und innovative
-              Techniken einsetzen, um unseren Kunden immer die besten Ergebnisse zu liefern.
-            </p>
-          </div>
-
-          <div class="col-12 col-lg-6 mb-8 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="450">
-            <h4>Unsere Leidenschaft</h4>
-            <p class="mb-0">
-              ... für FPV-Drohnenaufnahmen ist der Antrieb, der uns antreibt, immer die extra Meile zu gehen und
-              sicherzustellen, dass unsere Kunden mit unseren Dienstleistungen zufrieden sind. Wir sind stolz darauf,
-              mit unseren Kunden zusammenzuarbeiten, um ihre Visionen zum Leben zu erwecken und ihre Erinnerungen für
-              immer festzuhalten.
-            </p>
-          </div>
-
-          <div class="col-12 col-lg-6 animated" data-animation="fadeInUp" data-animation-delay="600">
-            <h4>Uns geht es darum</h4>
-            <p class="mb-0">
-              ... unseren Kunden ein erstklassiges Erlebnis zu bieten und sie zu begeistern. Wir sind stolz darauf, ein
-              Teil dieses aufregenden und sich schnell entwickelnden Feldes zu sein und freuen uns darauf, weiterhin
-              innovative und kreative Lösungen für unsere Kunden zu entwickeln.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Section - Our work -->
-    <section class="ln-section d-xl-flex" data-anchor="our-work" data-tooltip="Our work">
+    <!-- Section - Projects -->
+    <section class="ln-section d-xl-flex" data-anchor="projects" data-tooltip="Our work">
       <div class="container align-self-xl-center text-white">
         <div class="row mb-8">
           <div class="col-12 col-lg-8 col-xl-7">
@@ -516,6 +429,97 @@
       </div>
     </section>
 
+    <!-- Section - Team -->
+    <section class="ln-section d-xl-flex" data-anchor="team" data-tooltip="Team">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <h2 class="text-center text-white animated" data-animation="fadeInUp">
+              Triff das Team
+            </h2>
+            <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
+            <p class="lead text-center text-white mb-50 animated" data-animation="fadeInUp" data-animation-delay="150">
+              Unsere Piloten sind alle zertifiziert und verfügen über umfassende Erfahrung in der Drohnenfliegerei, um
+              sicherzustellen, dass wir stets sicher und effektiv arbeiten. Wir sind bestrebt, unsere Fähigkeiten
+              kontinuierlich zu verbessern, indem wir uns auf dem neuesten Stand der Technologie halten und innovative
+              Techniken einsetzen, um unseren Kunden immer die besten Ergebnisse zu liefern.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+
+          <!-- User Placeholder -->
+          <div class="col-md-3 col-sm-6 sm-mb-30"></div>
+
+          <!-- User 1 -->
+          <div class="col-md-3 col-sm-6 sm-mb-30 animated" data-animation="fadeInUp" data-animation-delay="400">
+            <div class="profile-card text-center">
+              <div class="user-image">
+                <img src="assets/images/team/user-1.jpg" alt="">
+                <div class="user-detail">
+                  <div class="ud-container">
+                    <div class="ud-content">
+                      <h5 class="heading-uppercase mb-15">Anh Duc Tran</h5>
+                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                      <nav class="socials-icons light display-table margincenter">
+                        <ul>
+                          <li><a href="https://www.instagram.com/adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                          <li><a href="https://www.tiktok.com/@adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/aductran" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user-info text-center">
+                <h5 class="heading-uppercase mb-0">Anh Duc Tran</h5>
+                <p class="role mb-0">Co-Founder & Pilot</p>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- User 2 -->
+          <div class="col-md-3 col-sm-6 xs-mb-30 animated" data-animation="fadeInUp" data-animation-delay="600">
+            <div class="profile-card sm-text-center">
+              <div class="user-image">
+                <img src="assets/images/team/user-2.jpg" alt="">
+                <div class="user-detail">
+                  <div class="overlay">
+                    <div class="overlay-wrapper parallax-wrapper">
+                      <div class="overlay-inner background-dark-4 opacity-75"></div>
+                    </div>
+                  </div>
+                  <div class="ud-container">
+                    <div class="ud-content">
+                      <h5 class="heading-uppercase mb-15">Tom Bendrath</h5>
+                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                      <nav class="socials-icons light display-table margincenter">
+                        <ul>
+                          <li><a href="https://www.instagram.com/tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
+                          <li><a href="https://www.tiktok.com/@tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/tom-bendrath" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="user-info text-center">
+                <h5 class="heading-uppercase mb-0">Tom Bendrath</h5>
+                <p class="role mb-0">Co-Founder & Pilot</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Placeholder -->
+					<div class="col-md-3 col-sm-6"></div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Section - Contact -->
     <section class="ln-section d-xl-flex" data-anchor="contact" data-tooltip="Contact">
       <div class="container">
@@ -601,6 +605,15 @@
     </section>
 
   </div>
+
+  <!-- Fullpage - Flag icon -->
+  <nav class="ln-social-icons ln-flag">
+    <ul class="mx-auto">
+      <li>
+        <a><span class="fi fi-us"></span></a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Fullpage - Social icons -->
   <nav class="ln-social-icons">
