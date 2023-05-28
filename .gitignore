@@ -6,4 +6,4 @@
 .vscode
 
 #Ignore video assets to save space
-assets/video
+#assets/video
