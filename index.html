@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="de-DE" class="no-js">
+<html lang="en" class="no-js">
 
 <head>
   <!-- Title -->
@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="AirPixel Studios Website" />
   <meta name="keywords" content="">
-	<meta name="author" content="co-authored by Anh Duc Tran, Tom Bendrath">
+  <meta name="author" content="co-authored by Anh Duc Tran, Tom Bendrath">
 
   <!-- Libs CSS -->
   <link rel="stylesheet" href="assets/vendor/fullPage.js/dist/jquery.fullpage.min.css" type="text/css" />
@@ -22,16 +22,14 @@
   <script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous"></script>
 
   <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+    rel="stylesheet" />
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.css" />
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/custom.css" />
-
-  <!-- Flag Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
 </head>
 
 <body class="layout-wide">
@@ -45,9 +43,10 @@
   <div id="top"></div>
 
   <!-- Site navigation -->
-  <nav class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-dark fixed-top bg-white shadow-light p-lg-4"
+  <nav
+    class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-dark fixed-top bg-white shadow-light p-lg-4"
     data-navbar-base="navbar-dark" data-navbar-toggled="navbar-light" data-navbar-scrolled="navbar-light">
-    
+
     <!-- Brand -->
     <a class="navbar-brand" href="#contact">
       <img src="assets/images/logo/logoWhite.png" class="navbar-brand-img" alt="" />
@@ -65,7 +64,10 @@
           <a class="nav-link heading-uppercase" href="#mission">Mission</a>
         </li>
         <li class="nav-item" data-menuanchor="services">
-          <a class="nav-link heading-uppercase" href="#services">Services</a>
+          <!-- Deutsch -->
+          <a lang="de" class="nav-link heading-uppercase" href="#services">Leistung</a>
+          <!-- Englisch -->
+          <a lang="en" class="nav-link heading-uppercase" href="#services">Services</a>
         </li>
         <li class="nav-item" data-menuanchor="portfolio">
           <a class="nav-link heading-uppercase" href="#portfolio">Portfolio</a>
@@ -74,17 +76,38 @@
           <a class="nav-link heading-uppercase" href="#team">Team</a>
         </li>
         <!-- Contact Button -->
-        <li class="nav-item" data-menuanchor="contact">
-          <a class="btn btn-soft-white btn-transparent heading-uppercase d-block d-lg-inline-block ml-lg-3" href="#contact">Kontakt</a>
+        <!-- Deutsch -->
+        <li lang="de" class="nav-item" data-menuanchor="contact">
+          <a class="btn btn-soft-white btn-transparent heading-uppercase d-block d-lg-inline-block ml-lg-3"
+            href="#contact">Kontakt</a>
+        </li>
+        <!-- Englisch -->
+        <li lang="en" class="nav-item" data-menuanchor="contact">
+          <a class="btn btn-soft-white btn-transparent heading-uppercase d-block d-lg-inline-block ml-lg-3"
+            href="#contact">Contact</a>
         </li>
       </ul>
-      
+
+      <div class="btn-group btn-group-toggle ml-lg-3" data-toggle="buttons" id="switch-lang">
+        <label id="lang-en-btn" class="btn btn-secondary btn-sm">
+          <input type="radio" name="options"> EN
+        </label>
+        <label id="lang-de-btn" class="btn btn-secondary btn-sm">
+          <input type="radio" name="options"> DE
+        </label>
+      </div>
     </div>
   </nav>
 
   <!-- Back To Top Button -->
-  <a href="#top" class="backtotop">
+  <!-- Deutsch -->
+  <a lang="de" href="#top" class="backtotop">
     <span>Zurück nach oben</span>
+    <i class="fas fa-angle-up"></i>
+  </a>
+  <!-- Deutsch -->
+  <a lang="en" href="#top" class="backtotop">
+    <span>Back to top</span>
     <i class="fas fa-angle-up"></i>
   </a>
 
@@ -122,12 +145,23 @@
         <div class="row">
           <div class="col-12 col-lg-9 col-xl-10">
             <h1 class="mb-4 animated" data-animation="fadeInUp" data-animation-delay="300">
-              ELEVATE <span class="font-weight-regular" data-toggle="typed" data-options='{"strings": ["YOUR VISION TO NEW HEIGHTS."]}'></span>
+              ELEVATE <span class="font-weight-regular" data-toggle="typed"
+                data-options='{"strings": ["YOUR VISION TO NEW HEIGHTS."]}'></span>
             </h1>
-            <a href="#portfolio" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
+
+            <!-- Deutsch -->
+            <a lang="de" href="#portfolio" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
               data-animation-delay="400">Aktuelle Projekte</a>
-            <a href="#contact" class="btn btn-soft-white btn-transparent icon-right scrollto animated" data-animation="fadeInUp"
-              data-animation-delay="600">Kontaktiere uns <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a lang="de" href="#contact" class="btn btn-soft-white btn-transparent icon-right scrollto animated"
+              data-animation="fadeInUp" data-animation-delay="600">Kontaktiere uns <i class="fa fa-angle-right"
+                aria-hidden="true"></i></a>
+
+            <!-- Englisch -->
+            <a lang="en" href="#portfolio" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
+              data-animation-delay="400">Current projects</a>
+            <a lang="en" href="#contact" class="btn btn-soft-white btn-transparent icon-right scrollto animated"
+              data-animation="fadeInUp" data-animation-delay="600">Contact Us <i class="fa fa-angle-right"
+                aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -138,10 +172,10 @@
       <div class="container align-self-xl-center text-white">
         <div class="row">
           <div class="col-12 col-lg-8 col-xl-7">
-            <h2 class="mb-4 animated" data-animation="fadeInUp" data-animation-delay="150">
+            <h2 lang="de" class="mb-4 animated" data-animation="fadeInUp" data-animation-delay="150">
               Unsere Mission
             </h2>
-            <p class="animated" data-animation="fadeInUp" data-animation-delay="150">
+            <p lang="de" class="animated" data-animation="fadeInUp" data-animation-delay="150">
               ... bei AirPixel Studios ist es, atemberaubende
               FPV-Drohnenaufnahmen für Innen- und Außenbereiche zu erstellen
               und unseren Kunden einzigartige Perspektiven zu bieten. Wir
@@ -153,6 +187,17 @@
               erzielen. Wir sind bestrebt, unseren Kunden ein erstklassiges
               Erlebnis zu bieten und uns kontinuierlich zu verbessern, um
               unsere Mission zu erfüllen.
+            </p>
+            <h2 lang="en" class="mb-4 animated" data-animation="fadeInUp" data-animation-delay="150">
+              Our Mission
+            </h2>
+            <p lang="en" class="animated" data-animation="fadeInUp" data-animation-delay="150">
+              ... at AirPixel Studios, our mission is to create breathtaking FPV drone footage for indoor and outdoor
+              settings, providing our clients with unique perspectives. We strive to exceed our customers' expectations
+              and deliver high-quality results that capture their memories forever. Our experienced and professional
+              pilots utilize state-of-the-art technology to ensure that we always achieve the best possible outcomes. We
+              are committed to offering our clients a first-class experience and continuously improving to fulfill our
+              mission.
             </p>
           </div>
         </div>
@@ -229,7 +274,8 @@
                 <i class="ti-timer"></i>
               </div>
               <h3 class="h4">Launch Quickly</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
@@ -239,7 +285,8 @@
                 <i class="ti-brush-alt"></i>
               </div>
               <h3 class="h4">Stylish Design</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
@@ -249,7 +296,8 @@
                 <i class="ti-book"></i>
               </div>
               <h3 class="h4">Well Documented</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
@@ -259,7 +307,8 @@
                 <i class="ti-layers"></i>
               </div>
               <h3 class="h4">Multiple Styles</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
@@ -269,7 +318,8 @@
                 <i class="ti-settings"></i>
               </div>
               <h3 class="h4">Fully Customizable</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
@@ -279,17 +329,28 @@
                 <i class="ti-headphone-alt"></i>
               </div>
               <h3 class="h4">Friendly Support</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident.</p>
             </div>
           </div>
 
         </div>
-        <div class="row">
+        <!-- Deutsch -->
+        <div lang="de" class="row">
           <div class="col-md-12 col-sm-12 text-center">
             <a href="#drones" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
               data-animation-delay="400">Unsere Drohnen</a>
-            <a href="#calculator" class="btn btn-soft-white btn-transparent icon-right scrollto animated" data-animation="fadeInUp"
-              data-animation-delay="600">Preisindikation</a>
+            <a href="#calculator" class="btn btn-soft-white btn-transparent icon-right scrollto animated"
+              data-animation="fadeInUp" data-animation-delay="600">Preisindikation</a>
+          </div>
+        </div>
+        <!-- Englisch -->
+        <div lang="en" class="row">
+          <div class="col-md-12 col-sm-12 text-center">
+            <a href="#drones" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp"
+              data-animation-delay="400">Our Drones</a>
+            <a href="#calculator" class="btn btn-soft-white btn-transparent icon-right scrollto animated"
+              data-animation="fadeInUp" data-animation-delay="600">Pricing</a>
           </div>
         </div>
       </div>
@@ -305,7 +366,8 @@
             </h2>
             <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
             <p class="lead text-center animated" data-animation="fadeInUp" data-animation-delay="150">
-              Donec sollicitudin libero vitae massa placerat tempor. Duis rutrum nisl eu ipsum varius, nec feugiat tortor vulputate. Integer pellentesque leo id metus dictum, a tristique tellus faucibus.
+              Donec sollicitudin libero vitae massa placerat tempor. Duis rutrum nisl eu ipsum varius, nec feugiat
+              tortor vulputate. Integer pellentesque leo id metus dictum, a tristique tellus faucibus.
             </p>
           </div>
         </div>
@@ -451,7 +513,9 @@
     <!-- Section - Team -->
     <section class="ln-section d-xl-flex" data-anchor="team" data-tooltip="Team">
       <div class="container align-self-xl-center text-white">
-        <div class="row mb-20">
+
+        <!-- Deutsch -->
+        <div lang="de" class="row mb-20">
           <div class="col-md-10 offset-md-1">
             <h2 class="text-center animated" data-animation="fadeInUp">
               Triff das Team
@@ -459,8 +523,18 @@
             <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
           </div>
         </div>
-        <div class="row">
 
+        <!-- Englisch -->
+        <div lang="en" class="row mb-20">
+          <div class="col-md-10 offset-md-1">
+            <h2 class="text-center animated" data-animation="fadeInUp">
+              Meet the team
+            </h2>
+            <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
+          </div>
+        </div>
+
+        <div class="row">
           <!-- User Placeholder -->
           <!-- <div class="col-md-3 col-sm-6 sm-mb-30"></div> -->
 
@@ -468,17 +542,21 @@
           <div class="col-md-3 col-sm-6 sm-mb-30 animated" data-animation="fadeInLeft" data-animation-delay="400">
             <div class="profile-card text-center">
               <div class="user-image">
-                <img src="assets/images/team/user-1.jpg" alt="">
+                <img src="assets/images/team/duc.jpg" alt="">
                 <div class="user-detail">
                   <div class="ud-container">
                     <div class="ud-content">
                       <h5 class="heading-uppercase mb-15">Anh Duc Tran</h5>
-                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat.</p>
                       <nav class="socials-icons light display-table margincenter">
                         <ul>
-                          <li><a href="https://www.instagram.com/adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                          <li><a href="https://www.tiktok.com/@adfpv_" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
-                          <li><a href="https://www.linkedin.com/in/aductran" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
+                          <li><a href="https://www.instagram.com/adfpv_" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                          <li><a href="https://www.tiktok.com/@adfpv_" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-tiktok"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/aductran" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-linkedin"></i></a></li>
                         </ul>
                       </nav>
                     </div>
@@ -491,9 +569,10 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Description -->
-          <div class="col-md-5 col-sm-6 sm-mb-30 m-auto">
+          <!-- Deutsch -->
+          <div lang="de" class="col-md-5 col-sm-6 sm-mb-30 m-auto">
             <p class="lead text-center animated" data-animation="fadeInUp" data-animation-delay="150">
               Unsere Piloten sind alle zertifiziert und verfügen über umfassende Erfahrung in der Drohnenfliegerei, um
               sicherzustellen, dass wir stets sicher und effektiv arbeiten. Wir sind bestrebt, unsere Fähigkeiten
@@ -501,12 +580,21 @@
               Techniken einsetzen, um unseren Kunden immer die besten Ergebnisse zu liefern.
             </p>
           </div>
+          <!-- Englisch -->
+          <div lang="en" class="col-md-5 col-sm-6 sm-mb-30 m-auto">
+            <p class="lead text-center animated" data-animation="fadeInUp" data-animation-delay="150">
+              Our pilots are all certified and have extensive experience in drone flying to ensure that we operate
+              safely and effectively. We are committed to continuously improving our skills by staying up to date with
+              the latest technology and utilizing innovative techniques to always deliver the best results to our
+              clients.
+            </p>
+          </div>
 
           <!-- User 2 -->
           <div class="col-md-3 col-sm-6 sm-mb-30 animated" data-animation="fadeInRight" data-animation-delay="600">
             <div class="profile-card sm-text-center">
               <div class="user-image">
-                <img src="assets/images/team/user-2.jpg" alt="">
+                <img src="assets/images/team/tom.jpg" alt="">
                 <div class="user-detail">
                   <div class="overlay">
                     <div class="overlay-wrapper parallax-wrapper">
@@ -516,12 +604,16 @@
                   <div class="ud-container">
                     <div class="ud-content">
                       <h5 class="heading-uppercase mb-15">Tom Bendrath</h5>
-                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                      <p class="mb-15">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat.</p>
                       <nav class="socials-icons light display-table margincenter">
                         <ul>
-                          <li><a href="https://www.instagram.com/tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                          <li><a href="https://www.tiktok.com/@tommi_fpv" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a></li>
-                          <li><a href="https://www.linkedin.com/in/tom-bendrath" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a></li>
+                          <li><a href="https://www.instagram.com/tommi_fpv" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                          <li><a href="https://www.tiktok.com/@tommi_fpv" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-tiktok"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/tom-bendrath" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-linkedin"></i></a></li>
                         </ul>
                       </nav>
                     </div>
@@ -536,7 +628,7 @@
           </div>
 
           <!-- User Placeholder -->
-					<!-- <div class="col-md-3 col-sm-6"></div> -->
+          <!-- <div class="col-md-3 col-sm-6"></div> -->
 
         </div>
       </div>
@@ -545,14 +637,31 @@
     <!-- Section - Contact -->
     <section class="ln-section d-xl-flex" data-anchor="contact" data-tooltip="Contact">
       <div class="container align-self-xl-center text-white">
-        <div class="row mb-50">
+
+        <!-- Deutsch -->
+        <div lang="de" class="row mb-50">
           <div class="col-md-8 offset-md-2">
             <h2 class="text-center animated" data-animation="fadeInUp">
               Kontaktiere Uns
             </h2>
             <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
             <p class="lead text-center animated" data-animation="fadeInUp" data-animation-delay="150">
-              Möchtest Du mehr über uns wissen? Ruf uns an oder schreibe uns eine E-Mail und wir werden uns so schnell wie möglich bei Dir melden.
+              Möchtest Du mehr über uns wissen? Ruf uns an oder schreibe uns eine E-Mail und wir werden uns so schnell
+              wie möglich bei Dir melden.
+            </p>
+          </div>
+        </div>
+
+        <!-- Englisch -->
+        <div lang="en" class="row mb-50">
+          <div class="col-md-8 offset-md-2">
+            <h2 class="text-center animated" data-animation="fadeInUp">
+              Contact us
+            </h2>
+            <div class="divider divider-alt divider-center divider-light animated" data-animation-delay="500"></div>
+            <p class="lead text-center animated" data-animation="fadeInUp" data-animation-delay="150">
+              Would you like to know more about us? Give us a call or send us an email, and we will get back to you as
+              soon as possible.
             </p>
           </div>
         </div>
@@ -582,35 +691,82 @@
           </div>
 
           <!-- Contact Form -->
-          <div class="col-md-7 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+          <!-- Deutsch -->
+          <div lang="de" class="col-md-7 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
-
                   <div class="form-process"></div>
-
                   <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                      <input type="text" id="cf-name" name="cf-name" placeholder="Enter your name" class="form-control fc-bordered light required">
+                      <input type="text" id="cf-name" name="cf-name" placeholder="Dein Name"
+                        class="form-control fc-bordered light required">
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6">
                     <div class="form-group">
-                      <input type="email" id="cf-email" name="cf-email" placeholder="Enter your email address" class="form-control fc-bordered light required">
+                      <input type="email" id="cf-email" name="cf-email" placeholder="Deine Mail Adresse"
+                        class="form-control fc-bordered light required">
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="form-group">
-                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (Optional)" class="form-control fc-bordered light">
+                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Betreff (Optional)"
+                        class="form-control fc-bordered light">
                     </div>
                   </div>
                   <div class="col-md-12 mb-20">
                     <div class="form-group">
-                      <textarea name="cf-message" id="cf-message" placeholder="Here goes your message" class="form-control fc-bordered light required" rows="7"></textarea>
+                      <textarea name="cf-message" id="cf-message" placeholder="Hier steht deine Nachricht an uns"
+                        class="form-control fc-bordered light required" rows="7"></textarea>
                     </div>
                   </div>
                   <div class="col-md-12 hidden">
-                    <input type="text" id="cf-botcheck" name="cf-botcheck" value="" class="form-control form-control-noradius" />
+                    <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
+                      class="form-control form-control-noradius" />
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Nachricht
+                      senden</button>
+                  </div>
+                </div>
+              </form>
+              <div class="contact-form-result text-center pt-10"></div>
+            </div>
+          </div>
+          <!-- Englisch -->
+          <div lang="en" class="col-md-7 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+            <div class="contact-form">
+              <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
+                <div class="row">
+                  <div class="form-process"></div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <input type="text" id="cf-name" name="cf-name" placeholder="Your name"
+                        class="form-control fc-bordered light required">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                      <input type="email" id="cf-email" name="cf-email" placeholder="Your email address"
+                        class="form-control fc-bordered light required">
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (Optional)"
+                        class="form-control fc-bordered light">
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-20">
+                    <div class="form-group">
+                      <textarea name="cf-message" id="cf-message" placeholder="Here goes your message"
+                        class="form-control fc-bordered light required" rows="7"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12 hidden">
+                    <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
+                      class="form-control form-control-noradius" />
                   </div>
                   <div class="col-md-12 text-center">
                     <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Send Message</button>
@@ -626,15 +782,6 @@
     </section>
 
   </div>
-
-  <!-- Fullpage - Flag icon -->
-  <nav class="ln-social-icons ln-flag">
-    <ul class="mx-auto">
-      <li>
-        <a><span class="fi fi-us"></span></a>
-      </li>
-    </ul>
-  </nav>
 
   <!-- Fullpage - Social icons -->
   <nav class="ln-social-icons">
@@ -652,8 +799,15 @@
   </nav>
 
   <!-- Fullpage - Copyright -->
+  <!-- Deutsch -->
   <div class="ln-copyright text-right">
-    <p>2023 AirPixel Studios - <a href="terms.html">Impressum</a></p>
+    <p lang="de">2023 AirPixel Studios - <a href="terms.html">Impressum</a></p>
+  </div>
+
+  <!-- Fullpage - Copyright -->
+  <!-- Englisch -->
+  <div class="ln-copyright text-right">
+    <p lang="en">2023 AirPixel Studios - <a href="terms.html">Legal information</a></p>
   </div>
 
   <!-- Libs JS -->
@@ -676,5 +830,11 @@
   <!-- Theme JS -->
   <script src="assets/js/main.js"></script>
 
+  <script src="js/index.js"></script>
+
+  <!-- js-cookie -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
 </body>
+
 </html>
