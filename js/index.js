@@ -1,14 +1,14 @@
 //Function called on page load
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function() {
   setInitialLangCookie();
-};
+});
 
 //Set first cookie when the user is on the page for the first time
 function setInitialLangCookie() {
   let cookie = Cookies.get("lang");
 
   if (cookie === undefined) {
-    Cookies.set("lang", "EN");
+    Cookies.set("lang", "EN", { secure: true, sameSite: "strict" });
     switchLang(Cookies.get("lang"));
   } else {
     switchLang(Cookies.get("lang"));
@@ -25,14 +25,14 @@ $("#switch-lang").click(function (event) {
 //Note: Each language has its own if case. If we add the Korean language in the future, we can easily extend this function.
 function switchLang(lang) {
   if (lang === "DE") {
-    Cookies.set("lang", "DE");
+    Cookies.set("lang", "DE", { secure: true, sameSite: "strict" });
     $('[lang="en"]').hide();
     $('[lang="de"]').show();
 
     $("#lang-de-btn").addClass("focus");
     $("#lang-en-btn").removeClass("focus");
   } else if (lang === "EN") {
-    Cookies.set("lang", "EN");
+    Cookies.set("lang", "EN", { secure: true, sameSite: "strict" });
     $('[lang="de"]').hide();
     $('[lang="en"]').show();
 
