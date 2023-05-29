@@ -1229,3 +1229,22 @@ label.cbx {
   margin-bottom: 10px !important;
 }
 
+/* Price Slider  */
+.irs-single {
+  background-color: #999999 !important;
+}
+
+.irs--round .irs-bar {
+  background-color: #999999 !important;
+}
+
+.irs--round .irs-handle {
+  border-top-color: #999999 !important;
+  border-right-color: #999999 !important;
+  border-bottom-color: #999999 !important;
+  border-left-color: #999999 !important;
+}
+
+.irs--round .irs-single:before {
+  border-top-color: #999999 !important;
+}
