@@ -6,7 +6,7 @@
 
 /* Contact Section - Particles */
 $color-particle: #c4c4c4;
-$spacing: 5560px;
+$spacing: 4560px;
 $time-1: 60s;
 $time-2: 120s;
 $time-3: 180s;
@@ -25,15 +25,10 @@ $time-4: 600s;
    box-shadow: particles($max);
 }
 
-.particle,
-.particle:after {
-  background: transparent;
-}
-
-.particle:after {
+.particle {
   position: absolute;
-  content: "";
-  top: $spacing;
+  bottom: 0;
+  left: 0;
 }
 
 .particle-1 {
