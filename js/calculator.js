@@ -1,426 +1,354 @@
-(function ($) {
+$(document).ready(function () {
+  "use strict";
 
-	"use strict";
+  // =====================================================
+  //      PRELOADER
+  // =====================================================
+  $(window).on("load", function () {
+    "use strict";
+    $('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
+    $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+    var $hero = $(".hero-home .content");
+    var $hero_v = $("#hero_video .content ");
+    $hero.find("h3, p, form").addClass("fadeInUp animated");
+    $hero.find(".btn-1").addClass("fadeIn animated");
+    $hero_v.find(".h3, p, form").addClass("fadeInUp animated");
+    $(window).scroll();
+  });
 
-	// =====================================================
-	//      PRELOADER
-	// =====================================================
-	$(window).on('load', function () {
-		'use strict';
-		$('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
-		$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-		var $hero = $('.hero-home .content');
-		var $hero_v = $('#hero_video .content ');
-		$hero.find('h3, p, form').addClass('fadeInUp animated');
-		$hero.find('.btn-1').addClass('fadeIn animated');
-		$hero_v.find('.h3, p, form').addClass('fadeInUp animated');
-		$(window).scroll();
-	})
+  // =====================================================
+  //      STICKY SIDEBAR SETUP
+  // =====================================================
+  $("#mainContent, #sidebar").theiaStickySidebar({
+    additionalMarginTop: 90,
+  });
 
-	// =====================================================
-	//      BACK TO TOP BUTTON
-	// =====================================================
-	function scrollToTop() {
-		$('html, body').animate({ scrollTop: 0 }, 500, 'easeInOutExpo');
-	}
+  // =====================================================
+  //      CALCULATOR ELEMENTS
+  // =====================================================
 
-	$(window).on('scroll', function () {
-		if ($(this).scrollTop() > 100) {
-			$('#toTop').fadeIn('slow');
-		} else {
-			$('#toTop').fadeOut('slow');
-		}
-	});
+  // Function to format item prices usign priceFormat plugin
+  function formatItemPrice() {
+    $(".price").priceFormat({
+      prefix: "	",
+      centsSeparator: ".",
+      thousandsSeparator: ",",
+    });
+  }
 
-	$('#toTop').on('click', function () {
-		scrollToTop();
-		return false;
-	});
+  // Function to format total price usign priceFormat plugin
+  function formatTotalPrice() {
+    $("#total").priceFormat({
+      prefix: "	",
+      centsSeparator: ".",
+      thousandsSeparator: ",",
+    });
+  }
 
-	// =====================================================
-	//      NAVBAR
-	// =====================================================
-	$(window).on('scroll load', function () {
+  // Function to set total title and price initially
+  function setTotalOnStart() {
+    $("#option1SingleSum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        singleOption1Title + ':' +
+        '<span class="price">' +
+        subSum1.toFixed(2) +
+        "</span>" +
+        "€"
+    );
+    $("#option2SingleSum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        singleOption2Title + ':' +
+        '<span class="price">' +
+        subSum2.toFixed(2) +
+        "</span>" +
+        "€"
+    );
+    $("#option3SingleSum").html(
+      '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
+        singleOption3Title + ':' +
+        '<span class="price">' +
+        subSum3.toFixed(2) +
+        "</span>" +
+        "€"
+    );
 
-		if ($(window).scrollTop() >= 1) {
-			$('.main-header').addClass('active');
-		} else {
-			$('.main-header').removeClass('active');
-		}
+    $("#totalTitle").val("Summe:");
+    $("#total").val(total.toFixed(2));
 
-	});
+    formatItemPrice();
+    formatTotalPrice();
+  }
 
-	// =====================================================
-	//      STICKY SIDEBAR SETUP
-	// =====================================================
-	$('#mainContent, #sidebar').theiaStickySidebar({
-		additionalMarginTop: 90
-	});
+  // Variables for calculation
+  var singleOption1Title = "Basis";
+  var actualQty1 = 1;
+  var subSum1 = 100;
 
-	// =====================================================
-	//      MOBILE MENU
-	// =====================================================	
-	// var $menu = $("nav#menu").mmenu({
-	// 	"extensions": ["pagedim-black", "theme-dark"], // "theme-dark" can be changed to: "theme-white"
-	// 	counters: true,
-	// 	keyboardNavigation: {
-	// 		enable: true,
-	// 		enhance: true
-	// 	},
-	// 	navbar: {
-	// 		title: 'MENU'
-	// 	},
-	// 	navbars: [{ position: 'bottom', content: ['<a href="#">© 2021 Costy</a>'] }]
-	// },
-	// 	{
-	// 		// configuration
-	// 		clone: true,
-	// 	});
-	// var $icon = $("#hamburger");
-	// var API = $menu.data("mmenu");
-	// $icon.on("click", function () {
-	// 	API.open();
-	// });
-	// API.bind("open:finish", function () {
-	// 	setTimeout(function () {
-	// 		$icon.addClass("is-active");
-	// 	}, 100);
-	// });
-	// API.bind("close:finish", function () {
-	// 	setTimeout(function () {
-	// 		$icon.removeClass("is-active");
-	// 	}, 100);
-	// });
+  var singleOption2Title = "Anfahrt";
+  var singleOption2Price = 0;
+  var actualQty2 = 100;
+  var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
 
-	// =====================================================
-	//      FAQ NICE SCROLL
-	// =====================================================
-	var position;
+  var singleOption3Title = "Flüge (inkl. Spotter)";
+  var singleOption3Price = 0;
+  var actualQty3 = 1;
+  var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
 
-	$('a.nice-scroll-faq').on('click', function (e) {
-		e.preventDefault();
-		position = $($(this).attr('href')).offset().top - 125;
-		$('body, html').animate({
-			scrollTop: position
-		}, 500, 'easeInOutExpo');
-	});
+  //Videostabilisierung Checkbox
+  var extraOption1IsChecked = false;
+  var extraOption1Title = "Videostabilisierung";
+  var extraOption1Price = 0;
 
-	$('ul#faqNav li a').on('click', function () {
-		$('ul#faqNav li a.active').removeClass('active');
-		$(this).addClass('active');
-	});
+  //Bereitstellung Material Checkbox
+  var extraOption2IsChecked = false;
+  var extraOption2Title = "Bereitstellung des Materials";
+  var extraOption2Price = 50;
 
-	// =====================================================
-	//      FAQ ACCORDION
-	// =====================================================
-	function toggleChevron(e) {
-		$(e.target).prev('.card-header').find('i.indicator').toggleClass('icon-minus icon-plus');
-	}
-	$('.faq-accordion').on('hidden.bs.collapse shown.bs.collapse', toggleChevron);
+  var total = subSum1 + subSum2 + subSum3;
 
-	// =====================================================
-	//      GALLERY
-	// =====================================================
-	// Single Image
-	$('#openImage1').magnificPopup({
-		items: {
-			src: 'img/gallery/1.jpg',
-			title: 'Image related to Option Single 1'
-		},
-		type: 'image',
-		fixedContentPos: false,
-	});
+  // Function to manage the calculations and update summary
+  function updateSummary() {
+    // Get the current data from option1Single elements
+    //actualQty1 = $("#option1SingleQty").val();
 
-	$('#openSimpleMailSummaryImage').magnificPopup({
-		items: {
-			src: 'img/presentation/simple-mail-summary.jpg',
-			title: 'Simple Mail Summary'
-		},
-		type: 'image',
-		fixedContentPos: false,
-	});
+    // Update order summary with option1Single details
 
-	// Single Video
-	$('#openVideo1').magnificPopup({
-		items: {
-			src: 'https://vimeo.com/432854555'
-		},
-		type: 'iframe',
-		fixedContentPos: false,
-	});
+    subSum1 = 100;
+    $("#option1SingleSum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        singleOption1Title + ':' +
+        '<span class="price">' +
+        subSum1.toFixed(2) +
+        "</span>" +
+        "€"
+    );
+    formatItemPrice();
 
-	// Image Gallery
-	$('#openGallery1').magnificPopup({
-		items: [
-			{
-				src: 'img/gallery/1.jpg',
-				title: 'Image related to Option 1.1'
-			},
-			{
-				src: 'img/gallery/2.jpg',
-				title: 'Image related to Option 1.2'
-			},
-			{
-				src: 'img/gallery/3.jpg',
-				title: 'Image related to Option 1.3'
-			}
-		],
-		gallery: {
-			enabled: true
-		},
-		type: 'image',
-		fixedContentPos: false,
-	});
+    // Get the current data from option2Single elements
+    actualQty2 = $("#option1SingleQty").val();
 
-	// =====================================================
-	//      CALCULATOR ELEMENTS
-	// =====================================================	
+    // Update order summary with option2Single details
+    if (actualQty2 != 0) {
+      subSum2 = ((actualQty2 - 100)/50) * 20
+      $("#option2SingleSum").html(
+        '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+          singleOption2Title +
+          " x " +
+          actualQty2 + 'km:' +
+          '<span class="price">' +
+          subSum2.toFixed(2) +
+          "</span>" + '€'
+      );
+      formatItemPrice();
+    }
 
-	// Function to format item prices usign priceFormat plugin
-	function formatItemPrice() {
-		$('.price').priceFormat({
-			prefix: '	',
-			centsSeparator: '.',
-			thousandsSeparator: ','
-		});
-	}
+    // Get the current data from option3Single elements
+    actualQty3 = $("#option2SingleQty").val();
 
-	// Function to format total price usign priceFormat plugin
-	function formatTotalPrice() {
-		$('#total').priceFormat({
-			prefix: '	',
-			centsSeparator: '.',
-			thousandsSeparator: ','
-		});
-	}
+    // Update order summary with option3Single details
+    if (actualQty3 != 0) {
 
-	// Function to set total title and price initially
-	function setTotalOnStart() {
-
-		$('#option1SingleSum').html('<span><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption1Title + '<span class="price">' + subSum1.toFixed(2) + '</span>' + '€');
-		$('#option2SingleSum').html('<span><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption2Title + ' x ' + actualQty2 + '<span class="price">' + subSum2.toFixed(2) + '</span>');
-		$('#option3SingleSum').html('<span"><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption3Title + ' x ' + actualQty3 + '<span class="price">' + subSum3.toFixed(2) + '</span>');
-
-		$('#totalTitle').val('Summe:');
-		$('#total').val(total.toFixed(2));
-
-		formatItemPrice();		
-		formatTotalPrice();
-	}
-
-	// Variables for calculation	
-	var singleOption1Title = 'Basis';
-	var actualQty1 = 100;
-	var subSum1 = 100;
-
-	var singleOption2Title = 'Anfahrt';
-	var singleOption2Price = 129;
-	var actualQty2 = 25;
-	var subSum2 = (singleOption2Price * 1) * (actualQty2 * 1);
-
-	var singleOption3Title = 'Flüge (inkl. Spotter)';
-	var singleOption3Price = 150;
-	var actualQty3 = 7;
-	var subSum3 = (singleOption3Price * 1) * (actualQty3 * 1);
-
-	//Videostabilisierung Checkbox
-	var extraOption1IsChecked = false;
-	var extraOption1Title = 'Videostabilisierung';
-	var extraOption1Price = 0;
-
-	//Bereitstellung Material Checkbox
-	var extraOption2IsChecked = false;
-	var extraOption2Title = '';
-	var extraOption2Price = 50;
-
-	var total = subSum1 + subSum2 + subSum3;	
-
-	// Function to manage the calculations and update summary
-	function updateSummary() {
-
-		// Get the current data from option1Single elements		
-		actualQty1 = $('#option1SingleQty').val();
-
-		// Update order summary with option1Single details
-		if (actualQty1 != 0) {
-
-			subSum1 = 100;
-			$('#option1SingleSum').html('<span><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption1Title + '<span class="price">' + subSum1.toFixed(2) + '</span>');
-			formatItemPrice();
-
+		if (actualQty3 === 1) {
+			subSum3 = 0;
+		} else if (actualQty3 > 1 && actualQty3 <= 2) {
+			subSum3 = 50 * actualQty3;
+		} else if (actualQty3 > 2 && actualQty3 <= 5) {
+			subSum3 = 40 * actualQty3;
+		} else if (actualQty3 > 5 && actualQty3 <= 20) {
+			subSum3 = 35 * actualQty3
 		}
 
-		// Get the current data from option2Single elements		
-		actualQty2 = $('#option2SingleQty').val();
+		console.log(actualQty3)
+		console.log(subSum3)
 
-		// Update order summary with option2Single details
-		if (actualQty2 != 0) {
+      $("#option3SingleSum").html(
+        '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
+          singleOption3Title +
+          " x " +
+          actualQty3 +
+          '<span class="price">' +
+          subSum3.toFixed(2) +
+          "</span>" + '€'
+      );
+      formatItemPrice();
+    }
 
-			subSum2 = (singleOption2Price * 1) * (actualQty2 * 1);
-			$('#option2SingleSum').html('<span><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption2Title + ' x ' + actualQty2 + '<span class="price">' + subSum2.toFixed(2) + '</span>');
-			formatItemPrice();
+    // Get the current data from extraOption1
+    extraOption1IsChecked = $("#extraOption1").is(":checked");
+    // extraOption1Title = $("#extraOption1Title").text();
+    extraOption1Price = $("#extraOption1").val();
 
-		}
+    if (extraOption1IsChecked) {
+      extraOption1Price = extraOption1Price * 1;
+      $("#extraOption1Sum").html(
+        '<span id="extraOption1SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
+          extraOption1Title +
+          '<span class="price">' +
+          extraOption1Price.toFixed(2) +
+          "</span>" +
+          "€"
+      );
+      formatItemPrice();
+    } else {
+      // If option is not checked
 
-		// Get the current data from option3Single elements		
-		actualQty3 = $('#option3SingleQty').val();
+      extraOption1Price = 0;
+      clearSummaryLine("extraOption1Sum");
+    }
 
-		// Update order summary with option3Single details
-		if (actualQty3 != 0) {
+    // Get the current data from extraOption2
+    extraOption2IsChecked = $("#extraOption2").is(":checked");
+    //extraOption2Title = $("#extraOption2Title").text();
+    extraOption2Price = $("#extraOption2").val();
 
-			subSum3 = (singleOption3Price * 1) * (actualQty3 * 1);
-			$('#option3SingleSum').html('<span"><i class="fa fa-arrow-circle-right"></i></span> ' + singleOption3Title + ' x ' + actualQty3 + '<span class="price">' + subSum3.toFixed(2) + '</span>');
-			formatItemPrice();
+    if (extraOption2IsChecked) {
+      extraOption2Price = extraOption2Price * 1;
+      $("#extraOption2Sum").html(
+        '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
+          extraOption2Title +
+          '<span class="price">' +
+          extraOption2Price.toFixed(2) +
+          "</span>" +
+          "€"
+      );
+      formatItemPrice();
+    } else {
+      // If option is not checked
 
-		}
+      extraOption2Price = 0;
+      clearSummaryLine("extraOption2Sum");
+    }
 
-		// Get the current data from extraOption1 
-		extraOption1IsChecked = $('#extraOption1').is(':checked');
-		extraOption1Title = $('#extraOption1Title').text();
-		extraOption1Price = $('#extraOption1').val();
+    // Update total in order summary
+    total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
+    $("#total").val(total.toFixed(2));
+    formatTotalPrice();
+  }
 
-		if (extraOption1IsChecked) {
+  // Function to clear line in order summary
+  function clearSummaryLine(summaryLineName) {
+    if (summaryLineName == "extraOption1Sum") {
+      $("#extraOption1Sum").html("");
+    } else if (summaryLineName == "extraOption2Sum") {
+      $("#extraOption2Sum").html("");
+    }
+  }
 
-			extraOption1Price = extraOption1Price * 1;
-			$('#extraOption1Sum').html('<span id="extraOption1SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' + extraOption1Title + '<span class="price">' + extraOption1Price.toFixed(2) + '</span>');
-			formatItemPrice();
+  // Set total title and price initially
+  setTotalOnStart();
 
-		} else { // If option is not checked
+  // When extraOption1 is checked
+  $("#extraOption1").on("click", function () {
+    updateSummary();
+  });
 
-			extraOption1Price = 0;
-			clearSummaryLine('extraOption1Sum');
+  // When extraOption2 is checked
+  $("#extraOption2").on("click", function () {
+    updateSummary();
+  });
 
-		}
+  // =====================================================
+  //      RANGE SLIDER 1
+  // =====================================================
+  var $range = $("#option1SingleRangeSlider"),
+    $input = $("#option1SingleQty"),
+    instance,
+    min = 100,
+    max = 1000;
 
-		// Update total in order summary		
-		total = subSum1 + subSum2 + subSum3 + extraOption1Price;
-		$('#total').val(total.toFixed(2));
-		formatTotalPrice();
+  $range.ionRangeSlider({
+    skin: "round",
+    type: "single",
+    min: min,
+    max: max,
+    from: 100,
+    step: 50,
+    hide_min_max: true,
+    onStart: function (data) {
+      $input.prop("value", data.from);
+    },
+    onChange: function (data) {
+      $input.prop("value", data.from);
+      updateSummary();
+    },
+  });
 
-	}
+  instance = $range.data("ionRangeSlider");
 
-	// Function to clear line in order summary
-	function clearSummaryLine(summaryLineName) {
+  $input.on("input", function () {
+    var val = $(this).prop("value");
 
-		if (summaryLineName == 'extraOption1Sum') {
-			$('#extraOption1Sum').html('');
-		}
-	}
+    // Validate
+    if (val < min) {
+      val = min;
+      $input.val(min);
+    } else if (val > max) {
+      val = max;
+      $input.val(max);
+    }
 
-	// Set total title and price initially
-	setTotalOnStart();
+    instance.update({
+      from: val,
+    });
 
-	// When extraOption1 is checked
-	$('#extraOption1').on('click', function () {
-		updateSummary();
-	});
+    updateSummary();
+  });
 
-	// =====================================================
-	//      RANGE SLIDER 1
-	// =====================================================	
-	var $range = $('#option1SingleRangeSlider'),
-		$input = $('#option1SingleQty'),
-		instance,
-		min = 100,
-		max = 1000;
+  // =====================================================
+  //      RANGE SLIDER 2
+  // =====================================================
+  var $range2 = $("#option2SingleRangeSlider"),
+    $input2 = $("#option2SingleQty"),
+    instance2,
+    min2 = 1,
+    max2 = 20;
 
-	$range.ionRangeSlider({
-		skin: 'round',
-		type: 'single',
-		min: min,
-		max: max,
-		from: 100,
-		step: 50,
-		hide_min_max: true,
-		onStart: function (data) {
-			$input.prop('value', data.from);
-		},
-		onChange: function (data) {
-			$input.prop('value', data.from);
-			updateSummary();
-		}
-	});
+  $range2.ionRangeSlider({
+    skin: "round",
+    type: "single",
+    min: min2,
+    max: max2,
+    from: 1,
+    step: 1,
+    hide_min_max: true,
+    onStart: function (data) {
+      $input2.prop("value", data.from);
+    },
+    onChange: function (data) {
+      $input2.prop("value", data.from);
+      updateSummary();
+    },
+  });
 
-	instance = $range.data("ionRangeSlider");
+  instance2 = $range2.data("ionRangeSlider");
 
-	$input.on('input', function () {
-		var val = $(this).prop('value');
+  $input2.on("input", function () {
+    var val2 = $(this).prop("value");
 
-		// Validate
-		if (val < min) {
-			val = min;
-			$input.val(min);
-		} else if (val > max) {
-			val = max;
-			$input.val(max);
-		}
+    // Validate
+    if (val2 < min2) {
+      val2 = min2;
+      $input2.val(min2);
+    } else if (val2 > max2) {
+      val2 = max2;
+      $input2.val(max2);
+    }
 
-		instance.update({
-			from: val
-		});
+    instance2.update({
+      from: val2,
+    });
 
-		updateSummary();
+    updateSummary();
+  });
 
-	});
+  // =====================================================
+  //      FORM INPUT VALIDATION
+  // =====================================================
 
-	// =====================================================
-	//      RANGE SLIDER 2
-	// =====================================================	
-	var $range2 = $('#option2SingleRangeSlider'),
-		$input2 = $('#option2SingleQty'),
-		instance2,
-		min2 = 1,
-		max2 = 50;
-
-	$range2.ionRangeSlider({
-		skin: 'round',
-		type: 'single',
-		min: min2,
-		max: max2,
-		from: 25,
-		step: 1,
-		hide_min_max: true,
-		onStart: function (data) {
-			$input2.prop('value', data.from);
-		},
-		onChange: function (data) {
-			$input2.prop('value', data.from);
-			updateSummary();
-		}
-	});
-
-	instance2 = $range2.data("ionRangeSlider");
-
-	$input2.on('input', function () {
-		var val2 = $(this).prop('value');
-
-		// Validate
-		if (val2 < min2) {
-			val2 = min2;
-			$input2.val(min2);
-		} else if (val2 > max2) {
-			val2 = max2;
-			$input2.val(max2);
-		}
-
-		instance2.update({
-			from: val2
-		});
-
-		updateSummary();
-
-	});
-
-	// =====================================================
-	//      FORM INPUT VALIDATION
-	// =====================================================
-
-	// Quantity inputs
-	$('.qty-input').on('keypress', function (event) {
-		if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
-			event.preventDefault();
-		}
-	});
-
-
-})(window.jQuery);
+  // Quantity inputs
+  $(".qty-input").on("keypress", function (event) {
+    if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+      event.preventDefault();
+    }
+  });
+});
