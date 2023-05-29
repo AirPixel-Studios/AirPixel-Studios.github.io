@@ -86,7 +86,7 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 28px;
+  line-height: 24px;
   color: #333;
 }
 
@@ -623,21 +623,25 @@ ul {
 }
 
 .nomargin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* Margin Top */
 .mt-20 {
-  margin-top: 20px;
+  margin-top: 20px !important;
 }
 
 /* Margin Bottom */
+.mb-15 {
+	margin-bottom: 15px !important;
+}
+
 .mb-20 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 .mb-50 {
@@ -646,39 +650,39 @@ ul {
 
 /* Padding Top */
 .pt-0 {
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 .pt-10 {
-  padding-top: 10px;
+  padding-top: 10px !important;
 }
 
 .pt-120 {
-  padding-top: 120px;
+  padding-top: 120px !important;
 }
 
 .pt-180 {
-  padding-top: 180px;
+  padding-top: 180px !important;
 }
 
 /* Padding Bottom */
 .pb-0 {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .pb-120 {
-  padding-bottom: 120px;
+  padding-bottom: 120px !important;
 }
 
 .pb-180 {
-  padding-bottom: 180px;
+  padding-bottom: 180px !important;
 }
 
 /* Mobile Spacing - Extra Small - Phones Less than 767px */
 @media (max-width: 767px) {
   /* Margin Bottom */
   .xs-mb-30 {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
   }
 }
 
@@ -686,18 +690,8 @@ ul {
 @media (max-width: 1024px) {
   /* Margin Bottom */
   .sm-mb-30 {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
   }
-
-  /* Padding Top */
-  /* .sm-pt-0 {
-		padding-top: 0;
-	} */
-
-  /* Padding Bottom */
-  /* .sm-pb-0 {
-		padding-bottom: 0;
-	} */
 }
 
 /*------------------------------------------------------------------
@@ -1032,8 +1026,25 @@ fieldset[disabled] .form-control {
 
 /* Misc */
 
+.bg-dark {
+  background-color: rgba(25, 25, 25, 0.92) !important;
+}
+
 .hidden {
   display: none !important;
+}
+
+.navbar-dark .navbar-brand .navbar-brand-text,
+.navbar-dark .navbar-brand .navbar-brand-img {
+  filter: none !important;
+}
+
+.navbar-brand-img {
+  max-height: 3rem !important;
+}
+
+.btn {
+  font-size: 14px !important;
 }
 
 .btn-transparent {
