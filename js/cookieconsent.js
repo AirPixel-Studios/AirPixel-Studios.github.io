@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
   // obtain plugin
   var cc = initCookieConsent();
 
