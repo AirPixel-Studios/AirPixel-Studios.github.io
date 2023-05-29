@@ -1,18 +1,16 @@
 //Function called on page load
 $(document).ready(function () {
-  setInitialLangCookie();
+
+  //Get language of browser
+  var usrlang = navigator.language || navigator.userLanguage;
+  if (usrlang === "de-DE" || usrlang === "de") {
+    Cookies.set("lang", "DE");
+  } else {
+    Cookies.set("lang", "EN");
+  }
 
   //Set first cookie when the user is on the page for the first time
-  function setInitialLangCookie() {
-    let cookie = Cookies.get("lang");
-
-    if (cookie === undefined) {
-      Cookies.set("lang", "EN");
-      switchLang(Cookies.get("lang"));
-    } else {
-      switchLang(Cookies.get("lang"));
-    }
-  }
+  switchLang(Cookies.get("lang"));
 
   //Language switch event
   $("#switch-lang").click(function (event) {
