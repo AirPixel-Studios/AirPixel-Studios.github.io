@@ -85,11 +85,7 @@ $(document).ready(function () {
 
 	$("#extraOption3Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title + ':' +
-        '<span class="price">' +
-        extraOption1Price.toFixed(2) +
-        "</span>" +
-        "€"
+        extraOption1Title + ': ' + 'Kostenfrei'
     );
 
     $("#totalTitle").val("Summe:");
@@ -196,11 +192,7 @@ $(document).ready(function () {
 	extraOption1Price = 0;
 	$("#extraOption3Sum").html(
         '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          extraOption1Title + ':' +
-          '<span class="price">' +
-          extraOption1Price.toFixed(2) +
-          "</span>" +
-          "€"
+          extraOption1Title + ': ' + 'Kostenfrei'
       );
       formatItemPrice();
 
