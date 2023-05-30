@@ -49,15 +49,25 @@ $(document).ready(function () {
   function setTotalOnStart() {
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title + ':' +
+        singleOption1Title +
+        ":" +
         '<span class="price">' +
         subSum1.toFixed(2) +
         "</span>" +
         "€"
     );
+    $("#extraOption2Sum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        extraOption2Title + ':' +
+        '<span class="price">' +
+        extraOption2Price.toFixed(2) +
+        "</span>" +
+        "€"
+    );
     $("#option2SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption2Title + ':' +
+        singleOption2Title + ` x ${subSum1}km ` + 
+        ":" +
         '<span class="price">' +
         subSum2.toFixed(2) +
         "</span>" +
@@ -65,9 +75,19 @@ $(document).ready(function () {
     );
     $("#option3SingleSum").html(
       '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption3Title + ':' +
+        singleOption3Title +
+		" x 1:" +
         '<span class="price">' +
         subSum3.toFixed(2) +
+        "</span>" +
+        "€"
+    );
+
+	$("#extraOption3Sum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        extraOption1Title + ':' +
+        '<span class="price">' +
+        extraOption1Price.toFixed(2) +
         "</span>" +
         "€"
     );
@@ -90,7 +110,7 @@ $(document).ready(function () {
   var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
 
   var singleOption3Title = "Flüge (inkl. Spotter)";
-  var singleOption3Price = 0;
+  var singleOption3Price = 50;
   var actualQty3 = 1;
   var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
 
@@ -104,19 +124,15 @@ $(document).ready(function () {
   var extraOption2Title = "Bereitstellung des Materials";
   var extraOption2Price = 50;
 
-  var total = subSum1 + subSum2 + subSum3;
+  var total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
 
   // Function to manage the calculations and update summary
   function updateSummary() {
-    // Get the current data from option1Single elements
-    //actualQty1 = $("#option1SingleQty").val();
-
-    // Update order summary with option1Single details
-
     subSum1 = 100;
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title + ':' +
+        singleOption1Title +
+        ":" +
         '<span class="price">' +
         subSum1.toFixed(2) +
         "</span>" +
@@ -124,114 +140,74 @@ $(document).ready(function () {
     );
     formatItemPrice();
 
-    // Get the current data from option2Single elements
-    actualQty2 = $("#option1SingleQty").val();
+	extraOption2Price = 50;
+    $("#extraOption2Sum").html(
+      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+        extraOption2Title + ':' +
+        '<span class="price">' +
+        extraOption2Price.toFixed(2) +
+        "</span>" +
+        "€"
+    );
+	formatItemPrice();
 
-    // Update order summary with option2Single details
+    actualQty2 = $("#option1SingleQty").val();
     if (actualQty2 != 0) {
-      subSum2 = ((actualQty2 - 100)/50) * 20
+      subSum2 = ((actualQty2 - 100) / 50) * 20;
       $("#option2SingleSum").html(
         '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
           singleOption2Title +
           " x " +
-          actualQty2 + 'km:' +
+          actualQty2 +
+          "km:" +
           '<span class="price">' +
           subSum2.toFixed(2) +
-          "</span>" + '€'
+          "</span>" +
+          "€"
       );
       formatItemPrice();
     }
 
-    // Get the current data from option3Single elements
     actualQty3 = $("#option2SingleQty").val();
-
-    // Update order summary with option3Single details
     if (actualQty3 != 0) {
-
-		if (actualQty3 === 1) {
-			subSum3 = 0;
-		} else if (actualQty3 > 1 && actualQty3 <= 2) {
-			subSum3 = 50 * actualQty3;
-		} else if (actualQty3 > 2 && actualQty3 <= 5) {
-			subSum3 = 40 * actualQty3;
-		} else if (actualQty3 > 5 && actualQty3 <= 20) {
-			subSum3 = 35 * actualQty3
-		}
-
-		console.log(actualQty3)
-		console.log(subSum3)
+      if (actualQty3 <= 1) {
+        subSum3 = singleOption3Price;
+      } else if (actualQty3 > 1 && actualQty3 <= 2) {
+        subSum3 = 50 * actualQty3;
+      } else if (actualQty3 > 2 && actualQty3 <= 5) {
+        subSum3 = 40 * actualQty3;
+      } else if (actualQty3 > 5 && actualQty3 <= 20) {
+        subSum3 = 35 * actualQty3;
+      }
 
       $("#option3SingleSum").html(
         '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
           singleOption3Title +
           " x " +
-          actualQty3 +
+          actualQty3 + ':' +
           '<span class="price">' +
           subSum3.toFixed(2) +
-          "</span>" + '€'
+          "</span>" +
+          "€"
       );
       formatItemPrice();
     }
 
-    // Get the current data from extraOption1
-    extraOption1IsChecked = $("#extraOption1").is(":checked");
-    // extraOption1Title = $("#extraOption1Title").text();
-    extraOption1Price = $("#extraOption1").val();
-
-    if (extraOption1IsChecked) {
-      extraOption1Price = extraOption1Price * 1;
-      $("#extraOption1Sum").html(
-        '<span id="extraOption1SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          extraOption1Title +
+	extraOption1Price = 0;
+	$("#extraOption3Sum").html(
+        '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
+          extraOption1Title + ':' +
           '<span class="price">' +
           extraOption1Price.toFixed(2) +
           "</span>" +
           "€"
       );
       formatItemPrice();
-    } else {
-      // If option is not checked
-
-      extraOption1Price = 0;
-      clearSummaryLine("extraOption1Sum");
-    }
-
-    // Get the current data from extraOption2
-    extraOption2IsChecked = $("#extraOption2").is(":checked");
-    //extraOption2Title = $("#extraOption2Title").text();
-    extraOption2Price = $("#extraOption2").val();
-
-    if (extraOption2IsChecked) {
-      extraOption2Price = extraOption2Price * 1;
-      $("#extraOption2Sum").html(
-        '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          extraOption2Title +
-          '<span class="price">' +
-          extraOption2Price.toFixed(2) +
-          "</span>" +
-          "€"
-      );
-      formatItemPrice();
-    } else {
-      // If option is not checked
-
-      extraOption2Price = 0;
-      clearSummaryLine("extraOption2Sum");
-    }
 
     // Update total in order summary
     total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
     $("#total").val(total.toFixed(2));
     formatTotalPrice();
-  }
-
-  // Function to clear line in order summary
-  function clearSummaryLine(summaryLineName) {
-    if (summaryLineName == "extraOption1Sum") {
-      $("#extraOption1Sum").html("");
-    } else if (summaryLineName == "extraOption2Sum") {
-      $("#extraOption2Sum").html("");
-    }
   }
 
   // Set total title and price initially
@@ -254,7 +230,7 @@ $(document).ready(function () {
     $input = $("#option1SingleQty"),
     instance,
     min = 100,
-    max = 1000;
+    max = 1500;
 
   $range.ionRangeSlider({
     skin: "round",
