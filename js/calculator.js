@@ -339,4 +339,6 @@ $(document).ready(function () {
 
     localStorage.setItem('pricingObj', JSON.stringify(priceObj));
   });
+
+  $('[data-toggle="tooltip"]').tooltip()
 });
