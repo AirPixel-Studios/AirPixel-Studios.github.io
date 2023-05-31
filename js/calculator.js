@@ -319,4 +319,24 @@ $(document).ready(function () {
       event.preventDefault();
     }
   });
+
+  // Store pricing object 
+  $("#submitWithCalc").on("click", function (event) {
+    var priceObj = {
+      Basis: subSum1,
+      Provisioning: extraOption2Price,
+      Journey: {
+        km: actualQty2,
+        price: subSum2 
+      },
+      Flights: {
+        count: actualQty3,
+        price: subSum3
+      },
+      Videostabilization: 0,
+      TotalSum: total
+    }
+
+    localStorage.setItem('pricingObj', JSON.stringify(priceObj));
+  });
 });
