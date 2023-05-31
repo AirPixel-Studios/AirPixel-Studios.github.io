@@ -11,9 +11,7 @@ $(document).ready(function () {
       Cookies.set("lang", "EN");
     }
   }
-  
   switchLang(Cookies.get("lang"));
-
 
   //Language switch event
   $("#switch-lang").click(function (event) {

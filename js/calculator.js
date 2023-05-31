@@ -1,5 +1,9 @@
 $(document).ready(function () {
   "use strict";
+
+  //Get current language
+  let lang = Cookies.get("lang").toLowerCase();
+
   // =====================================================
   //      STICKY SIDEBAR SETUP
   // =====================================================
@@ -50,7 +54,7 @@ $(document).ready(function () {
     );
     $("#option2SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption2Title + ` x ${subSum1}km ` + 
+        singleOption2Title + ` x ${subSum1}km` + 
         ":" +
         '<span class="price">' +
         subSum2.toFixed(2) +
@@ -69,10 +73,14 @@ $(document).ready(function () {
 
 	$("#extraOption3Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title + ': ' + 'Kostenfrei'
+        extraOption1Title + ': ' + extraOption1PriceText
     );
 
-    $("#totalTitle").val("Summe:");
+    if (lang === "de") {
+      $("#totalTitle").val("Summe:");
+    } else {
+      $("#totalTitle").val("Total:");
+    }
     $("#total").val(total.toFixed(2));
 
     formatItemPrice();
@@ -80,28 +88,27 @@ $(document).ready(function () {
   }
 
   // Variables for calculation
-  var singleOption1Title = "Basis";
-  var actualQty1 = 1;
+  //var singleOption1Title = "Basis";
+  var singleOption1Title = $(`#${lang}_title_basis`).text();
   var subSum1 = 100;
 
-  var singleOption2Title = "Anfahrt";
+  var singleOption2Title = $(`#${lang}_title_journey`).text();
   var singleOption2Price = 0;
   var actualQty2 = 100;
   var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
 
-  var singleOption3Title = "Flüge (inkl. Spotter)";
+  var singleOption3Title = $(`#${lang}_title_flights`).text();
   var singleOption3Price = 50;
   var actualQty3 = 1;
   var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
 
   //Videostabilisierung Checkbox
-  var extraOption1IsChecked = false;
-  var extraOption1Title = "Videostabilisierung";
+  var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
   var extraOption1Price = 0;
+  var extraOption1PriceText = $(`#${lang}_title_price`).text();
 
   //Bereitstellung Material Checkbox
-  var extraOption2IsChecked = false;
-  var extraOption2Title = "Bereitstellung des Materials";
+  var extraOption2Title = $(`#${lang}_title_provisioning`).text();
   var extraOption2Price = 50;
 
   var total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
@@ -176,7 +183,7 @@ $(document).ready(function () {
 	extraOption1Price = 0;
 	$("#extraOption3Sum").html(
         '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          extraOption1Title + ': ' + 'Kostenfrei'
+          extraOption1Title + ': ' + extraOption1PriceText
       );
       formatItemPrice();
 
