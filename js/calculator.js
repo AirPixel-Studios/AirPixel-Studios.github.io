@@ -1,26 +1,10 @@
 $(document).ready(function () {
   "use strict";
-
-  // =====================================================
-  //      PRELOADER
-  // =====================================================
-  $(window).on("load", function () {
-    "use strict";
-    $('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
-    $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
-    var $hero = $(".hero-home .content");
-    var $hero_v = $("#hero_video .content ");
-    $hero.find("h3, p, form").addClass("fadeInUp animated");
-    $hero.find(".btn-1").addClass("fadeIn animated");
-    $hero_v.find(".h3, p, form").addClass("fadeInUp animated");
-    $(window).scroll();
-  });
-
   // =====================================================
   //      STICKY SIDEBAR SETUP
   // =====================================================
-  $("#mainContent, #sidebar").theiaStickySidebar({
-    additionalMarginTop: 90,
+  $("#orderContainer, #sidebar").theiaStickySidebar({
+    additionalMarginTop: 90
   });
 
   // =====================================================
