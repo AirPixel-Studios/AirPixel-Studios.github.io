@@ -1052,7 +1052,14 @@ fieldset[disabled] .form-control {
   border-color: white;
 }
 
+/* Calculator */
+
+main {
+  width: 100%;
+}
+
 /* Price Box */
+
 .price-box-desc {
   color: #ff7b79;
   font-size: 11px;
