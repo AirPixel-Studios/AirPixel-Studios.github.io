@@ -43,11 +43,12 @@
 <body>
     <!-- Site navigation -->
     <nav
-        class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-light p-lg-4">
+        class="site-navbar navbar-dark navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
+        data-navbar-base="navbar-light" data-navbar-toggled="navbar-light" data-navbar-scrolled="navbar-dark">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
-            <img src="assets/images/logo.png" class="navbar-brand-img" alt="">
+        <a class="navbar-brand" href="#contact">
+            <img src="assets/images/logo/logoWhite.png" class="navbar-brand-img" alt="" />
         </a>
 
         <!-- Toggler -->
@@ -59,6 +60,7 @@
 
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
+
             <!-- Navigation Buttons -->
             <ul class="navbar-nav ml-auto" id="navigation">
                 <li class="nav-item" data-menuanchor="home">
@@ -68,7 +70,9 @@
                     <a class="nav-link heading-uppercase" href="index.html#mission">Mission</a>
                 </li>
                 <li class="nav-item" data-menuanchor="services">
+                    <!-- Deutsch -->
                     <a lang="de" class="nav-link heading-uppercase" href="index.html#services">Leistung</a>
+                    <!-- Englisch -->
                     <a lang="en" class="nav-link heading-uppercase" href="index.html#services">Services</a>
                 </li>
                 <li class="nav-item" data-menuanchor="portfolio">
@@ -77,15 +81,33 @@
                 <li class="nav-item" data-menuanchor="team">
                     <a class="nav-link heading-uppercase" href="index.html#team">Team</a>
                 </li>
-                <li class="nav-item" data-menuanchor="contact">
-                    <a lang="de" class="nav-link heading-uppercase" href="calculator.html">Preisindikation</a>
+                <li class="nav-item active" data-menuanchor="pricing">
+                    <!-- Deutsch -->
+                    <a lang="de" class="nav-link heading-uppercase" href="calculator.html">Preise</a>
+                    <!-- Englisch -->
                     <a lang="en" class="nav-link heading-uppercase" href="calculator.html">Pricing</a>
                 </li>
-                <li class="nav-item" data-menuanchor="contact">
-                    <a lang="de" class="nav-link heading-uppercase" href="index.html#contact">Kontakt</a>
-                    <a lang="en" class="nav-link heading-uppercase" href="index.html#contact">Contact</a>
+                <!-- Contact Button -->
+                <!-- Deutsch -->
+                <li lang="de" class="nav-item" data-menuanchor="contact">
+                    <a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
+                    href="index.html#contact">Kontakt</a>
+                </li>
+                <!-- Englisch -->
+                <li lang="en" class="nav-item" data-menuanchor="contact">
+                    <a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
+                    href="index.html#contact">Contact</a>
                 </li>
             </ul>
+  
+            <div class="btn-group btn-group-toggle ml-lg-4" data-toggle="buttons" id="switch-lang">
+                <label id="lang-en-btn" class="btn btn-secondary btn-sm">
+                    <input type="radio" name="options"> EN
+                </label>
+                <label id="lang-de-btn" class="btn btn-secondary btn-sm">
+                    <input type="radio" name="options"> DE
+                </label>
+            </div>
         </div>
     </nav>
 
@@ -279,11 +301,13 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <button lang="de" class="btn btn-light" type="submit"
-                                            id="submitWithCalc">Kontaktiere
-                                            uns</button>
-                                        <button lang="en" class="btn btn-light" type="submit"
-                                            id="submitWithCalc">Contact us</button>
+                                        <a href="index.html#contact">
+                                            <button lang="de" class="btn btn-light" type="submit"
+                                                id="submitWithCalc">Kontaktiere
+                                                uns</button>
+                                            <button lang="en" class="btn btn-light" type="submit"
+                                                id="submitWithCalc">Contact us</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
