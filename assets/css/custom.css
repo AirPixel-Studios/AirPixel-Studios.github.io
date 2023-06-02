@@ -616,6 +616,13 @@ ul {
 [12.4 Spacing]
 */
 
+@media (min-width: 1400px) {
+  .site-navbar {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+}
+
 /* Margin */
 .margincenter {
   margin-left: auto !important;
