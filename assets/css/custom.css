@@ -1071,6 +1071,7 @@ fieldset[disabled] .form-control {
 
 .btn-transparent {
   background-color: transparent !important;
+  border-color: white !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -1088,10 +1089,6 @@ fieldset[disabled] .form-control {
 
 .navbar-light .btn-transparent {
   border-color: black !important;
-}
-
-.navbar-dark .btn-transparent {
-  border-color: white !important;
 }
 
 .navbar-dark .navbar-brand-img {
