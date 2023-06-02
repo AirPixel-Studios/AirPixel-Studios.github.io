@@ -1103,6 +1103,13 @@ fieldset[disabled] .form-control {
   content: url("../images/logo/bg-black.png");
 }
 
+@media (max-width: 1200px) {
+  .navbar .navbar-nav .active > .nav-link:before,
+  .navbar .navbar-nav .nav-link.active:before {
+    border-bottom: 0px solid currentColor !important;
+  }
+}
+
 /* Calculator */
 
 main {
