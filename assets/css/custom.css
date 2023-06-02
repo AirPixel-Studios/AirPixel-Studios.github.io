@@ -1049,7 +1049,7 @@ fieldset[disabled] .form-control {
 /* Misc */
 
 .bg-dark {
-  background-color: rgba(25, 25, 25, 0.92) !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
 .hidden {
@@ -1338,11 +1338,11 @@ label.cbx {
 }
 
 @media (max-width: 992px) {
-  .btn {
+  .navbar .btn {
     text-align: unset !important;
   }
 
-  .btn-transparent {
+  .navbar .btn-transparent {
     border-style: none !important;
   }
 }
