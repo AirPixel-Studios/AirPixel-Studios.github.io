@@ -576,7 +576,7 @@ ul {
   opacity: 1;
 }
 
-.profile-card .user-image:after {
+.profile-card .user-image::after {
   content: "\A";
   position: absolute;
   width: 100%;
@@ -589,7 +589,7 @@ ul {
   -webkit-transition: all 0.3s ease-in-out;
 }
 
-.profile-card .user-image:hover:after {
+.profile-card .user-image:hover::after {
   opacity: 1;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -610,6 +610,21 @@ ul {
 
 .display-table {
   display: table;
+}
+
+.contact-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-flex > div {
+  width: 200px;
+}
+
+@media (min-width: 768px) {
+  .contact-flex {
+    display: unset !important;
+  }
 }
 
 /*------------------------------------------------------------------
@@ -1055,8 +1070,40 @@ fieldset[disabled] .form-control {
 }
 
 .btn-transparent {
-  background-color: transparent;
-  border-color: white;
+  background-color: transparent !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-toggler-alternative-icon {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.navbar-light .navbar-toggler-alternative-icon:before,
+.navbar-light .navbar-toggler-alternative-icon:after {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .btn-transparent {
+  border-color: black !important;
+}
+
+.navbar-dark .btn-transparent {
+  border-color: white !important;
+}
+
+.navbar-dark .navbar-brand-img {
+  content: url("../images/logo/bg-transparent.png");
+}
+
+.navbar-light .navbar-brand-img {
+  content: url("../images/logo/bg-white.png");
+}
+
+.bg-black .navbar-brand-img {
+  content: url("../images/logo/bg-black.png");
 }
 
 /* Calculator */
@@ -1293,7 +1340,17 @@ label.cbx {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 992px) {
+  .btn {
+    text-align: unset !important;
+  }
+
+  .btn-transparent {
+    border-style: none !important;
+  }
+}
+
+@media (min-width: 992px) {
   .calc-nav {
     visibility: hidden !important;
   }
