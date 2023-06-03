@@ -628,95 +628,6 @@ ul {
 }
 
 /*------------------------------------------------------------------
-[12.4 Spacing]
-*/
-
-@media (min-width: 1400px) {
-  .site-navbar {
-    padding-left: 9rem !important;
-    padding-right: 9rem !important;
-  }
-}
-
-/* Margin */
-.margincenter {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.nomargin {
-  margin: 0 !important;
-}
-
-/* Margin Top */
-.mt-20 {
-  margin-top: 20px !important;
-}
-
-/* Margin Bottom */
-.mb-15 {
-  margin-bottom: 15px !important;
-}
-
-.mb-20 {
-  margin-bottom: 20px !important;
-}
-
-.mb-30 {
-  margin-bottom: 30px !important;
-}
-
-.mb-50 {
-  margin-bottom: 50px !important;
-}
-
-/* Padding Top */
-.pt-0 {
-  padding-top: 0 !important;
-}
-
-.pt-10 {
-  padding-top: 10px !important;
-}
-
-.pt-120 {
-  padding-top: 120px !important;
-}
-
-.pt-180 {
-  padding-top: 180px !important;
-}
-
-/* Padding Bottom */
-.pb-0 {
-  padding-bottom: 0 !important;
-}
-
-.pb-120 {
-  padding-bottom: 120px !important;
-}
-
-.pb-180 {
-  padding-bottom: 180px !important;
-}
-
-/* Mobile Spacing - Extra Small - Phones Less than 767px */
-@media (max-width: 767px) {
-  /* Margin Bottom */
-  .xs-mb-30 {
-    margin-bottom: 30px !important;
-  }
-}
-
-/* Mobile Spacing - Small Devices - Tablets 768px and up to 1024px */
-@media (max-width: 1024px) {
-  /* Margin Bottom */
-  .sm-mb-30 {
-    margin-bottom: 30px !important;
-  }
-}
-
-/*------------------------------------------------------------------
 [7. Elements]
 */
 
@@ -1330,6 +1241,32 @@ label.cbx {
   display: inline-block !important;
 }
 
+.terms-footer {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Spacing */
+
+@media (max-width: 1024px) {
+  section {
+    padding: 5.8rem 0 !important;
+  }
+}
+
+@media (max-width: 1112px) {
+  section {
+    padding: 7.5rem 0 !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .site-navbar {
+    padding-left: 9rem !important;
+    padding-right: 9rem !important;
+  }
+}
+
 @media (min-width: 770px) {
   .header-info-icon {
     position: absolute;
@@ -1358,9 +1295,4 @@ label.cbx {
   .calc-nav {
     visibility: hidden !important;
   }
-}
-
-.terms-footer {
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
 }

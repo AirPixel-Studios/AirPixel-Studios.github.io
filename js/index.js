@@ -37,5 +37,7 @@ $(document).ready(function () {
       $("#lang-en-btn").addClass("focus");
       $("#lang-de-btn").removeClass("focus");
     }
+
+    $.getScript("../assets/vendor/jquery-validation/dist/localization/messages_"+lang+".js");
   }
 });
