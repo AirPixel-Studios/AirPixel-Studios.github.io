@@ -1296,3 +1296,10 @@ label.cbx {
     visibility: hidden !important;
   }
 }
+
+/* Stacked buttons on small phones in German language */
+@media (max-width: 350px) {
+  .de-btn-contact {
+    margin-top: 0.5rem !important;
+  }
+}
