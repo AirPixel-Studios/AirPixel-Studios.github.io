@@ -1003,15 +1003,15 @@ fieldset[disabled] .form-control {
 }
 
 .navbar-dark .navbar-brand-img {
-  content: url("../images/logo/bg-transparent.png");
+  content: url("../images/logo/bg-transparent-0.5x.png");
 }
 
 .navbar-light .navbar-brand-img {
-  content: url("../images/logo/bg-white.png");
+  content: url("../images/logo/bg-white-0.5x.png");
 }
 
 .bg-black .navbar-brand-img {
-  content: url("../images/logo/bg-black.png");
+  content: url("../images/logo/bg-black-0.5x.png");
 }
 
 @media (max-width: 1200px) {
