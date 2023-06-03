@@ -1248,15 +1248,9 @@ label.cbx {
 
 /* Spacing */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   section {
-    padding: 5.8rem 0 !important;
-  }
-}
-
-@media (max-width: 1112px) {
-  section {
-    padding: 7.5rem 0 !important;
+    padding: 7.8rem 0 1rem 0 !important;
   }
 }
 
@@ -1299,7 +1293,7 @@ label.cbx {
 
 /* Stacked buttons on small phones in German language */
 @media (max-width: 350px) {
-  .de-btn-contact {
+  .mt-lang-btn-stacked {
     margin-top: 0.5rem !important;
   }
 }
