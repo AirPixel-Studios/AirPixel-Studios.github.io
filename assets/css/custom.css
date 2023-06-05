@@ -1289,3 +1289,10 @@ label.cbx {
     margin-top: 0.5rem !important;
   }
 }
+
+/* Maintenance background image */
+.img-maintenance-background {
+  width: 100%;
+  height: auto;
+  object-fit: cover !important;
+}
