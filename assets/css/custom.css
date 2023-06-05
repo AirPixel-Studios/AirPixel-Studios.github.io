@@ -1237,7 +1237,7 @@ label.cbx {
   border-top-color: #999999 !important;
 }
 
-.header-info .header-info-title {
+.header-info .header-info-title .calculator-cells-selector {
   display: inline-block !important;
 }
 
@@ -1261,18 +1261,10 @@ label.cbx {
   }
 }
 
-@media (min-width: 770px) {
-  .header-info-icon {
-    position: absolute;
-    top: 9%;
-  }
-}
-
-@media (max-width: 770px) {
-  .header-info-icon {
-    position: absolute;
-    top: 15%;
-  }
+.header-info-icon {
+  font-size: 0.6em;
+  position: absolute;
+  top: 9%;
 }
 
 @media (max-width: 992px) {
