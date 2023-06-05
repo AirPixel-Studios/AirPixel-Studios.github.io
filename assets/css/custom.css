@@ -1264,7 +1264,7 @@ label.cbx {
 .header-info-icon {
   font-size: 0.6em;
   position: absolute;
-  top: 9%;
+  top: 20% !important;
 }
 
 @media (max-width: 992px) {
