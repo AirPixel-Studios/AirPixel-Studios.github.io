@@ -1,15 +1,11 @@
+//Function called on page load
 $(document).ready(function () {
   "use strict";
 
-  if (Cookies.get("lang") === undefined) {
-    //Get language of browser
-    var usrlang = navigator.language || navigator.userLanguage;
-    if (usrlang === "de-DE" || usrlang === "de") {
-      Cookies.set("lang", "de");
-    } else {
-      Cookies.set("lang", "en");
-    }
-  }
+  //Language switch event
+  $("#switch-lang").click(function (event) {
+    updateSummary();
+  });
 
   //Get current language
   let lang = Cookies.get("lang");
@@ -365,18 +361,4 @@ $(document).ready(function () {
 
     localStorage.setItem("pricingObj", JSON.stringify(priceObj));
   });
-
-  //Language switch event
-  $("#switch-lang").click(function (event) {
-    event.preventDefault();
-
-    if (event.target.innerText.toLowerCase() === "de") {
-      Cookies.set("lang", "de");
-    } else if (event.target.innerText.toLowerCase() === "en") {
-      Cookies.set("lang", "en");
-    }
-    updateSummary();
-  });
-
-  $('[data-toggle="tooltip"]').tooltip();
 });
