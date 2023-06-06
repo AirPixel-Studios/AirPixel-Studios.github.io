@@ -2,6 +2,7 @@
 <html lang="en-US" class="no-js">
 
 <head>
+
   <!-- Title -->
   <title>Home | AirPixel Studios - Elevate your vision to new heigths.</title>
 
@@ -16,17 +17,16 @@
   <link rel="stylesheet" href="assets/vendor/fullPage.js/dist/jquery.fullpage.min.css" type="text/css" />
   <link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css" type="text/css" />
   <link rel="stylesheet" href="assets/vendor/themify-icons/css/themify-icons.css" type="text/css" />
-  <script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous"></script>
-
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
-    rel="stylesheet" />
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="assets/css/theme.css" />
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/custom.css" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+    rel="stylesheet" />
 
   <!-- cookieconsent-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
@@ -35,7 +35,13 @@
 </head>
 
 <body class="layout-wide">
-  <div id="top"></div>
+
+  <!-- Loader -->
+  <div class="loader bg-dark">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
 
   <!-- Site navigation -->
   <nav
@@ -71,18 +77,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- Back To Top Button -->
-  <!-- Deutsch -->
-  <a lang="de" href="#top" class="backtotop">
-    <span>Zurück nach oben</span>
-    <i class="fas fa-angle-up"></i>
-  </a>
-  <!-- Deutsch -->
-  <a lang="en" href="#top" class="backtotop">
-    <span>Back to top</span>
-    <i class="fas fa-angle-up"></i>
-  </a>
 
   <!-- Global overlay -->
   <div class="overlay overlay-global overlay-credits">
@@ -175,7 +169,7 @@
     <!-- Fullpage - Copyright -->
     <!-- Englisch -->
     <!-- <div class="ln-copyright text-right">
-    <p lang="en">2023 AirPixel Studios - <a href="terms.html">Legal information</a></p>
+    <p lang="en">2023 AirPixel Studios - <a href="terms.html">Terms of service</a></p>
   </div> -->
 
     <!-- Libs JS -->
@@ -185,13 +179,17 @@
     <script src="assets/vendor/fullPage.js/dist/jquery.fullpage.min.js"></script>
     <script src="assets/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
 
-    <!-- js-cookie -->
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-
     <!-- Theme JS -->
     <script src="assets/js/main.js"></script>
 
-    <script src="js/index.js"></script>
+    <!-- Custom JS -->
+    <script src="js/language.js"></script>
+
+    <!-- Icon Packs -->
+    <script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous"></script>
+
+    <!-- js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
     <!-- cookieconsent -->
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>

@@ -21,26 +21,31 @@
     <link href="assets/vendor/range-slider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="assets/vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous"></script>
-
-    <!-- Font Awesome CSS -->
-    <link href="vendor/fontawesome/css/all.min.css" rel="stylesheet">
-
-    <!-- Icofont -->
-    <link rel="stylesheet" href="assets/vendor/icofont/icofont.min.css">
-
-    <!-- Fonts -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CMontserrat:200,300,400,500,700&display=swap">
-
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/theme.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap"
+        rel="stylesheet" />
+
+    <!-- cookieconsent-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
+        media="print" onload="this.media='all'">
+
 </head>
 
 <body>
+
+    <!-- Loader -->
+    <div class="loader bg-dark">
+        <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
     <!-- Site navigation -->
     <nav
         class="site-navbar navbar-dark navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
@@ -177,13 +182,13 @@
                                         <div class="option-box-header">
                                             <div lang="de">
                                                 <h3 id="de_title_flights" class="header-info-title">Flüge
-                                                    (inkl. Spotter)<i class="icofont-info-circle header-info-icon"
+                                                    (inkl. Spotter)<i class="fa-solid fa-circle-info header-info-icon"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="Ein Spotter ist eine Person, die den Piloten unterstützt, indem sie den Luftraum beobachtet und potenzielle Hindernisse oder Gefahren rechtzeitig erkennt und meldet."></i></h3>
                                             </div>
                                             <div lang="en">
                                                 <h3 id="en_title_flights" class="header-info-title">Flights
-                                                    (incl. spotter)<i class="icofont-info-circle header-info-icon"
+                                                    (incl. spotter)<i class="fa-solid fa-circle-info header-info-icon"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="A spotter is a person who assists the pilot by observing the airspace and detecting and reporting potential obstacles or hazards in a timely manner."></i></h3>
                                             </div>
@@ -350,7 +355,8 @@
                             </a>
                         </li> -->
                     </ul>
-                    <p class="mb-0">2023 AirPixel Studios - <a href="terms.html" class="text-gray-400">Impressum</a></p>
+                    <p lang="de" class="mb-0">2023 AirPixel Studios - <a href="terms.html" class="text-gray-400">Impressum</a></p>
+                    <p lang="en" class="mb-0">2023 AirPixel Studios - <a href="terms.html" class="text-gray-400">Terms of service</a></p>
                 </div>
             </div>
         </div>
@@ -369,12 +375,22 @@
     <script src="assets/vendor/theia-sticky-sidebar/js/theia-sticky-sidebar.min.js"></script>
     <script src="assets/vendor/mmenu/js/mmenu.min.js"></script>
 
+    <!-- Theme JS -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/language.js"></script>
+    <script src="js/calculator.js"></script>
+
+    <!-- Icon Packs -->
+    <script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous"></script>
+
     <!-- js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
-    <!-- Theme JS -->
-    <script src="js/calculator.js"></script>
-    <script src="js/index.js"></script>
+    <!-- cookieconsent -->
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
+    <script defer src="js/cookieconsent.js"></script>
 
 </body>
 
