@@ -2,14 +2,22 @@
 $(document).ready(function () {
   "use strict";
 
-  $(".portfolio-slick").slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    dots: true, 
-  });
+  new Splide(".splide", {
+    perPage: 3,
+    rewind: true,
+    mediaQuery: "min",
+    breakpoints: {
+      1400: {
+        perPage: 3,
+      },
+      1024: {
+        perPage: 2,
+      },
+      767: {
+        perPage: 1,
+      },
+    },
+  }).mount();
 
   $.getScript(
     "../assets/vendor/jquery-validation/dist/localization/messages_" +

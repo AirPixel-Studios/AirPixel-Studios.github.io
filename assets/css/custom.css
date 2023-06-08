@@ -1,11 +1,17 @@
 ﻿@font-face {
-  font-family: Lato;
-  src:url("../fonts/Lato/Lato-Regular.ttf");
+  font-family: 'LatoRegular';
+  src: url('../fonts/Lato/Lato-Regular/LatoRegular.eot');
+  src: url('../fonts/Lato/Lato-Regular/LatoRegular.eot') format('embedded-opentype'),
+       url('../fonts/Lato/Lato-Regular/LatoRegular.woff2') format('woff2'),
+       url('../fonts/Lato/Lato-Regular/LatoRegular.woff') format('woff'),
+       url('../fonts/Lato/Lato-Regular/LatoRegular.ttf') format('truetype'),
+       url('../fonts/Lato/Lato-Regular/LatoRegular.svg#LatoRegular') format('svg');
 }
+
 
 @font-face {
   font-family: Oxygen;
-  src:url("../fonts/Oxygen/Oxygen-Regular.ttf");
+  src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
 /* Language Flag */
@@ -1331,11 +1337,11 @@ label.cbx {
   position: relative;
   text-align: center;
   color: white;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .portfolio-item-title {
-  font-family: "Lato";
+  font-family: "LatoRegular";
   text-transform: uppercase;
   font-size: 25px;
   text-align: left;
@@ -1356,11 +1362,12 @@ label.cbx {
 }
 
 .card-font {
-  font-family: "Lato";
+  font-family: "LatoRegular";
+  text-align: left;
   /* text-transform: uppercase; */
 }
 
 .card-p-item {
-  font-family: "Lato";
-  font-weight: 900;
+  font-family: "LatoRegular";
+  font-weight: 600;
 }
