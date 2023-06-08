@@ -1,13 +1,13 @@
 ﻿@font-face {
-  font-family: 'LatoRegular';
-  src: url('../fonts/Lato/Lato-Regular/LatoRegular.eot');
-  src: url('../fonts/Lato/Lato-Regular/LatoRegular.eot') format('embedded-opentype'),
-       url('../fonts/Lato/Lato-Regular/LatoRegular.woff2') format('woff2'),
-       url('../fonts/Lato/Lato-Regular/LatoRegular.woff') format('woff'),
-       url('../fonts/Lato/Lato-Regular/LatoRegular.ttf') format('truetype'),
-       url('../fonts/Lato/Lato-Regular/LatoRegular.svg#LatoRegular') format('svg');
+  font-family: "LatoRegular";
+  src: url("../fonts/Lato/Lato-Regular/LatoRegular.eot");
+  src: url("../fonts/Lato/Lato-Regular/LatoRegular.eot")
+      format("embedded-opentype"),
+    url("../fonts/Lato/Lato-Regular/LatoRegular.woff2") format("woff2"),
+    url("../fonts/Lato/Lato-Regular/LatoRegular.woff") format("woff"),
+    url("../fonts/Lato/Lato-Regular/LatoRegular.ttf") format("truetype"),
+    url("../fonts/Lato/Lato-Regular/LatoRegular.svg#LatoRegular") format("svg");
 }
-
 
 @font-face {
   font-family: Oxygen;
@@ -1341,7 +1341,7 @@ label.cbx {
 }
 
 .portfolio-item-title {
-  font-family: "LatoRegular";
+  font-family: "Lato";
   text-transform: uppercase;
   font-size: 25px;
   text-align: left;
@@ -1361,13 +1361,22 @@ label.cbx {
   margin-bottom: 8px !important;
 }
 
+@media (max-width: 1200px) {
+  .card-pos {
+    margin-bottom: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .card-font {
-  font-family: "LatoRegular";
+  font-family: "Lato";
   text-align: left;
   /* text-transform: uppercase; */
 }
 
 .card-p-item {
-  font-family: "LatoRegular";
-  font-weight: 600;
+  font-family: "Lato";
+  font-weight: 900 !important;
 }
