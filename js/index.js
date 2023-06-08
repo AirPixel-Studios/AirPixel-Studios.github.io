@@ -5,12 +5,12 @@ $(document).ready(function () {
   new Splide(".splide", {
     perPage: 3,
     rewind: true,
-    mediaQuery: "min",
+    mediaQuery: "max",
     breakpoints: {
-      1400: {
+      1700: {
         perPage: 3,
       },
-      1024: {
+      1500: {
         perPage: 2,
       },
       767: {
