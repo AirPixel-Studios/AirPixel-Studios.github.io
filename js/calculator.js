@@ -2,6 +2,9 @@
 $(document).ready(function () {
   "use strict";
 
+  //Init tooltip element
+  $('[data-toggle="tooltip"]').tooltip()
+
   //Language switch event
   $("#switch-lang").click(function (event) {
     updateSummary();
