@@ -14,16 +14,6 @@
   src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
-/* Language Flag */
-.ln-flag {
-  top: 2rem !important;
-}
-
-.ln-flag span {
-  width: 100%;
-  margin: auto;
-}
-
 /* Place Your Custom Styles Here */
 
 .form-control {
