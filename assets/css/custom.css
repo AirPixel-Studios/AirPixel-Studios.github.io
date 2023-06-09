@@ -1314,16 +1314,3 @@ label.cbx {
   color: #1a39db;
   text-decoration: none;
 }
-
-.video-js {
-  height: 100vh !important;
-  width: unset !important;
-  position: static !important;
-}
-
-.vjs-poster {
-  height: 100vh !important;
-  width: unset !important;
-  position: static !important;
-  background-size: cover !important;
-}
