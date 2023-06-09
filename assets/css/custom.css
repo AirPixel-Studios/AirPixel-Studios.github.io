@@ -1314,3 +1314,7 @@ label.cbx {
   color: #1a39db;
   text-decoration: none;
 }
+
+.video-js {
+  position: static !important;
+}
