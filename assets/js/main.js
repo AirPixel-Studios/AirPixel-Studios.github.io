@@ -897,6 +897,7 @@ License: https://themeforest.net/licenses/standard
     ln_magnificPopup();
     ln_countdown();
     ln_contactForm();
+    ln_bootstrap();
     yose_typedText();
   });
 
