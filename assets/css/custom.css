@@ -1316,5 +1316,7 @@ label.cbx {
 }
 
 .video-js {
+  height: 100vh !important;
+  width: unset !important;
   position: static !important;
 }
