@@ -54,26 +54,25 @@ $(document).ready(function() {
         },
         settings_modal: {
           title: "Cookie Einstellungen",
-          save_settings_btn: "Save settings",
-          accept_all_btn: "Accept all",
-          reject_all_btn: "Reject all",
-          close_btn_label: "Close",
+          save_settings_btn: "Einstellungen speichern",
+          accept_all_btn: "Alle akzeptieren",
+          reject_all_btn: "Alle ablehnen",
+          close_btn_label: "Schließen",
           cookie_table_headers: [
             { col1: "Name" },
             { col2: "Domain" },
-            { col3: "Expiration" },
-            { col4: "Description" },
+            { col3: "Beschreibung" },
           ],
           blocks: [
             {
               title: "Cookie Nutzung 📢",
               description:
-                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Ihr Online-Erlebnis zu verbessern. Sie können jederzeit für jede Kategorie wählen, ob Sie zustimmen oder ablehnen möchten. Für weitere Details zu Cookies und anderen sensiblen Daten lesen Sie bitte die vollständige <a href="terms.html" class="cc-link">Datenschutzrichtlinie</a>.',
+                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Dein Online-Erlebnis zu verbessern. Du kannst jederzeit für jede Kategorie wählen, ob Du zustimmen oder ablehnen möchtest. Für weitere Details zu Cookies und anderen sensiblen Daten lese bitte unsere vollständige <a href="terms.html" class="cc-link">Datenschutzrichtlinie</a>.',
             },
             {
-              title: "Strictly necessary cookies",
+              title: "Notwendige Cookies",
               description:
-                "These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly",
+                "Diese Cookies sind für das reibungslose Funktionieren unserer Website unerlässlich. Ohne diese Cookies würde die Website nicht richtig funktionieren.",
               toggle: {
                 value: "necessary",
                 enabled: true,
@@ -81,12 +80,12 @@ $(document).ready(function() {
               },
             },
             {
-              title: "Performance and Analytics cookies",
+              title: "Analytics Cookies",
               description:
-                "These cookies allow the website to remember the choices you have made in the past",
+              "Diese Cookies erlauben uns zu analysieren wie Du unsere Webseite nutzt.",
               toggle: {
                 value: "analytics", // your cookie category
-                enabled: false,
+                enabled: true,
                 readonly: false,
               },
               cookie_table: [
@@ -94,32 +93,15 @@ $(document).ready(function() {
                 {
                   col1: "^_ga", // match all cookies starting with "_ga"
                   col2: "google.com",
-                  col3: "2 years",
-                  col4: "description ...",
+                  col3: "Google Analytics",
                   is_regex: true,
-                },
-                {
-                  col1: "_gid",
-                  col2: "google.com",
-                  col3: "1 day",
-                  col4: "description ...",
                 },
               ],
             },
             {
-              title: "Advertisement and Targeting cookies",
+              title: "Weitere Informationen",
               description:
-                "These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you",
-              toggle: {
-                value: "targeting",
-                enabled: false,
-                readonly: false,
-              },
-            },
-            {
-              title: "More information",
-              description:
-                'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="index.html#contact">contact us</a>.',
+                'Bei Fragen zu unseren Cookies und Ihren Wahlmöglichkeiten wende dich bitte an <a class="cc-link" href="index.html#contact">uns</a>.',
             },
           ],
         },
@@ -147,8 +129,7 @@ $(document).ready(function() {
           cookie_table_headers: [
             { col1: "Name" },
             { col2: "Domain" },
-            { col3: "Expiration" },
-            { col4: "Description" },
+            { col3: "Description" },
           ],
           blocks: [
             {
@@ -159,7 +140,7 @@ $(document).ready(function() {
             {
               title: "Strictly necessary cookies",
               description:
-                "These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly",
+                "These cookies are essential for the proper functioning of our website. Without these cookies, the website would not work properly",
               toggle: {
                 value: "necessary",
                 enabled: true,
@@ -169,10 +150,10 @@ $(document).ready(function() {
             {
               title: "Performance and Analytics cookies",
               description:
-                "These cookies allow the website to remember the choices you have made in the past",
+                "These cookies allow us to analyize how you are using our website.",
               toggle: {
                 value: "analytics", // your cookie category
-                enabled: false,
+                enabled: true,
                 readonly: false,
               },
               cookie_table: [
@@ -180,27 +161,10 @@ $(document).ready(function() {
                 {
                   col1: "^_ga", // match all cookies starting with "_ga"
                   col2: "google.com",
-                  col3: "2 years",
-                  col4: "description ...",
+                  col3: "Google Analytics",
                   is_regex: true,
                 },
-                {
-                  col1: "_gid",
-                  col2: "google.com",
-                  col3: "1 day",
-                  col4: "description ...",
-                },
               ],
-            },
-            {
-              title: "Advertisement and Targeting cookies",
-              description:
-                "These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you",
-              toggle: {
-                value: "targeting",
-                enabled: false,
-                readonly: false,
-              },
             },
             {
               title: "More information",
