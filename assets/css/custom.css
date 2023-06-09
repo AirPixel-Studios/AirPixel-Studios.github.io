@@ -1322,5 +1322,8 @@ label.cbx {
 }
 
 .vjs-poster {
+  height: 100vh !important;
+  width: unset !important;
+  position: static !important;
   background-size: cover !important;
 }
