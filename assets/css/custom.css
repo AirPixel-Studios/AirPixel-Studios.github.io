@@ -1314,3 +1314,9 @@ label.cbx {
   color: #1a39db;
   text-decoration: none;
 }
+
+/* Bullet point styling on data privacy page */
+ul.a {
+  margin-left: 1rem;
+  list-style-type: circle;
+}
