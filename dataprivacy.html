@@ -517,10 +517,14 @@
               EINSCHLÄGIG: Art. 49a DSGVO].</p>
 
             <h4>Widerruf</h4>
-            <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die
-              Cookie-Einstellungen [HIER DEN LINK ZU DEN EINSTELLUNGSMÖGLICHKEITEN DES CONSENT-TOOLS SETZEN] aufrufen
-              und dort Ihre Auswahl ändern. Die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten
+            <p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie <a
+                id="disable_analytics">hier</a> klicken. Die Rechtmäßigkeit der aufgrund der Einwilligung bis zum
+              Widerruf erfolgten
               Verarbeitung bleibt davon unberührt.</p>
+
+              <div id="disable-tracking-alert" class="alert alert-success" role="alert" style="display:none;">
+                Google Analytics wurde deaktiviert.
+              </div>
 
             <p>Sie können die Speicherung von Cookies auch von vornherein durch eine entsprechende Einstellung Ihrer
               Browser-Software verhindern. Wenn Sie Ihren Browser so konfigurieren, dass alle Cookies abgelehnt werden,
@@ -541,9 +545,10 @@
               und unter
               <a href="https://policies.google.com/?hl=de">https://policies.google.com/?hl=de</a>.
             </p>
-            
+
             <p>Quelle: <a href="https://www.e-recht24.de">
                 https://www.e-recht24.de</a></p>
+
           </article>
         </div>
         <div class="col-lg-4">
@@ -609,7 +614,7 @@
   <script src="assets/vendor/vegas/vegas.min.js"></script>
 
   <!-- Theme JS -->
-  <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
 
   <!-- Custom JS -->
   <script src="js/language.js"></script>
