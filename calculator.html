@@ -39,13 +39,12 @@
     <!-- Loader -->
     <div class="loader bg-dark">
         <div class="spinner-grow text-primary" role="status">
-        <span class="sr-only">Loading...</span>
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
     <!-- Site navigation -->
-    <nav
-        class="site-navbar navbar-dark navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
+    <nav class="site-navbar navbar-dark navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
         data-navbar-base="navbar-dark" data-navbar-toggled="navbar-dark" data-navbar-scrolled="navbar-dark">
 
         <!-- Brand -->
@@ -93,15 +92,15 @@
                 <!-- Deutsch -->
                 <li lang="de" class="nav-item" data-menuanchor="contact">
                     <a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-                    href="index.html#contact">Kontakt</a>
+                        href="index.html#contact">Kontakt</a>
                 </li>
                 <!-- Englisch -->
                 <li lang="en" class="nav-item" data-menuanchor="contact">
                     <a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-                    href="index.html#contact">Contact</a>
+                        href="index.html#contact">Contact</a>
                 </li>
             </ul>
-  
+
             <div class="btn-group btn-group-toggle ml-lg-4" data-toggle="buttons" id="switch-lang">
                 <label id="lang-en-btn" class="btn btn-secondary btn-sm">
                     <input type="radio" name="options"> EN
@@ -180,14 +179,16 @@
                                             <div lang="de">
                                                 <h3 id="de_title_flights" class="header-info-title">Flüge
                                                     (inkl. Spotter)<i class="fa-solid fa-circle-info header-info-icon"
-                                                    data-toggle="tooltip" data-placement="top"
-                                                    title="Ein Spotter ist eine Person, die den Piloten unterstützt, indem sie den Luftraum beobachtet und potenzielle Hindernisse oder Gefahren rechtzeitig erkennt und meldet."></i></h3>
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="Ein Spotter ist eine Person, die den Piloten unterstützt, indem sie den Luftraum beobachtet und potenzielle Hindernisse oder Gefahren rechtzeitig erkennt und meldet."></i>
+                                                </h3>
                                             </div>
                                             <div lang="en">
                                                 <h3 id="en_title_flights" class="header-info-title">Flights
                                                     (incl. spotter)<i class="fa-solid fa-circle-info header-info-icon"
-                                                    data-toggle="tooltip" data-placement="top"
-                                                    title="A spotter is a person who assists the pilot by observing the airspace and detecting and reporting potential obstacles or hazards in a timely manner."></i></h3>
+                                                        data-toggle="tooltip" data-placement="top"
+                                                        title="A spotter is a person who assists the pilot by observing the airspace and detecting and reporting potential obstacles or hazards in a timely manner."></i>
+                                                </h3>
                                             </div>
                                             <div lang="de">
                                                 <ul>
@@ -352,8 +353,10 @@
                             </a>
                         </li> -->
                     </ul>
-                    <p lang="de" class="mb-0">2023 AirPixel Studios - <a href="legalinformation.html" class="text-gray-400">Impressum</a></p>
-                    <p lang="en" class="mb-0">2023 AirPixel Studios - <a href="legalinformation.html" class="text-gray-400">Terms of service</a></p>
+                    <p lang="de" class="mb-0">2023 AirPixel Studios - <a href="legalinformation.html"
+                            class="text-gray-400">Impressum</a></p>
+                    <p lang="en" class="mb-0">2023 AirPixel Studios - <a href="legalinformation.html"
+                            class="text-gray-400">Terms of service</a></p>
                 </div>
             </div>
         </div>
@@ -388,7 +391,15 @@
     <!-- cookieconsent -->
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
     <script defer src="js/cookieconsent.js"></script>
-
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9FDJYXMY95', { 'anonymize_ip': true });
+    </script>
 </body>
 
 </html>
