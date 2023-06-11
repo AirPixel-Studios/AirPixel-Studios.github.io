@@ -32,8 +32,7 @@
     rel="stylesheet" />
 
   <!-- cookieconsent-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
-    media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css">
 
 </head>
 
@@ -787,7 +786,7 @@
 
           <!-- Contact Form -->
           <!-- Deutsch -->
-          <div lang="de" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+          <div lang="de" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
@@ -812,8 +811,8 @@
                   </div>
                   <div class="col-md-12 mb-5">
                     <div class="form-group">
-                      <textarea name="cf-message" id="cf-message" placeholder="Hier steht deine Nachricht an uns"
-                        class="form-control fc-bordered light required" rows="7"></textarea>
+                      <textarea id="cf-message" name="cf-message" placeholder="Hier steht deine Nachricht an uns"
+                        rows="7" class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
                   <div class="col-md-12 hidden">
@@ -821,7 +820,7 @@
                       class="form-control form-control-noradius" />
                   </div>
                   <div class="col-md-12 text-center">
-                    <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Nachricht
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white">Nachricht
                       senden</button>
                   </div>
                 </div>
@@ -830,7 +829,7 @@
             </div>
           </div>
           <!-- Englisch -->
-          <div lang="en" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+          <div lang="en" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
@@ -849,14 +848,14 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="form-group">
-                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (Optional)"
+                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (optional)"
                         class="form-control fc-bordered light">
                     </div>
                   </div>
                   <div class="col-md-12 mb-5">
                     <div class="form-group">
-                      <textarea name="cf-message" id="cf-message" placeholder="Here goes your message"
-                        class="form-control fc-bordered light required" rows="7"></textarea>
+                      <textarea id="cf-message" name="cf-message" placeholder="Here goes your message"
+                        rows="7" class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
                   <div class="col-md-12 hidden">
@@ -864,7 +863,7 @@
                       class="form-control form-control-noradius" />
                   </div>
                   <div class="col-md-12 text-center">
-                    <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Send Message</button>
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white">Send Message</button>
                   </div>
                 </div>
               </form>

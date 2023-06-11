@@ -1,12 +1,23 @@
 $(document).ready(function () {
-  // obtain plugin
+  "use strict";
+
   var cc = initCookieConsent();
 
-  // run plugin with your configuration
   cc.run({
-    current_lang: Cookies.get("lang").toLowerCase(),
-    autoclear_cookies: true, // default: false
-    page_scripts: true, // default: false
+    current_lang: Cookies.get("lang"),
+    autoclear_cookies: true,                   // default: false
+    page_scripts: true,                        // default: false
+    gui_options: {
+      consent_modal: {
+          layout: 'box',                       // box/cloud/bar
+          position: 'bottom center',           // bottom/middle/top + left/right/center
+          transition: 'zoom'                   // zoom/slide
+      },
+      settings_modal: {
+          layout: 'box',                       // box/bar
+          transition: 'zoom'                   // zoom/slide
+      }
+    },
 
     // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
     // delay: 0,                               // default: 0
@@ -51,13 +62,12 @@ $(document).ready(function () {
       // ...
     },
 
-    //TODO: An die Nutzung der Webseite anpassen und Übersetzungen hinzufügen
     languages: {
       de: {
         consent_modal: {
           title: "Wir nutzen Cookies!",
           description:
-            'Hallo, diese Website verwendet essenzielle Cookies, um ihren ordnungsgemäßen Betrieb sicherzustellen, sowie Tracking-Cookies, um zu verstehen, wie du mit ihr interagierst. Letztere werden nur nach Einwilligung gesetzt. <button type="button" data-cc="c-settings" class="cc-link">Zur Auswahl</button>',
+            'Hallo, diese Website verwendet essenzielle Cookies, um ihren ordnungsgemäßen Betrieb sicherzustellen, sowie Tracking-Cookies, um zu verstehen, wie Du mit ihr interagierst. Letztere werden nur nach Einwilligung gesetzt. <button type="button" data-cc="c-settings" class="cc-link">Zur Auswahl</button>',
           primary_btn: {
             text: "Alle akzeptieren",
             role: "accept_all", // 'accept_selected' or 'accept_all'
@@ -82,7 +92,7 @@ $(document).ready(function () {
             {
               title: "Cookie Nutzung 📢",
               description:
-                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Dein Online-Erlebnis zu verbessern. Du kannst jederzeit für jede Kategorie wählen, ob Du zustimmen oder ablehnen möchtest. Für weitere Details zu Cookies und anderen sensiblen Daten lese bitte unsere vollständige <a href="legalinformation.html" class="cc-link">Datenschutzrichtlinie</a>.',
+                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Dein Online-Erlebnis zu verbessern. Du kannst jederzeit für jede Kategorie wählen, ob Du zustimmen oder ablehnen möchtest. Für weitere Details zu Cookies und anderen sensiblen Daten lese bitte unsere vollständige <a href="dataprivacy.html" class="cc-link">Datenschutzrichtlinie</a>.',
             },
             {
               title: "Notwendige Cookies",
@@ -95,9 +105,9 @@ $(document).ready(function () {
               },
             },
             {
-              title: "Analytics Cookies",
+              title: "Analyse Cookies",
               description:
-                "Diese Cookies erlauben uns zu analysieren wie Du unsere Webseite nutzt.",
+                "Diese Cookies erlauben uns zu analysieren, wie Du unsere Webseite nutzt.",
               toggle: {
                 value: "analytics", // your cookie category
                 enabled: true,
@@ -116,7 +126,7 @@ $(document).ready(function () {
             {
               title: "Weitere Informationen",
               description:
-                'Bei Fragen zu unseren Cookies und Ihren Wahlmöglichkeiten wende dich bitte an <a class="cc-link" href="index.html#contact">uns</a>.',
+                'Bei Fragen zu unseren Cookies und Deinen Wahlmöglichkeiten wende Dich bitte an <a class="cc-link" href="index.html#contact">uns</a>.',
             },
           ],
         },
@@ -150,7 +160,7 @@ $(document).ready(function () {
             {
               title: "Cookie usage 📢",
               description:
-                'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="legalinformation.html" class="cc-link">privacy policy</a>.',
+                'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="dataprivacy.html" class="cc-link">privacy policy</a>.',
             },
             {
               title: "Strictly necessary cookies",
@@ -163,7 +173,7 @@ $(document).ready(function () {
               },
             },
             {
-              title: "Performance and Analytics cookies",
+              title: "Analytics cookies",
               description:
                 "These cookies allow us to analyize how you are using our website.",
               toggle: {
@@ -190,5 +200,10 @@ $(document).ready(function () {
         },
       },
     },
+  });
+
+  //Language switch event
+  $("#switch-lang").click(function (event) {
+    cc.updateLanguage(Cookies.get("lang"));  
   });
 });
