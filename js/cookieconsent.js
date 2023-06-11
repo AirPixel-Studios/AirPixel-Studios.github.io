@@ -1,10 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // obtain plugin
   var cc = initCookieConsent();
 
   // run plugin with your configuration
   cc.run({
-    current_lang: Cookies.get('lang').toLowerCase(),
+    current_lang: Cookies.get("lang").toLowerCase(),
     autoclear_cookies: true, // default: false
     page_scripts: true, // default: false
 
@@ -25,11 +25,26 @@ $(document).ready(function() {
     // revision: 0,                            // default: 0
 
     onFirstAction: function (user_preferences, cookie) {
-      // callback triggered only once
+      //Currently we only have one cookie which can be selected that's why we just try to get the first item in the array
+      //We can enhance this in the future when we include more 3rd party stuff...
+      let rejected = user_preferences.rejected_categories[0];
+
+      if (rejected) {
+        disable_analytics();
+      }
     },
 
     onAccept: function (cookie) {
-      // ...
+      //Check if GA is already disabled by user
+      let ga = Cookies.get("ga-disable-G-9FDJYXMY95");
+
+      if (ga) {
+        Object.keys(Cookies.get()).forEach(function (cookieName) {
+          if(cookieName.startsWith('_ga')) {
+            Cookies.remove(cookieName);
+          }
+        });
+      }
     },
 
     onChange: function (cookie, changed_preferences) {
@@ -82,7 +97,7 @@ $(document).ready(function() {
             {
               title: "Analytics Cookies",
               description:
-              "Diese Cookies erlauben uns zu analysieren wie Du unsere Webseite nutzt.",
+                "Diese Cookies erlauben uns zu analysieren wie Du unsere Webseite nutzt.",
               toggle: {
                 value: "analytics", // your cookie category
                 enabled: true,

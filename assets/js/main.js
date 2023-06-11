@@ -887,6 +887,10 @@ License: https://themeforest.net/licenses/standard
     }
   }
 
+  $("#disable_analytics").click(function () {
+    if (disable_analytics()) $("#disable-tracking-alert").show();
+  });
+
   $(document).ready(function ($) {
     $("html, body").scrollTop(0);
     ln_screenDetector();
@@ -921,3 +925,21 @@ License: https://themeforest.net/licenses/standard
     ln_navigationOnScroll();
   });
 })(jQuery);
+
+//Disable google analytics
+function disable_analytics() {
+  var gaProperty = "G-9FDJYXMY95";
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = "ga-disable-" + gaProperty;
+  if (document.cookie.indexOf(disableStr + "=true") > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  document.cookie =
+    disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+  window[disableStr] = true;
+  console.log("DISABLE GOOGLE ANALYTICS");
+  return true;
+}
