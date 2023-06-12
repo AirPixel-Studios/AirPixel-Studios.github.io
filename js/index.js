@@ -2,11 +2,14 @@
 $(document).ready(function () {
   "use strict";
 
+  //Render pricing if user has been on pricing page before
   let priceObj = JSON.parse(localStorage.getItem('priceObj'));
-
   if (priceObj != null) {
     updateSummary(priceObj);
+    $(".contact-form").parent().addClass("col-md-8");
     $("#sidebar").show();
+  } else {
+    $(".contact-form").parent().removeClass("col-md-8");
   }
 
   $.getScript("../assets/vendor/jquery-validation/dist/localization/messages_" + Cookies.get("lang") + ".js");
@@ -19,6 +22,16 @@ $(document).ready(function () {
       updateSummary(priceObj);
     }
   });
+
+  //Send estimate checkbox change event
+  $("#de-cf-price-cb, #en-cf-price-cb").change(function() {
+    $("#de-cf-price-cb, #en-cf-price-cb").prop("checked", this.checked);
+    localStorage.setItem("sendEstimate", this.checked);
+  });
+  //Overwrite default checked attribute to false
+  if (localStorage.getItem('sendEstimate') === 'false') {
+    $("#de-cf-price-cb, #en-cf-price-cb").prop("checked", false);
+  }
 });
 
 // =====================================================

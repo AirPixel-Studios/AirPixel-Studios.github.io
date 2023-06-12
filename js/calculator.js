@@ -121,6 +121,7 @@ $(document).ready(function () {
 
     formatItemPrice();
     formatTotalPrice();
+    setPriceObject();
   }
 
   // Function to manage the calculations and update summary
@@ -219,7 +220,64 @@ $(document).ready(function () {
       $("#totalTitle").val("Total:");
     }
     $("#total").val(total.toFixed(2));
+
     formatTotalPrice();
+    setPriceObject();
+  }
+
+  function setPriceObject() {
+    var priceObj = {
+      basis: {
+        lang: {
+          de: $('#de_title_basis').text(),
+          en: $('#en_title_basis').text(),
+        },
+        value: subSum1,
+      },
+      provision: {
+        lang: {
+          de: $('#de_title_provision').text(),
+          en: $('#en_title_provision').text(),
+        },
+        value: extraOption2Price,
+      },
+      journey: {
+        lang: {
+          de: $('#de_title_journey').text(),
+          en: $('#en_title_journey').text(),
+        },
+        value: {
+          km: actualQty2,
+          price: subSum2,
+        },
+      },
+      flights: {
+        lang: {
+          de: $('#de_title_flights').text(),
+          en: $('#en_title_flights').text(),
+        },
+        value: {
+          count: actualQty3,
+          price: subSum3,
+        },
+      },
+      videostabilization: {
+        lang: {
+          de: $('#de_title_videostabilization').text(),
+          en: $('#en_title_videostabilization').text(),
+        },
+        value: extraOption1Price,
+      },
+      totalSum: {
+        lang: {
+          de: $('#de_title_price').text(),
+          en: $('#en_title_price').text(),
+        },
+        value: total,
+      },
+    };
+
+    localStorage.setItem("priceObj", JSON.stringify(priceObj));
   }
 
   // Set total title and price initially
@@ -338,63 +396,5 @@ $(document).ready(function () {
     if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
       event.preventDefault();
     }
-  });
-
-  // Store price object
-  $("#submitWithCalc").on("click", function (event) {
-    var priceObj = {
-      basis: {
-        lang: {
-          de: $('#de_title_basis').text(),
-          en: $('#en_title_basis').text(),
-        },
-        value: subSum1,
-      },
-      provision: {
-        lang: {
-          de: $('#de_title_provision').text(),
-          en: $('#en_title_provision').text(),
-        },
-        value: extraOption2Price,
-      },
-      journey: {
-        lang: {
-          de: $('#de_title_journey').text(),
-          en: $('#en_title_journey').text(),
-        },
-        value: {
-          km: actualQty2,
-          price: subSum2,
-        },
-      },
-      flights: {
-        lang: {
-          de: $('#de_title_flights').text(),
-          en: $('#en_title_flights').text(),
-        },
-        value: {
-          count: actualQty3,
-          price: subSum3,
-        },
-      },
-      videostabilization: {
-        lang: {
-          de: $('#de_title_videostabilization').text(),
-          en: $('#en_title_videostabilization').text(),
-        },
-        value: extraOption1Price,
-      },
-      totalSum: {
-        lang: {
-          de: $('#de_title_price').text(),
-          en: $('#en_title_price').text(),
-        },
-        value: total,
-      },
-    };
-
-    localStorage.setItem("priceObj", JSON.stringify(priceObj));
-
-    window.location.href = "index.html#contact";
   });
 });
