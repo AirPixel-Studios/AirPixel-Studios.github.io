@@ -621,7 +621,7 @@ ul {
   width: 200px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .contact-flex {
     display: unset !important;
   }

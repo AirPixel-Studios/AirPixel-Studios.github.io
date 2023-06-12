@@ -762,7 +762,7 @@
         </div>
 
         <div class="row">
-          <div class="contact-flex col-md-3 col-lg-2 mt-0 mt-md-4 mt-lg-6">
+          <div class="contact-flex col-sm-12 col-md-12 col-lg-2 mt-0 mt-lg-6">
             <!-- Mail -->
             <div class="text-center mb-8 animated" data-animation="fadeInLeft" data-animation-delay="400">
               <a href="mailto:hello@airpixel-studios.com">
@@ -787,7 +787,7 @@
 
           <!-- Contact Form -->
           <!-- Deutsch -->
-          <div lang="de" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="400">
+          <div lang="de" class="col-sm-12 col-md-8 offset-lg-1 col-lg-6 animated" data-animation="fadeInUp" data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
@@ -830,7 +830,7 @@
             </div>
           </div>
           <!-- Englisch -->
-          <div lang="en" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="400">
+          <div lang="en" class="col-sm-12 col-md-8 offset-lg-1 col-lg-6 animated" data-animation="fadeInUp" data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
@@ -873,17 +873,19 @@
             </div>
           </div>
 
-          <div class="col-md-3" id="sidebar" style="display:none;">
+          <div class="col-sm-12 col-md-4 col-lg-3 mt-6 mt-md-0" id="sidebar" style="display:none;">
             <!-- Price Overview Container -->
             <div id="orderContainer" class="theiaStickySidebar animated" data-animation="fadeInRight" data-animation-delay="400">
               <div class="card">
                 <div class="pt-3 px-6">
                   <div class="row">
-                    <div class="col-md-13">
-                      <div class="row">
-                        <h3 lang="de">Voranschlag</h3>
-                        <h3 lang="en">Estimate</h3>
-                        <a href="calculator.html" target=""><i class="fa-solid fa-pen-to-square"></i></a>
+                    <div class="col-md-13" style="width: 100%;">
+                      <div class="mb-3" style="display: flex;">
+                        <h3 lang="de" class="mb-0">Voranschlag</h3>
+                        <h3 lang="en" class="mb-0">Estimate</h3>
+                        <a href="calculator.html" target="" class="m-auto" style="left: 100%; position: sticky;">
+                          <i class="fa-solid fa-pen-to-square text-white"></i>
+                        </a>
                       </div>
                       
                       <ul id="orderSumList">
@@ -907,7 +909,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mt-2">
+              <div class="mt-2" style="margin-left: 15px;">
                 <!-- Deutsch -->
                 <div lang="de">
                   <input type="checkbox" id="cf-price-cb" name="cf-price-cb" class="mr-1" checked>
