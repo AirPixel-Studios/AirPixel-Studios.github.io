@@ -23,7 +23,7 @@
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #eaecf1;
-  border-radius: 0.3125rem;
+  border-radius: 0.3125rem !important;
   box-shadow: none;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -311,7 +311,7 @@ pre {
   color: #333;
   background-color: #f7f7f7;
   border: 1px solid #e8e8e8;
-  border-radius: 0px;
+  border-radius: 0;
   text-align: left;
 }
 
@@ -677,8 +677,6 @@ textarea.form-control {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
   border-radius: 0;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -951,12 +949,6 @@ input[type="checkbox"] {
   margin-left: 15px;
 }
 
-.form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control {
-  background-color: #f7f7f7;
-}
-
 /* Misc */
 
 .bg-dark {
@@ -1052,10 +1044,7 @@ main {
   font-weight: 300;
   line-height: 1;
   display: inline-block;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 0.3125rem;
 }
 
 @media (min-width: 770px) {
@@ -1074,12 +1063,17 @@ main {
   }
 }
 
+.bg-black .summaryInput {
+  background: unset !important;
+  color: #fff;
+}
+
 .summaryInput {
-  width: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 700;
   background: #fff;
+  color: #333;
   border: none;
 }
 
@@ -1090,6 +1084,7 @@ main {
   margin: 0 0 30px 0;
   padding: 30px 15px;
   border: 1px solid #ddd;
+  border-radius: 0.3125rem;
 }
 
 .option-box-header {
@@ -1111,10 +1106,7 @@ label.cbx {
   font-weight: 500;
   margin-top: 20px;
   border: solid 1px #ddd;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 0.3125rem;
   height: 45px;
   padding: 10px 15px;
   width: 100%;
@@ -1142,10 +1134,7 @@ label.cbx {
   border: 1px solid #ddd;
   transition: all 0.2s ease;
   margin-right: 10px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 0.3125rem;
 }
 
 .cbx span:first-child svg {

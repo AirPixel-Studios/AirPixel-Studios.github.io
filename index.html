@@ -792,37 +792,37 @@
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
                   <div class="form-process"></div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="text" id="cf-name" name="cf-name" placeholder="Dein Name"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="email" id="cf-email" name="cf-email" placeholder="Deine Mail Adresse"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <input type="text" id="cf-subject" name="cf-subject" placeholder="Betreff (Optional)"
                         class="form-control fc-bordered light">
                     </div>
                   </div>
-                  <div class="col-md-12 mb-5">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <textarea id="cf-message" name="cf-message" placeholder="Hier steht deine Nachricht an uns"
                         rows="7" class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
-                  <div class="col-md-12 hidden">
+                  <div class="col-md-12 mt-5 hidden">
                     <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
                       class="form-control form-control-noradius" />
                   </div>
-                  <div class="col-md-12 text-center">
-                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white">Nachricht
-                      senden</button>
+                  <div class="col-md-12 mt-5 text-center">
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white animated"
+                      data-animation="fadeInUp" data-animation-delay="600">Nachricht senden</button>
                   </div>
                 </div>
               </form>
@@ -835,40 +835,90 @@
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
                   <div class="form-process"></div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="text" id="cf-name" name="cf-name" placeholder="Your name"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="email" id="cf-email" name="cf-email" placeholder="Your email address"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (optional)"
                         class="form-control fc-bordered light">
                     </div>
                   </div>
-                  <div class="col-md-12 mb-5">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <textarea id="cf-message" name="cf-message" placeholder="Here goes your message"
                         rows="7" class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
-                  <div class="col-md-12 hidden">
+                  <div class="col-md-12 mt-5 hidden">
                     <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
                       class="form-control form-control-noradius" />
                   </div>
-                  <div class="col-md-12 text-center">
-                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white">Send Message</button>
+                  <div class="col-md-12 mt-5 text-center">
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white animated"
+                      data-animation="fadeInUp" data-animation-delay="600">Send Message</button>
                   </div>
                 </div>
               </form>
               <div class="contact-form-result text-center mt-2"></div>
+            </div>
+          </div>
+
+          <div class="col-md-3" id="sidebar" style="display:none;">
+            <!-- Price Overview Container -->
+            <div id="orderContainer" class="theiaStickySidebar animated" data-animation="fadeInRight" data-animation-delay="400">
+              <div class="card">
+                <div class="pt-3 px-6">
+                  <div class="row">
+                    <div class="col-md-13">
+                      <div class="row">
+                        <h3 lang="de">Voranschlag</h3>
+                        <h3 lang="en">Estimate</h3>
+                        <a href="calculator.html" target=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      </div>
+                      
+                      <ul id="orderSumList">
+                        <li id="option1SingleSum"></li>
+                        <li id="extraOption2Sum"></li>
+                        <li id="option2SingleSum"></li>
+                        <li id="option3SingleSum"></li>
+                        <li id="extraOption3Sum"></li>
+                      </ul>
+                      <div class="row total-container">
+                        <div class="col-4 py-3 pr-0">
+                          <input type="text" id="totalTitle" class="summaryInput"
+                            name="totallabel" value="" disabled />
+                        </div>
+                        <div class="col-6 py-3 pl-0">
+                          <input type="text" id="total" class="summaryInput"
+                            name="total" value="0" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <!-- Deutsch -->
+                <div lang="de">
+                  <input type="checkbox" id="cf-price-cb" name="cf-price-cb" class="mr-1" checked>
+                  <label for="cf-price-cb">Sende den Voranschlag</label>
+                </div>
+                <!-- Englisch -->
+                <div lang="en">
+                  <input type="checkbox" id="cf-price-cb" name="cf-price-cb" class="mr-1" checked>
+                  <label for="cf-price-cb">Send the estimate</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -921,6 +971,7 @@
   <script src="assets/vendor/slick/slick.min.js"></script>
   <script src="assets/vendor/vegas/vegas.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/price-format/js/jquery.priceformat.min.js"></script>
 
   <!-- Theme JS -->
   <script src="assets/js/main.js"></script>

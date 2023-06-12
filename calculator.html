@@ -140,11 +140,11 @@
                                     <div id="optionGroup2" class="row option-box">
                                         <div class="price-box">50€</div>
                                         <div lang="de" class="option-box-header">
-                                            <h3 id="de_title_provisioning">Bereitstellung des Videomaterials</h3>
+                                            <h3 id="de_title_provision">Bereitstellung des Videomaterials</h3>
                                             <p>Downloadlink (3 Monate gültig) für das Rohmaterial</p>
                                         </div>
                                         <div lang="en" class="option-box-header">
-                                            <h3 id="en_title_provisioning">Provision of the video footage</h3>
+                                            <h3 id="en_title_provision">Provision of the video footage</h3>
                                             <p>Download link (valid for 3 months) for the raw footage</p>
                                         </div>
                                     </div>
@@ -283,12 +283,8 @@
                                             <div class="card-body p-7">
                                                 <div class="row">
                                                     <div class="col-md-13">
-                                                        <input type="hidden" id="subSum1" name="subSum1" value="0" />
-                                                        <input type="hidden" id="subSum2" name="subSum2" value="0" />
-                                                        <input type="hidden" id="subSum3" name="subSum3" value="0" />
-                                                        <input type="hidden" id="totalDue" name="totalDue" value="0" />
-                                                        <h3 lang="de">Übersicht</h3>
-                                                        <h3 lang="en">Overview</h3>
+                                                        <h3 lang="de">Voranschlag</h3>
+                                                        <h3 lang="en">Estimate</h3>
                                                         <ul id="orderSumList">
                                                             <li id="option1SingleSum"></li>
                                                             <li id="extraOption2Sum"></li>
@@ -311,13 +307,12 @@
                                             </div>
                                         </div>
                                         <br />
-                                        <a href="index.html#contact">
-                                            <button lang="de" class="btn btn-light" type="submit"
-                                                id="submitWithCalc">Kontaktiere
-                                                uns</button>
-                                            <button lang="en" class="btn btn-light" type="submit"
-                                                id="submitWithCalc">Contact us</button>
-                                        </a>
+                                        <div id="submitWithCalc">
+                                            <button lang="de" type="submit"
+                                                class="btn btn-light">Kontaktiere uns</button>
+                                            <button lang="en" type="submit"
+                                                class="btn btn-light">Contact us</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

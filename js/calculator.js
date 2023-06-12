@@ -11,7 +11,6 @@ $(document).ready(function () {
   let lang = Cookies.get("lang");
 
   // Variables for calculation
-  //var singleOption1Title = "Basis";
   var singleOption1Title = $(`#${lang}_title_basis`).text();
   var subSum1 = 100;
 
@@ -31,7 +30,7 @@ $(document).ready(function () {
   var extraOption1PriceText = $(`#${lang}_title_price`).text();
 
   //Bereitstellung Material Checkbox
-  var extraOption2Title = $(`#${lang}_title_provisioning`).text();
+  var extraOption2Title = $(`#${lang}_title_provision`).text();
   var extraOption2Price = 50;
 
   var total =
@@ -126,7 +125,6 @@ $(document).ready(function () {
 
   // Function to manage the calculations and update summary
   function updateSummary() {
-
     lang = Cookies.get("lang");
 
     var singleOption1Title = $(`#${lang}_title_basis`).text();
@@ -134,7 +132,7 @@ $(document).ready(function () {
     var singleOption3Title = $(`#${lang}_title_flights`).text();
     var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
     var extraOption1PriceText = $(`#${lang}_title_price`).text();
-    var extraOption2Title = $(`#${lang}_title_provisioning`).text();
+    var extraOption2Title = $(`#${lang}_title_provision`).text();
 
     subSum1 = 100;
     $("#option1SingleSum").html(
@@ -342,23 +340,61 @@ $(document).ready(function () {
     }
   });
 
-  // Store pricing object
+  // Store price object
   $("#submitWithCalc").on("click", function (event) {
     var priceObj = {
-      Basis: subSum1,
-      Provisioning: extraOption2Price,
-      Journey: {
-        km: actualQty2,
-        price: subSum2,
+      basis: {
+        lang: {
+          de: $('#de_title_basis').text(),
+          en: $('#en_title_basis').text(),
+        },
+        value: subSum1,
       },
-      Flights: {
-        count: actualQty3,
-        price: subSum3,
+      provision: {
+        lang: {
+          de: $('#de_title_provision').text(),
+          en: $('#en_title_provision').text(),
+        },
+        value: extraOption2Price,
       },
-      Videostabilization: 0,
-      TotalSum: total,
+      journey: {
+        lang: {
+          de: $('#de_title_journey').text(),
+          en: $('#en_title_journey').text(),
+        },
+        value: {
+          km: actualQty2,
+          price: subSum2,
+        },
+      },
+      flights: {
+        lang: {
+          de: $('#de_title_flights').text(),
+          en: $('#en_title_flights').text(),
+        },
+        value: {
+          count: actualQty3,
+          price: subSum3,
+        },
+      },
+      videostabilization: {
+        lang: {
+          de: $('#de_title_videostabilization').text(),
+          en: $('#en_title_videostabilization').text(),
+        },
+        value: extraOption1Price,
+      },
+      totalSum: {
+        lang: {
+          de: $('#de_title_price').text(),
+          en: $('#en_title_price').text(),
+        },
+        value: total,
+      },
     };
 
-    localStorage.setItem("pricingObj", JSON.stringify(priceObj));
+    localStorage.setItem("priceObj", JSON.stringify(priceObj));
+
+    window.location.href = "index.html#contact";
   });
 });
