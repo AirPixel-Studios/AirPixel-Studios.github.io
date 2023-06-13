@@ -2,6 +2,23 @@
 $(document).ready(function () {
   "use strict";
 
+  new Splide(".splide", {
+    perPage: 3,
+    rewind: true,
+    mediaQuery: "max",
+    breakpoints: {
+      1700: {
+        perPage: 3,
+      },
+      1500: {
+        perPage: 2,
+      },
+      767: {
+        perPage: 1,
+      },
+    },
+  }).mount();
+
   //Render pricing if user has been on pricing page before
   let priceObj = JSON.parse(localStorage.getItem('priceObj'));
   if (priceObj != null) {
