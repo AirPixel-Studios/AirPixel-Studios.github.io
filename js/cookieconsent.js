@@ -9,13 +9,13 @@ $(document).ready(function () {
     page_scripts: true,                        // default: false
     gui_options: {
       consent_modal: {
-          layout: 'box',                       // box/cloud/bar
-          position: 'bottom center',           // bottom/middle/top + left/right/center
-          transition: 'zoom'                   // zoom/slide
+        layout: 'box',                         // box/cloud/bar
+        position: 'bottom center',             // bottom/middle/top + left/right/center
+        transition: 'zoom'                     // zoom/slide
       },
       settings_modal: {
-          layout: 'box',                       // box/bar
-          transition: 'zoom'                   // zoom/slide
+        layout: 'box',                         // box/bar
+        transition: 'zoom'                     // zoom/slide
       }
     },
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
       if (ga) {
         Object.keys(Cookies.get()).forEach(function (cookieName) {
-          if(cookieName.startsWith('_ga')) {
+          if (cookieName.startsWith('_ga')) {
             Cookies.remove(cookieName);
           }
         });
@@ -204,6 +204,6 @@ $(document).ready(function () {
 
   //Language switch event
   $("#switch-lang").click(function (event) {
-    cc.updateLanguage(Cookies.get("lang"));  
+    cc.updateLanguage(Cookies.get("lang"));
   });
 });

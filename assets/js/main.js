@@ -177,8 +177,8 @@ License: https://themeforest.net/licenses/standard
 
               // Global overlay animation - background color and opacity
               var sectionOverlayColor = $(".ln-section")
-                  .eq(nextIndex - 1)
-                  .attr("data-overlay-color"),
+                .eq(nextIndex - 1)
+                .attr("data-overlay-color"),
                 sectionOverlayOpacity = parseInt(
                   $(".ln-section")
                     .eq(nextIndex - 1)
@@ -248,8 +248,8 @@ License: https://themeforest.net/licenses/standard
             afterRender: function () {
               // Global overlay animation - background color and opacity
               var sectionOverlayColor = $(".ln-section")
-                  .eq(0)
-                  .attr("data-overlay-color"),
+                .eq(0)
+                .attr("data-overlay-color"),
                 sectionOverlayOpacity = parseInt(
                   $(".ln-section").eq(0).attr("data-overlay-opacity"),
                   10

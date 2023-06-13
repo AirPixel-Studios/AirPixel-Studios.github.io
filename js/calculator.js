@@ -69,47 +69,47 @@ $(document).ready(function () {
   function setTotalOnStart() {
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption1Title +
+      ":" +
+      '<span class="price">' +
+      subSum1.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#extraOption2Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
+      extraOption2Title +
+      ": " +
+      '<span class="price">' +
+      extraOption2Price.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#option2SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption2Title +
-        ` x ${subSum1}km` +
-        ":" +
-        '<span class="price">' +
-        subSum2.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption2Title +
+      ` x ${subSum1}km` +
+      ":" +
+      '<span class="price">' +
+      subSum2.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#option3SingleSum").html(
       '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption3Title +
-        " x 1:" +
-        '<span class="price">' +
-        subSum3.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption3Title +
+      " x 1:" +
+      '<span class="price">' +
+      subSum3.toFixed(2) +
+      "</span>" +
+      "€"
     );
 
     $("#extraOption3Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
+      extraOption1Title +
+      ": " +
+      extraOption1PriceText
     );
 
     if (lang === "de") {
@@ -138,24 +138,24 @@ $(document).ready(function () {
     subSum1 = 100;
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption1Title +
+      ":" +
+      '<span class="price">' +
+      subSum1.toFixed(2) +
+      "</span>" +
+      "€"
     );
     formatItemPrice();
 
     extraOption2Price = 50;
     $("#extraOption2Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
+      extraOption2Title +
+      ": " +
+      '<span class="price">' +
+      extraOption2Price.toFixed(2) +
+      "</span>" +
+      "€"
     );
     formatItemPrice();
 
@@ -164,14 +164,14 @@ $(document).ready(function () {
       subSum2 = ((actualQty2 - 100) / 50) * 20;
       $("#option2SingleSum").html(
         '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption2Title +
-          " x " +
-          actualQty2 +
-          "km:" +
-          '<span class="price">' +
-          subSum2.toFixed(2) +
-          "</span>" +
-          "€"
+        singleOption2Title +
+        " x " +
+        actualQty2 +
+        "km:" +
+        '<span class="price">' +
+        subSum2.toFixed(2) +
+        "</span>" +
+        "€"
       );
       formatItemPrice();
     }
@@ -190,14 +190,14 @@ $(document).ready(function () {
 
       $("#option3SingleSum").html(
         '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption3Title +
-          " x " +
-          actualQty3 +
-          ":" +
-          '<span class="price">' +
-          subSum3.toFixed(2) +
-          "</span>" +
-          "€"
+        singleOption3Title +
+        " x " +
+        actualQty3 +
+        ":" +
+        '<span class="price">' +
+        subSum3.toFixed(2) +
+        "</span>" +
+        "€"
       );
       formatItemPrice();
     }
@@ -205,9 +205,9 @@ $(document).ready(function () {
     extraOption1Price = 0;
     $("#extraOption3Sum").html(
       '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
+      extraOption1Title +
+      ": " +
+      extraOption1PriceText
     );
     formatItemPrice();
 
