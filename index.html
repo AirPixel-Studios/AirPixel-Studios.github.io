@@ -4,7 +4,8 @@
 <head>
 
   <!-- Title -->
-  <title>Home | AirPixel Studios - Elevate your vision to new heigths.</title>
+  <title name="de">Home | AirPixel Studios - Elevate your vision to new heigths.</title>
+  <title name="en">Home | AirPixel Studios - Elevate your vision to new heigths.</title>
 
   <!-- Meta Data -->
   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
@@ -28,8 +29,7 @@
   <link rel="stylesheet" href="assets/css/custom.css" />
 
   <!-- cookieconsent-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
-    media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css">
 
 </head>
 
@@ -129,7 +129,7 @@
   <!-- Global overlay -->
   <div class="overlay overlay-global">
     <div class="overlay-inner overlay-video">
-      <video autoplay muted loop>
+      <video autoplay muted loop playsinline>
         <source src="assets/videos/Background.mp4" type="video/mp4" />
       </video>
     </div>
@@ -463,8 +463,7 @@
               <li class="splide__slide portfolio-item-container">
                 <div>
                   <a href="portfolio/">
-                    <img class="portfolio-item-image" src="assets/images/portfolio/Wedding.jpg"
-                      alt="" />
+                    <img class="portfolio-item-image" src="assets/images/portfolio/Wedding.jpg" alt="" />
                   </a>
                   <div lang="en" class="portfolio-item-title">Wedding Celebration<br>Forst</div>
                   <div lang="de" class="portfolio-item-title">Hochzeitsfeier<br>Forst</div>
@@ -699,7 +698,7 @@
         </div>
 
         <div class="row">
-          <div class="contact-flex col-md-3 col-lg-2 mt-0 mt-md-4 mt-lg-6">
+          <div class="contact-flex col-sm-12 col-md-12 col-lg-2 mt-0 mt-lg-6">
             <!-- Mail -->
             <div class="text-center mb-8 animated" data-animation="fadeInLeft" data-animation-delay="400">
               <a href="mailto:hello@airpixel-studios.com">
@@ -724,42 +723,43 @@
 
           <!-- Contact Form -->
           <!-- Deutsch -->
-          <div lang="de" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+          <div lang="de" class="col-sm-12 col-md-8 offset-lg-1 col-lg-6 animated" data-animation="fadeInUp"
+            data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
                   <div class="form-process"></div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="text" id="cf-name" name="cf-name" placeholder="Dein Name"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="email" id="cf-email" name="cf-email" placeholder="Deine Mail Adresse"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <input type="text" id="cf-subject" name="cf-subject" placeholder="Betreff (Optional)"
                         class="form-control fc-bordered light">
                     </div>
                   </div>
-                  <div class="col-md-12 mb-5">
+                  <div class="col-md-12">
                     <div class="form-group">
-                      <textarea name="cf-message" id="cf-message" placeholder="Hier steht deine Nachricht an uns"
-                        class="form-control fc-bordered light required" rows="7"></textarea>
+                      <textarea id="cf-message" name="cf-message" placeholder="Hier steht deine Nachricht an uns"
+                        rows="7" class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
-                  <div class="col-md-12 hidden">
+                  <div class="col-md-12 mt-5 hidden">
                     <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
                       class="form-control form-control-noradius" />
                   </div>
-                  <div class="col-md-12 text-center">
-                    <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Nachricht
-                      senden</button>
+                  <div class="col-md-12 mt-5 text-center">
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white animated"
+                      data-animation="fadeInUp" data-animation-delay="600">Nachricht senden</button>
                   </div>
                 </div>
               </form>
@@ -767,45 +767,97 @@
             </div>
           </div>
           <!-- Englisch -->
-          <div lang="en" class="col-md-6 offset-md-1 animated" data-animation="fadeInUp" data-animation-delay="150">
+          <div lang="en" class="col-sm-12 col-md-8 offset-lg-1 col-lg-6 animated" data-animation="fadeInUp"
+            data-animation-delay="400">
             <div class="contact-form">
               <form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
                 <div class="row">
                   <div class="form-process"></div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="text" id="cf-name" name="cf-name" placeholder="Your name"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-6">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <input type="email" id="cf-email" name="cf-email" placeholder="Your email address"
                         class="form-control fc-bordered light required">
                     </div>
                   </div>
-                  <div class="col-md-12 col-sm-12">
+                  <div class="col-md-12">
                     <div class="form-group">
-                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (Optional)"
+                      <input type="text" id="cf-subject" name="cf-subject" placeholder="Subject (optional)"
                         class="form-control fc-bordered light">
                     </div>
                   </div>
-                  <div class="col-md-12 mb-5">
+                  <div class="col-md-12">
                     <div class="form-group">
-                      <textarea name="cf-message" id="cf-message" placeholder="Here goes your message"
-                        class="form-control fc-bordered light required" rows="7"></textarea>
+                      <textarea id="cf-message" name="cf-message" placeholder="Here goes your message" rows="7"
+                        class="form-control fc-bordered light required"></textarea>
                     </div>
                   </div>
-                  <div class="col-md-12 hidden">
+                  <div class="col-md-12 mt-5 hidden">
                     <input type="text" id="cf-botcheck" name="cf-botcheck" value=""
                       class="form-control form-control-noradius" />
                   </div>
-                  <div class="col-md-12 text-center">
-                    <button class="btn btn-white" type="submit" id="cf-submit" name="cf-submit">Send Message</button>
+                  <div class="col-md-12 mt-5 text-center">
+                    <button type="submit" id="cf-submit" name="cf-submit" class="btn btn-white animated"
+                      data-animation="fadeInUp" data-animation-delay="600">Send Message</button>
                   </div>
                 </div>
               </form>
               <div class="contact-form-result text-center mt-2"></div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-3 mt-6 mt-md-0" id="sidebar" style="display:none;">
+            <!-- Price Overview Container -->
+            <div id="orderContainer" class="theiaStickySidebar animated" data-animation="fadeInRight"
+              data-animation-delay="400">
+              <div class="card">
+                <div class="pt-3 px-6">
+                  <div class="row">
+                    <div class="col-md-13" style="width: 100%;">
+                      <div class="mb-3" style="display: flex;">
+                        <h3 lang="de" class="mb-0">Voranschlag</h3>
+                        <h3 lang="en" class="mb-0">Estimate</h3>
+                        <a href="calculator.html" target="" class="m-auto" style="left: 100%; position: sticky;">
+                          <i class="fa-solid fa-pen-to-square text-white"></i>
+                        </a>
+                      </div>
+
+                      <ul id="orderSumList">
+                        <li id="option1SingleSum"></li>
+                        <li id="extraOption2Sum"></li>
+                        <li id="option2SingleSum"></li>
+                        <li id="option3SingleSum"></li>
+                        <li id="extraOption3Sum"></li>
+                      </ul>
+                      <div class="row total-container">
+                        <div class="col-4 py-3 pr-0">
+                          <input type="text" id="totalTitle" class="summaryInput" name="totallabel" value="" disabled />
+                        </div>
+                        <div class="col-6 py-3 pl-0">
+                          <input type="text" id="total" class="summaryInput" name="total" value="0" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2" style="margin-left: 15px;">
+                <!-- Deutsch -->
+                <div lang="de">
+                  <input type="checkbox" id="de-cf-price-cb" name="cf-price-cb" class="mr-1" checked>
+                  <label for="cf-price-cb">Sende den Voranschlag</label>
+                </div>
+                <!-- Englisch -->
+                <div lang="en">
+                  <input type="checkbox" id="en-cf-price-cb" name="cf-price-cb" class="mr-1" checked>
+                  <label for="cf-price-cb">Send the estimate</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -833,13 +885,15 @@
   <!-- Fullpage - Copyright -->
   <!-- Deutsch -->
   <div class="ln-copyright text-right">
-    <p lang="de">2023 AirPixel Studios - <a href="terms.html">Impressum</a></p>
+    <p lang="de">2023 AirPixel Studios | <a href="legalinformation.html" class="text-reset">Impressum</a> | <a
+        href="dataprivacy.html" class="text-reset">Datenschutzerklärung</a></p>
   </div>
 
   <!-- Fullpage - Copyright -->
   <!-- Englisch -->
   <div class="ln-copyright text-right">
-    <p lang="en">2023 AirPixel Studios - <a href="terms.html">Terms of service</a></p>
+    <p lang="en">2023 AirPixel Studios | <a href="legalinformation.html" class="text-reset">Legal Information</a> | <a
+        href="dataprivacy.html" class="text-reset">Data Privacy</a></p>
   </div>
 
   <!-- Libs JS -->
@@ -858,6 +912,7 @@
   <script src="assets/vendor/vegas/vegas.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/splide/js/splide.min.js"></script>
+  <script src="assets/vendor/price-format/js/jquery.priceformat.min.js"></script>
 
   <!-- Theme JS -->
   <script src="assets/js/main.js"></script>
@@ -876,6 +931,14 @@
   <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
   <script defer src="js/cookieconsent.js"></script>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9FDJYXMY95', { 'anonymize_ip': true });
+  </script>
 </body>
 
 </html>

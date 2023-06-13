@@ -177,8 +177,8 @@ License: https://themeforest.net/licenses/standard
 
               // Global overlay animation - background color and opacity
               var sectionOverlayColor = $(".ln-section")
-                  .eq(nextIndex - 1)
-                  .attr("data-overlay-color"),
+                .eq(nextIndex - 1)
+                .attr("data-overlay-color"),
                 sectionOverlayOpacity = parseInt(
                   $(".ln-section")
                     .eq(nextIndex - 1)
@@ -248,8 +248,8 @@ License: https://themeforest.net/licenses/standard
             afterRender: function () {
               // Global overlay animation - background color and opacity
               var sectionOverlayColor = $(".ln-section")
-                  .eq(0)
-                  .attr("data-overlay-color"),
+                .eq(0)
+                .attr("data-overlay-color"),
                 sectionOverlayOpacity = parseInt(
                   $(".ln-section").eq(0).attr("data-overlay-opacity"),
                   10
@@ -887,6 +887,10 @@ License: https://themeforest.net/licenses/standard
     }
   }
 
+  $("#disable_analytics").click(function () {
+    if (disable_analytics()) $("#disable-tracking-alert").show();
+  });
+
   $(document).ready(function ($) {
     $("html, body").scrollTop(0);
     ln_screenDetector();
@@ -897,6 +901,7 @@ License: https://themeforest.net/licenses/standard
     ln_magnificPopup();
     ln_countdown();
     ln_contactForm();
+    ln_bootstrap();
     yose_typedText();
   });
 
@@ -920,3 +925,21 @@ License: https://themeforest.net/licenses/standard
     ln_navigationOnScroll();
   });
 })(jQuery);
+
+//Disable google analytics
+function disable_analytics() {
+  var gaProperty = "G-9FDJYXMY95";
+
+  // Disable tracking if the opt-out cookie exists.
+  var disableStr = "ga-disable-" + gaProperty;
+  if (document.cookie.indexOf(disableStr + "=true") > -1) {
+    window[disableStr] = true;
+  }
+
+  // Opt-out function
+  document.cookie =
+    disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+  window[disableStr] = true;
+  console.log("DISABLE GOOGLE ANALYTICS");
+  return true;
+}

@@ -11,7 +11,6 @@ $(document).ready(function () {
   let lang = Cookies.get("lang");
 
   // Variables for calculation
-  //var singleOption1Title = "Basis";
   var singleOption1Title = $(`#${lang}_title_basis`).text();
   var subSum1 = 100;
 
@@ -31,7 +30,7 @@ $(document).ready(function () {
   var extraOption1PriceText = $(`#${lang}_title_price`).text();
 
   //Bereitstellung Material Checkbox
-  var extraOption2Title = $(`#${lang}_title_provisioning`).text();
+  var extraOption2Title = $(`#${lang}_title_provision`).text();
   var extraOption2Price = 50;
 
   var total =
@@ -70,47 +69,47 @@ $(document).ready(function () {
   function setTotalOnStart() {
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption1Title +
+      ":" +
+      '<span class="price">' +
+      subSum1.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#extraOption2Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
+      extraOption2Title +
+      ": " +
+      '<span class="price">' +
+      extraOption2Price.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#option2SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption2Title +
-        ` x ${subSum1}km` +
-        ":" +
-        '<span class="price">' +
-        subSum2.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption2Title +
+      ` x ${subSum1}km` +
+      ":" +
+      '<span class="price">' +
+      subSum2.toFixed(2) +
+      "</span>" +
+      "€"
     );
     $("#option3SingleSum").html(
       '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption3Title +
-        " x 1:" +
-        '<span class="price">' +
-        subSum3.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption3Title +
+      " x 1:" +
+      '<span class="price">' +
+      subSum3.toFixed(2) +
+      "</span>" +
+      "€"
     );
 
     $("#extraOption3Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
+      extraOption1Title +
+      ": " +
+      extraOption1PriceText
     );
 
     if (lang === "de") {
@@ -122,11 +121,11 @@ $(document).ready(function () {
 
     formatItemPrice();
     formatTotalPrice();
+    setPriceObject();
   }
 
   // Function to manage the calculations and update summary
   function updateSummary() {
-
     lang = Cookies.get("lang");
 
     var singleOption1Title = $(`#${lang}_title_basis`).text();
@@ -134,29 +133,29 @@ $(document).ready(function () {
     var singleOption3Title = $(`#${lang}_title_flights`).text();
     var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
     var extraOption1PriceText = $(`#${lang}_title_price`).text();
-    var extraOption2Title = $(`#${lang}_title_provisioning`).text();
+    var extraOption2Title = $(`#${lang}_title_provision`).text();
 
     subSum1 = 100;
     $("#option1SingleSum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
+      singleOption1Title +
+      ":" +
+      '<span class="price">' +
+      subSum1.toFixed(2) +
+      "</span>" +
+      "€"
     );
     formatItemPrice();
 
     extraOption2Price = 50;
     $("#extraOption2Sum").html(
       '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
+      extraOption2Title +
+      ": " +
+      '<span class="price">' +
+      extraOption2Price.toFixed(2) +
+      "</span>" +
+      "€"
     );
     formatItemPrice();
 
@@ -165,14 +164,14 @@ $(document).ready(function () {
       subSum2 = ((actualQty2 - 100) / 50) * 20;
       $("#option2SingleSum").html(
         '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption2Title +
-          " x " +
-          actualQty2 +
-          "km:" +
-          '<span class="price">' +
-          subSum2.toFixed(2) +
-          "</span>" +
-          "€"
+        singleOption2Title +
+        " x " +
+        actualQty2 +
+        "km:" +
+        '<span class="price">' +
+        subSum2.toFixed(2) +
+        "</span>" +
+        "€"
       );
       formatItemPrice();
     }
@@ -191,14 +190,14 @@ $(document).ready(function () {
 
       $("#option3SingleSum").html(
         '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption3Title +
-          " x " +
-          actualQty3 +
-          ":" +
-          '<span class="price">' +
-          subSum3.toFixed(2) +
-          "</span>" +
-          "€"
+        singleOption3Title +
+        " x " +
+        actualQty3 +
+        ":" +
+        '<span class="price">' +
+        subSum3.toFixed(2) +
+        "</span>" +
+        "€"
       );
       formatItemPrice();
     }
@@ -206,9 +205,9 @@ $(document).ready(function () {
     extraOption1Price = 0;
     $("#extraOption3Sum").html(
       '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
+      extraOption1Title +
+      ": " +
+      extraOption1PriceText
     );
     formatItemPrice();
 
@@ -221,7 +220,64 @@ $(document).ready(function () {
       $("#totalTitle").val("Total:");
     }
     $("#total").val(total.toFixed(2));
+
     formatTotalPrice();
+    setPriceObject();
+  }
+
+  function setPriceObject() {
+    var priceObj = {
+      basis: {
+        lang: {
+          de: $('#de_title_basis').text(),
+          en: $('#en_title_basis').text(),
+        },
+        value: subSum1,
+      },
+      provision: {
+        lang: {
+          de: $('#de_title_provision').text(),
+          en: $('#en_title_provision').text(),
+        },
+        value: extraOption2Price,
+      },
+      journey: {
+        lang: {
+          de: $('#de_title_journey').text(),
+          en: $('#en_title_journey').text(),
+        },
+        value: {
+          km: actualQty2,
+          price: subSum2,
+        },
+      },
+      flights: {
+        lang: {
+          de: $('#de_title_flights').text(),
+          en: $('#en_title_flights').text(),
+        },
+        value: {
+          count: actualQty3,
+          price: subSum3,
+        },
+      },
+      videostabilization: {
+        lang: {
+          de: $('#de_title_videostabilization').text(),
+          en: $('#en_title_videostabilization').text(),
+        },
+        value: extraOption1Price,
+      },
+      totalSum: {
+        lang: {
+          de: $('#de_title_price').text(),
+          en: $('#en_title_price').text(),
+        },
+        value: total,
+      },
+    };
+
+    localStorage.setItem("priceObj", JSON.stringify(priceObj));
   }
 
   // Set total title and price initially
@@ -340,25 +396,5 @@ $(document).ready(function () {
     if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
       event.preventDefault();
     }
-  });
-
-  // Store pricing object
-  $("#submitWithCalc").on("click", function (event) {
-    var priceObj = {
-      Basis: subSum1,
-      Provisioning: extraOption2Price,
-      Journey: {
-        km: actualQty2,
-        price: subSum2,
-      },
-      Flights: {
-        count: actualQty3,
-        price: subSum3,
-      },
-      Videostabilization: 0,
-      TotalSum: total,
-    };
-
-    localStorage.setItem("pricingObj", JSON.stringify(priceObj));
   });
 });
