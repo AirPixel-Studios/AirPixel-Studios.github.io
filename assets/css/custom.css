@@ -1326,12 +1326,6 @@ label.cbx {
 .card-font {
   font-family: "LatoRegular";
   text-align: left;
-  /* text-transform: uppercase; */
-}
-
-.card-p-item {
-  font-family: "LatoRegular";
-  font-weight: 900 !important;
 }
 
 /* - Data Privacy Page - */
