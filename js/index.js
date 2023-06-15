@@ -38,8 +38,6 @@ $(document).ready(function () {
 		if (priceObj != null) {
 			updateSummary(priceObj);
 		}
-
-		prefillForm(Cookies.get("lang"));
 	});
 
 	//Set sendEstimate to true on initial load
@@ -56,18 +54,43 @@ $(document).ready(function () {
 	if (localStorage.getItem('sendEstimate') === 'false') {
 		$("#de-cf-price-cb, #en-cf-price-cb").prop("checked", false);
 	}
+
+	let contactFormData = JSON.parse(localStorage.getItem('contactForm'));
+	if (contactFormData != null) {
+		fillSavedContactFormData(contactFormData);
+	}
+
+	$("form :input").change(function () {
+		saveContactFormData();
+	});
 });
 
-// Function to fill input values of contact form on language switch event
-function prefillForm(lang) {
-	let oldLang = ((lang === "de") ? "en" : "de");
+function saveContactFormData() {
+	let lang = Cookies.get("lang");
+	let otherLang = ((lang === "de") ? "en" : "de");
+	const formInputs = ["name", "email", "subject", "message"];
+	let contactFormData = {};
+
+	for (let i = 0; i < formInputs.length; i++) {
+		let inputValue = $("#" + lang + "-cf-" + formInputs[i]).val();
+		contactFormData[formInputs[i]] = inputValue;
+
+		// set value in other language form
+		$("#" + otherLang + "-cf-" + formInputs[i]).val(inputValue);
+	}
+
+	localStorage.setItem("contactForm", JSON.stringify(contactFormData));
+}
+
+// Function to fill input values of contact form after returning to index page
+function fillSavedContactFormData(contactFormData) {
+	let lang = Cookies.get("lang");
+	let otherLang = ((lang === "de") ? "en" : "de");
 	const formInputs = ["name", "email", "subject", "message"];
 
 	for (let i = 0; i < formInputs.length; i++) {
-		let inputValue = $("#" + oldLang + "-cf-" + formInputs[i]).val();
-		if (inputValue != "") {
-			$("#" + lang + "-cf-" + formInputs[i]).val(inputValue);
-		}
+		$("#" + lang + "-cf-" + formInputs[i]).val(contactFormData[formInputs[i]]);
+		$("#" + otherLang + "-cf-" + formInputs[i]).val(contactFormData[formInputs[i]]);
 	}
 }
 
