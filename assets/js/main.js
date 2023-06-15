@@ -850,9 +850,9 @@ License: https://themeforest.net/licenses/standard
 						strBody += "\nEmail: " + inputEmail;
 
 						// Estimate section
-						if (localStorage.getItem('sendEstimate') === 'true') {
+						let priceObj = JSON.parse(localStorage.getItem('priceObj'));
+						if (localStorage.getItem('sendEstimate') === 'true' && priceObj != null) {
 							strBody += "\n\n" + ((lang === "de") ? "Voranschlag:" : "Estimate:");
-							let priceObj = JSON.parse(localStorage.getItem('priceObj'));
 
 							let singleOption1Title = priceObj.basis.lang[lang];
 							let subSum1 = priceObj.basis.value;

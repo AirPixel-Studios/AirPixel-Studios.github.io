@@ -42,6 +42,11 @@ $(document).ready(function () {
 		prefillForm(Cookies.get("lang"));
 	});
 
+	//Set sendEstimate to true on initial load
+	if (localStorage.getItem('sendEstimate') == null) {
+		localStorage.setItem("sendEstimate", true);
+	}
+
 	//Send estimate checkbox change event
 	$("#de-cf-price-cb, #en-cf-price-cb").change(function () {
 		$("#de-cf-price-cb, #en-cf-price-cb").prop("checked", this.checked);
