@@ -1,382 +1,400 @@
+//Function called on page load
 $(document).ready(function () {
-  "use strict";
+	"use strict";
 
-  if (Cookies.get("lang") === undefined) {
-    //Get language of browser
-    var usrlang = navigator.language || navigator.userLanguage;
-    if (usrlang === "de-DE" || usrlang === "de") {
-      Cookies.set("lang", "de");
-    } else {
-      Cookies.set("lang", "en");
-    }
-  }
+	//Language switch event
+	$("#switch-lang").click(function (event) {
+		updateSummary();
+	});
 
-  //Get current language
-  let lang = Cookies.get("lang");
+	//Get current language
+	let lang = Cookies.get("lang");
 
-  // Variables for calculation
-  //var singleOption1Title = "Basis";
-  var singleOption1Title = $(`#${lang}_title_basis`).text();
-  var subSum1 = 100;
+	// Variables for calculation
+	var singleOption1Title = $(`#${lang}_title_basis`).text();
+	var subSum1 = 100;
 
-  var singleOption2Title = $(`#${lang}_title_journey`).text();
-  var singleOption2Price = 0;
-  var actualQty2 = 100;
-  var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
+	var singleOption2Title = $(`#${lang}_title_journey`).text();
+	var singleOption2Price = 0;
+	var actualQty2 = 100;
+	var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
 
-  var singleOption3Title = $(`#${lang}_title_flights`).text();
-  var singleOption3Price = 50;
-  var actualQty3 = 1;
-  var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
+	var singleOption3Title = $(`#${lang}_title_flights`).text();
+	var singleOption3Price = 50;
+	var actualQty3 = 1;
+	var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
 
-  //Videostabilisierung Checkbox
-  var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
-  var extraOption1Price = 0;
-  var extraOption1PriceText = $(`#${lang}_title_price`).text();
+	//Videostabilisierung Checkbox
+	var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
+	var extraOption1Price = 0;
+	var extraOption1PriceText = $(`#${lang}_title_price`).text();
 
-  //Bereitstellung Material Checkbox
-  var extraOption2Title = $(`#${lang}_title_provisioning`).text();
-  var extraOption2Price = 50;
+	//Bereitstellung Material Checkbox
+	var extraOption2Title = $(`#${lang}_title_provision`).text();
+	var extraOption2Price = 50;
 
-  var total =
-    subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
+	var total =
+		subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
 
-  // =====================================================
-  //      STICKY SIDEBAR SETUP
-  // =====================================================
-  $("#orderContainer, #sidebar").theiaStickySidebar({
-    additionalMarginTop: 90,
-  });
+	// =====================================================
+	//      STICKY SIDEBAR SETUP
+	// =====================================================
+	$("#orderContainer, #sidebar").theiaStickySidebar({
+		additionalMarginTop: 90,
+	});
 
-  // =====================================================
-  //      CALCULATOR ELEMENTS
-  // =====================================================
+	// =====================================================
+	//      CALCULATOR ELEMENTS
+	// =====================================================
 
-  // Function to format item prices usign priceFormat plugin
-  function formatItemPrice() {
-    $(".price").priceFormat({
-      prefix: "	",
-      centsSeparator: ".",
-      thousandsSeparator: ",",
-    });
-  }
+	// Function to format item prices usign priceFormat plugin
+	function formatItemPrice() {
+		$(".price").priceFormat({
+			prefix: "	",
+			centsSeparator: ".",
+			thousandsSeparator: ",",
+		});
+	}
 
-  // Function to format total price usign priceFormat plugin
-  function formatTotalPrice() {
-    $("#total").priceFormat({
-      prefix: "	",
-      centsSeparator: ".",
-      thousandsSeparator: ",",
-    });
-  }
+	// Function to format total price usign priceFormat plugin
+	function formatTotalPrice() {
+		$("#total").priceFormat({
+			prefix: "	",
+			centsSeparator: ".",
+			thousandsSeparator: ",",
+		});
+	}
 
-  // Function to set total title and price initially
-  function setTotalOnStart() {
-    $("#option1SingleSum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
-    );
-    $("#extraOption2Sum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
-    );
-    $("#option2SingleSum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption2Title +
-        ` x ${subSum1}km` +
-        ":" +
-        '<span class="price">' +
-        subSum2.toFixed(2) +
-        "</span>" +
-        "€"
-    );
-    $("#option3SingleSum").html(
-      '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption3Title +
-        " x 1:" +
-        '<span class="price">' +
-        subSum3.toFixed(2) +
-        "</span>" +
-        "€"
-    );
+	// Function to set total title and price initially
+	function setTotalOnStart() {
+		$("#option1SingleSum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			singleOption1Title +
+			":" +
+			'<span class="price">' +
+			subSum1.toFixed(2) +
+			"</span>" +
+			"€"
+		);
+		$("#extraOption2Sum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			extraOption2Title +
+			": " +
+			'<span class="price">' +
+			extraOption2Price.toFixed(2) +
+			"</span>" +
+			"€"
+		);
+		$("#option2SingleSum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			singleOption2Title +
+			` x ${subSum1}km` +
+			":" +
+			'<span class="price">' +
+			subSum2.toFixed(2) +
+			"</span>" +
+			"€"
+		);
+		$("#option3SingleSum").html(
+			'<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
+			singleOption3Title +
+			" x 1:" +
+			'<span class="price">' +
+			subSum3.toFixed(2) +
+			"</span>" +
+			"€"
+		);
 
-    $("#extraOption3Sum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
-    );
+		$("#extraOption3Sum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			extraOption1Title +
+			": " +
+			extraOption1PriceText
+		);
 
-    if (lang === "de") {
-      $("#totalTitle").val("Summe:");
-    } else {
-      $("#totalTitle").val("Total:");
-    }
-    $("#total").val(total.toFixed(2));
+		if (lang === "de") {
+			$("#totalTitle").val("Summe:");
+		} else {
+			$("#totalTitle").val("Total:");
+		}
+		$("#total").val(total.toFixed(2));
 
-    formatItemPrice();
-    formatTotalPrice();
-  }
+		formatItemPrice();
+		formatTotalPrice();
+		setPriceObject();
+	}
 
-  // Function to manage the calculations and update summary
-  function updateSummary() {
+	// Function to manage the calculations and update summary
+	function updateSummary() {
+		lang = Cookies.get("lang");
 
-    lang = Cookies.get("lang");
+		var singleOption1Title = $(`#${lang}_title_basis`).text();
+		var singleOption2Title = $(`#${lang}_title_journey`).text();
+		var singleOption3Title = $(`#${lang}_title_flights`).text();
+		var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
+		var extraOption1PriceText = $(`#${lang}_title_price`).text();
+		var extraOption2Title = $(`#${lang}_title_provision`).text();
 
-    var singleOption1Title = $(`#${lang}_title_basis`).text();
-    var singleOption2Title = $(`#${lang}_title_journey`).text();
-    var singleOption3Title = $(`#${lang}_title_flights`).text();
-    var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
-    var extraOption1PriceText = $(`#${lang}_title_price`).text();
-    var extraOption2Title = $(`#${lang}_title_provisioning`).text();
+		subSum1 = 100;
+		$("#option1SingleSum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			singleOption1Title +
+			":" +
+			'<span class="price">' +
+			subSum1.toFixed(2) +
+			"</span>" +
+			"€"
+		);
 
-    subSum1 = 100;
-    $("#option1SingleSum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        singleOption1Title +
-        ":" +
-        '<span class="price">' +
-        subSum1.toFixed(2) +
-        "</span>" +
-        "€"
-    );
-    formatItemPrice();
+		extraOption2Price = 50;
+		$("#extraOption2Sum").html(
+			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+			extraOption2Title +
+			": " +
+			'<span class="price">' +
+			extraOption2Price.toFixed(2) +
+			"</span>" +
+			"€"
+		);
 
-    extraOption2Price = 50;
-    $("#extraOption2Sum").html(
-      '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption2Title +
-        ": " +
-        '<span class="price">' +
-        extraOption2Price.toFixed(2) +
-        "</span>" +
-        "€"
-    );
-    formatItemPrice();
+		actualQty2 = $("#option1SingleQty").val();
+		if (actualQty2 != 0) {
+			subSum2 = ((actualQty2 - 100) / 50) * 20;
+			$("#option2SingleSum").html(
+				'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
+				singleOption2Title +
+				" x " +
+				actualQty2 +
+				"km:" +
+				'<span class="price">' +
+				subSum2.toFixed(2) +
+				"</span>" +
+				"€"
+			);
+		}
 
-    actualQty2 = $("#option1SingleQty").val();
-    if (actualQty2 != 0) {
-      subSum2 = ((actualQty2 - 100) / 50) * 20;
-      $("#option2SingleSum").html(
-        '<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption2Title +
-          " x " +
-          actualQty2 +
-          "km:" +
-          '<span class="price">' +
-          subSum2.toFixed(2) +
-          "</span>" +
-          "€"
-      );
-      formatItemPrice();
-    }
+		actualQty3 = $("#option2SingleQty").val();
+		if (actualQty3 != 0) {
+			if (actualQty3 <= 1) {
+				subSum3 = singleOption3Price;
+			} else if (actualQty3 > 1 && actualQty3 <= 2) {
+				subSum3 = 50 * actualQty3;
+			} else if (actualQty3 > 2 && actualQty3 <= 5) {
+				subSum3 = 40 * actualQty3;
+			} else if (actualQty3 > 5 && actualQty3 <= 20) {
+				subSum3 = 35 * actualQty3;
+			}
 
-    actualQty3 = $("#option2SingleQty").val();
-    if (actualQty3 != 0) {
-      if (actualQty3 <= 1) {
-        subSum3 = singleOption3Price;
-      } else if (actualQty3 > 1 && actualQty3 <= 2) {
-        subSum3 = 50 * actualQty3;
-      } else if (actualQty3 > 2 && actualQty3 <= 5) {
-        subSum3 = 40 * actualQty3;
-      } else if (actualQty3 > 5 && actualQty3 <= 20) {
-        subSum3 = 35 * actualQty3;
-      }
+			$("#option3SingleSum").html(
+				'<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
+				singleOption3Title +
+				" x " +
+				actualQty3 +
+				":" +
+				'<span class="price">' +
+				subSum3.toFixed(2) +
+				"</span>" +
+				"€"
+			);
+		}
 
-      $("#option3SingleSum").html(
-        '<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-          singleOption3Title +
-          " x " +
-          actualQty3 +
-          ":" +
-          '<span class="price">' +
-          subSum3.toFixed(2) +
-          "</span>" +
-          "€"
-      );
-      formatItemPrice();
-    }
+		extraOption1Price = 0;
+		$("#extraOption3Sum").html(
+			'<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
+			extraOption1Title +
+			": " +
+			extraOption1PriceText
+		);
 
-    extraOption1Price = 0;
-    $("#extraOption3Sum").html(
-      '<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-        extraOption1Title +
-        ": " +
-        extraOption1PriceText
-    );
-    formatItemPrice();
+		// Update total in order summary
+		total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
 
-    // Update total in order summary
-    total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
+		if (lang === "de") {
+			$("#totalTitle").val("Summe:");
+		} else {
+			$("#totalTitle").val("Total:");
+		}
+		$("#total").val(total.toFixed(2));
 
-    if (lang === "de") {
-      $("#totalTitle").val("Summe:");
-    } else {
-      $("#totalTitle").val("Total:");
-    }
-    $("#total").val(total.toFixed(2));
-    formatTotalPrice();
-  }
+		formatItemPrice();
+		formatTotalPrice();
+		setPriceObject();
+	}
 
-  // Set total title and price initially
-  setTotalOnStart();
+	function setPriceObject() {
+		var priceObj = {
+			basis: {
+				lang: {
+					de: $('#de_title_basis').text(),
+					en: $('#en_title_basis').text(),
+				},
+				value: subSum1,
+			},
+			provision: {
+				lang: {
+					de: $('#de_title_provision').text(),
+					en: $('#en_title_provision').text(),
+				},
+				value: extraOption2Price,
+			},
+			journey: {
+				lang: {
+					de: $('#de_title_journey').text(),
+					en: $('#en_title_journey').text(),
+				},
+				value: {
+					km: actualQty2,
+					price: subSum2,
+				},
+			},
+			flights: {
+				lang: {
+					// tooltip generated \n & \t chars
+					de: $('#de_title_flights').text().replace(/\t/g, '').replace(/\n/g, ''),
+					en: $('#en_title_flights').text().replace(/\t/g, '').replace(/\n/g, ''),
+				},
+				value: {
+					count: actualQty3,
+					price: subSum3,
+				},
+			},
+			videostabilization: {
+				lang: {
+					de: $('#de_title_videostabilization').text(),
+					en: $('#en_title_videostabilization').text(),
+				},
+				value: {
+					de: $('#de_title_price').text(),
+					en: $('#en_title_price').text(),
+				},
+			},
+			totalSum: {
+				lang: {
+					de: 'Summe',
+					en: 'Total',
+				},
+				value: total,
+			},
+		};
 
-  // When extraOption1 is checked
-  $("#extraOption1").on("click", function () {
-    updateSummary();
-  });
+		localStorage.setItem("priceObj", JSON.stringify(priceObj));
+	}
 
-  // When extraOption2 is checked
-  $("#extraOption2").on("click", function () {
-    updateSummary();
-  });
+	// Set total title and price initially
+	setTotalOnStart();
 
-  // =====================================================
-  //      RANGE SLIDER 1
-  // =====================================================
-  var $range = $("#option1SingleRangeSlider"),
-    $input = $("#option1SingleQty"),
-    instance,
-    min = 100,
-    max = 1500;
+	// When extraOption1 is checked
+	$("#extraOption1").on("click", function () {
+		updateSummary();
+	});
 
-  $range.ionRangeSlider({
-    skin: "round",
-    type: "single",
-    min: min,
-    max: max,
-    from: 100,
-    step: 50,
-    hide_min_max: true,
-    onStart: function (data) {
-      $input.prop("value", data.from);
-    },
-    onChange: function (data) {
-      $input.prop("value", data.from);
-      updateSummary();
-    },
-  });
+	// When extraOption2 is checked
+	$("#extraOption2").on("click", function () {
+		updateSummary();
+	});
 
-  instance = $range.data("ionRangeSlider");
+	// =====================================================
+	//      RANGE SLIDER 1
+	// =====================================================
+	var $range = $("#option1SingleRangeSlider"),
+		$input = $("#option1SingleQty"),
+		instance,
+		min = 100,
+		max = 1500;
 
-  $input.on("input", function () {
-    var val = $(this).prop("value");
+	$range.ionRangeSlider({
+		skin: "round",
+		type: "single",
+		min: min,
+		max: max,
+		from: 100,
+		step: 50,
+		hide_min_max: true,
+		onStart: function (data) {
+			$input.prop("value", data.from);
+		},
+		onChange: function (data) {
+			$input.prop("value", data.from);
+			updateSummary();
+		},
+	});
 
-    // Validate
-    if (val < min) {
-      val = min;
-      $input.val(min);
-    } else if (val > max) {
-      val = max;
-      $input.val(max);
-    }
+	instance = $range.data("ionRangeSlider");
 
-    instance.update({
-      from: val,
-    });
+	$input.on("input", function () {
+		var val = $(this).prop("value");
 
-    updateSummary();
-  });
+		// Validate
+		if (val < min) {
+			val = min;
+			$input.val(min);
+		} else if (val > max) {
+			val = max;
+			$input.val(max);
+		}
 
-  // =====================================================
-  //      RANGE SLIDER 2
-  // =====================================================
-  var $range2 = $("#option2SingleRangeSlider"),
-    $input2 = $("#option2SingleQty"),
-    instance2,
-    min2 = 1,
-    max2 = 20;
+		instance.update({
+			from: val,
+		});
 
-  $range2.ionRangeSlider({
-    skin: "round",
-    type: "single",
-    min: min2,
-    max: max2,
-    from: 1,
-    step: 1,
-    hide_min_max: true,
-    onStart: function (data) {
-      $input2.prop("value", data.from);
-    },
-    onChange: function (data) {
-      $input2.prop("value", data.from);
-      updateSummary();
-    },
-  });
+		updateSummary();
+	});
 
-  instance2 = $range2.data("ionRangeSlider");
+	// =====================================================
+	//      RANGE SLIDER 2
+	// =====================================================
+	var $range2 = $("#option2SingleRangeSlider"),
+		$input2 = $("#option2SingleQty"),
+		instance2,
+		min2 = 1,
+		max2 = 20;
 
-  $input2.on("input", function () {
-    var val2 = $(this).prop("value");
+	$range2.ionRangeSlider({
+		skin: "round",
+		type: "single",
+		min: min2,
+		max: max2,
+		from: 1,
+		step: 1,
+		hide_min_max: true,
+		onStart: function (data) {
+			$input2.prop("value", data.from);
+		},
+		onChange: function (data) {
+			$input2.prop("value", data.from);
+			updateSummary();
+		},
+	});
 
-    // Validate
-    if (val2 < min2) {
-      val2 = min2;
-      $input2.val(min2);
-    } else if (val2 > max2) {
-      val2 = max2;
-      $input2.val(max2);
-    }
+	instance2 = $range2.data("ionRangeSlider");
 
-    instance2.update({
-      from: val2,
-    });
+	$input2.on("input", function () {
+		var val2 = $(this).prop("value");
 
-    updateSummary();
-  });
+		// Validate
+		if (val2 < min2) {
+			val2 = min2;
+			$input2.val(min2);
+		} else if (val2 > max2) {
+			val2 = max2;
+			$input2.val(max2);
+		}
 
-  // =====================================================
-  //      FORM INPUT VALIDATION
-  // =====================================================
+		instance2.update({
+			from: val2,
+		});
 
-  // Quantity inputs
-  $(".qty-input").on("keypress", function (event) {
-    if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
-      event.preventDefault();
-    }
-  });
+		updateSummary();
+	});
 
-  // Store pricing object
-  $("#submitWithCalc").on("click", function (event) {
-    var priceObj = {
-      Basis: subSum1,
-      Provisioning: extraOption2Price,
-      Journey: {
-        km: actualQty2,
-        price: subSum2,
-      },
-      Flights: {
-        count: actualQty3,
-        price: subSum3,
-      },
-      Videostabilization: 0,
-      TotalSum: total,
-    };
+	// =====================================================
+	//      FORM INPUT VALIDATION
+	// =====================================================
 
-    localStorage.setItem("pricingObj", JSON.stringify(priceObj));
-  });
-
-  //Language switch event
-  $("#switch-lang").click(function (event) {
-    event.preventDefault();
-
-    if (event.target.innerText.toLowerCase() === "de") {
-      Cookies.set("lang", "de");
-    } else if (event.target.innerText.toLowerCase() === "en") {
-      Cookies.set("lang", "en");
-    }
-    updateSummary();
-  });
-
-  $('[data-toggle="tooltip"]').tooltip();
+	// Quantity inputs
+	$(".qty-input").on("keypress", function (event) {
+		if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+			event.preventDefault();
+		}
+	});
 });

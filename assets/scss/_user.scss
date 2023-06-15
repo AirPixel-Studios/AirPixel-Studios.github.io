@@ -13,16 +13,18 @@ $time-3: 180s;
 $time-4: 600s;
 
 @function particles($max) {
-   $val: 0px 0px $color-particle;
-   @for $i from 1 through $max {
-      $val: #{$val},
-      random($spacing)+px random($spacing)+px $color-particle;
-   }
-   @return $val;
+  $val: 0px 0px $color-particle;
+
+  @for $i from 1 through $max {
+    $val: #{$val},
+    random($spacing)+px random($spacing)+px $color-particle;
+  }
+
+  @return $val;
 }
 
 @mixin particles($max) {
-   box-shadow: particles($max);
+  box-shadow: particles($max);
 }
 
 .particle {
@@ -84,6 +86,22 @@ $time-4: 600s;
 }
 
 @keyframes animParticle {
-  from { transform: translateY(0px); }
-  to   { transform: translateY($spacing * -1); }
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY($spacing * -1);
+  }
+}
+
+/* Misc */
+
+.card {
+  background-color: unset;
+  border: 1px solid #ddd;
+}
+
+.bg-black .card {
+  border: 1px solid #fff !important;
 }
