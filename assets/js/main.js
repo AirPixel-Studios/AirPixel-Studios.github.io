@@ -850,34 +850,34 @@ License: https://themeforest.net/licenses/standard
 						strBody += "\nEmail: " + inputEmail;
 
 						// Estimate section
-						let priceObj = JSON.parse(localStorage.getItem('priceObj'));
-						if (localStorage.getItem('sendEstimate') === 'true' && priceObj != null) {
+						let estimateData = JSON.parse(localStorage.getItem('estimateData'));
+						if (localStorage.getItem('sendEstimate') === 'true' && estimateData != null) {
 							strBody += "\n\n" + ((lang === "de") ? "Voranschlag:" : "Estimate:");
 
-							let singleOption1Title = priceObj.basis.lang[lang];
-							let subSum1 = priceObj.basis.value;
+							let singleOption1Title = estimateData.basis.lang[lang];
+							let subSum1 = estimateData.basis.value;
 							strBody += "\n" + singleOption1Title + ": " + subSum1.toFixed(2) + "€";
 
-							let extraOption2Title = priceObj.provision.lang[lang];
-							let extraOption2Price = priceObj.provision.value;
+							let extraOption2Title = estimateData.provision.lang[lang];
+							let extraOption2Price = estimateData.provision.value;
 							strBody += "\n" + extraOption2Title + ": " + extraOption2Price.toFixed(2) + "€";
 
-							let singleOption2Title = priceObj.journey.lang[lang];
-							let actualQty2 = priceObj.journey.value.km;
-							let subSum2 = priceObj.journey.value.price;
+							let singleOption2Title = estimateData.journey.lang[lang];
+							let actualQty2 = estimateData.journey.value.km;
+							let subSum2 = estimateData.journey.value.price;
 							strBody += "\n" + singleOption2Title + " x " + actualQty2 + "km: " + subSum2.toFixed(2) + "€";
 
-							let singleOption3Title = priceObj.flights.lang[lang];
-							let actualQty3 = priceObj.flights.value.count;
-							let subSum3 = priceObj.flights.value.price;
+							let singleOption3Title = estimateData.flights.lang[lang];
+							let actualQty3 = estimateData.flights.value.count;
+							let subSum3 = estimateData.flights.value.price;
 							strBody += "\n" + singleOption3Title + " x " + actualQty3 + ": " + subSum3.toFixed(2) + "€";
 
-							let extraOption1Title = priceObj.videostabilization.lang[lang];
-							let extraOption1PriceText = priceObj.videostabilization.value[lang];
+							let extraOption1Title = estimateData.videostabilization.lang[lang];
+							let extraOption1PriceText = estimateData.videostabilization.value[lang];
 							strBody += "\n" + extraOption1Title + ": " + extraOption1PriceText;
 
-							let totalTitle = priceObj.totalSum.lang[lang];
-							let totalPrice = priceObj.totalSum.value;
+							let totalTitle = estimateData.totalSum.lang[lang];
+							let totalPrice = estimateData.totalSum.value;
 							strBody += "\n" + totalTitle + ": " + totalPrice.toFixed(2) + "€";
 						}
 
@@ -1010,6 +1010,5 @@ function disable_analytics() {
 	document.cookie =
 		disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
 	window[disableStr] = true;
-	console.log("DISABLE GOOGLE ANALYTICS");
 	return true;
 }

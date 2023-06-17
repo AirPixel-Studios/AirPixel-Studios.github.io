@@ -261,7 +261,7 @@ ul {
 }
 
 .bg-black .navbar-brand-img {
-  content: url("../images/logo/bg-black-0.5x.png");
+  content: url("../images/logo/bg-black-0.5x.png") !important;
 }
 
 .navbar-dark .navbar-brand-img {

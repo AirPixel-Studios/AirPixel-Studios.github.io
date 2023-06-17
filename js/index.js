@@ -20,9 +20,9 @@ $(document).ready(function () {
 	}).mount();
 
 	//Render pricing if user has been on pricing page before
-	let priceObj = JSON.parse(localStorage.getItem('priceObj'));
-	if (priceObj != null) {
-		updateSummary(priceObj);
+	let estimateData = JSON.parse(localStorage.getItem('estimateData'));
+	if (estimateData != null) {
+		renderVariablePrices(estimateData);
 		$(".contact-form").parent().addClass("col-md-8");
 		$("#sidebar").show();
 	} else {
@@ -35,8 +35,8 @@ $(document).ready(function () {
 	$("#switch-lang").click(function (event) {
 		$.getScript("../assets/vendor/jquery-validation/dist/localization/messages_" + Cookies.get("lang") + ".js");
 
-		if (priceObj != null) {
-			updateSummary(priceObj);
+		if (estimateData != null) {
+			renderVariablePrices(estimateData);
 		}
 	});
 
@@ -65,6 +65,7 @@ $(document).ready(function () {
 	});
 });
 
+// Function to save data from contact form to auto-fill form once user navigates back to form
 function saveContactFormData() {
 	let lang = Cookies.get("lang");
 	let otherLang = ((lang === "de") ? "en" : "de");
@@ -108,11 +109,11 @@ function formatItemPrice() {
 }
 
 // Function to manage the calculations and update summary
-function updateSummary(priceObj) {
+function renderVariablePrices(estimateData) {
 	lang = Cookies.get("lang");
 
-	let singleOption1Title = priceObj.basis.lang[lang];
-	let subSum1 = priceObj.basis.value;
+	let singleOption1Title = estimateData.basis.lang[lang];
+	let subSum1 = estimateData.basis.value;
 	$("#option1SingleSum").html(
 		'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 		singleOption1Title +
@@ -123,8 +124,8 @@ function updateSummary(priceObj) {
 		"€"
 	);
 
-	let extraOption2Title = priceObj.provision.lang[lang];
-	let extraOption2Price = priceObj.provision.value;
+	let extraOption2Title = estimateData.provision.lang[lang];
+	let extraOption2Price = estimateData.provision.value;
 	$("#extraOption2Sum").html(
 		'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 		extraOption2Title +
@@ -135,9 +136,9 @@ function updateSummary(priceObj) {
 		"€"
 	);
 
-	let singleOption2Title = priceObj.journey.lang[lang];
-	let actualQty2 = priceObj.journey.value.km;
-	let subSum2 = priceObj.journey.value.price;
+	let singleOption2Title = estimateData.journey.lang[lang];
+	let actualQty2 = estimateData.journey.value.km;
+	let subSum2 = estimateData.journey.value.price;
 	$("#option2SingleSum").html(
 		'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 		singleOption2Title +
@@ -150,9 +151,9 @@ function updateSummary(priceObj) {
 		"€"
 	);
 
-	let singleOption3Title = priceObj.flights.lang[lang];
-	let actualQty3 = priceObj.flights.value.count;
-	let subSum3 = priceObj.flights.value.price;
+	let singleOption3Title = estimateData.flights.lang[lang];
+	let actualQty3 = estimateData.flights.value.count;
+	let subSum3 = estimateData.flights.value.price;
 	$("#option3SingleSum").html(
 		'<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
 		singleOption3Title +
@@ -165,8 +166,8 @@ function updateSummary(priceObj) {
 		"€"
 	);
 
-	let extraOption1Title = priceObj.videostabilization.lang[lang];
-	let extraOption1PriceText = priceObj.videostabilization.value[lang];
+	let extraOption1Title = estimateData.videostabilization.lang[lang];
+	let extraOption1PriceText = estimateData.videostabilization.value[lang];
 	$("#extraOption3Sum").html(
 		'<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
 		extraOption1Title +
@@ -174,10 +175,10 @@ function updateSummary(priceObj) {
 		extraOption1PriceText
 	);
 
-	let totalTitle = priceObj.totalSum.lang[lang];
-	let totalPrice = priceObj.totalSum.value;
+	let totalTitle = estimateData.totalSum.lang[lang];
+	let totalPrice = estimateData.totalSum.value;
 	$("#totalTitle").val(totalTitle + ":");
 	$("#total").val(totalPrice.toFixed(2) + "€");
 
-	formatItemPrice();	
+	formatItemPrice();
 }

@@ -1,40 +1,70 @@
-//Function called on page load
+// function called on page load
 $(document).ready(function () {
 	"use strict";
 
-	//Language switch event
+	let lang, singleOption1Title, singleOption2Title, singleOption3Title, extraOption1Title, extraOption1PriceText, extraOption2Title, total;
+	updateLangTexts();
+
+	// variables for calculation
+	// fixed: basis
+	let subSum1 = 100;
+
+	// range slider: journey
+	let singleOption2Price = 0;
+	let actualQty2 = 100;
+	let subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
+
+	// range slider: flights
+	let singleOption3Price = 50;
+	let actualQty3 = 1;
+	let subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
+
+	// fixed (free): videostabilization
+	let extraOption1Price = 0;
+
+	// fixed: provision
+	let extraOption2Price = 50;
+
+	// =====================================================
+	//      RANGE SLIDERS
+	// =====================================================
+	initRangeSlider("#option1SingleRangeSlider", "#option1SingleQty", 100, 1500, 50);
+	initRangeSlider("#option2SingleRangeSlider", "#option2SingleQty", 1, 20, 1);
+
+	// fill input values of estimator after returning to calculator page
+	let estimateData = JSON.parse(localStorage.getItem('estimateData'));
+	if (estimateData != null) {
+		$("#option1SingleQty").val(estimateData.journey.value.km);
+		$("#option2SingleQty").val(estimateData.flights.value.count);
+	}
+
+	// language switch event
 	$("#switch-lang").click(function (event) {
-		updateSummary();
+		updateLangTexts();
+		renderFixedPrices();
+		renderVariablePrices();
 	});
 
-	//Get current language
-	let lang = Cookies.get("lang");
+	function updateLangTexts() {
+		lang = Cookies.get("lang");
+		singleOption1Title = $(`#${lang}_title_basis`).text();
+		singleOption2Title = $(`#${lang}_title_journey`).text();
+		singleOption3Title = $(`#${lang}_title_flights`).text();
+		extraOption1Title = $(`#${lang}_title_videostabilization`).text();
+		extraOption1PriceText = $(`#${lang}_title_price`).text();
+		extraOption2Title = $(`#${lang}_title_provision`).text();
+	}
 
-	// Variables for calculation
-	var singleOption1Title = $(`#${lang}_title_basis`).text();
-	var subSum1 = 100;
+	// =====================================================
+	//      FORM INPUT VALIDATION
+	// =====================================================
 
-	var singleOption2Title = $(`#${lang}_title_journey`).text();
-	var singleOption2Price = 0;
-	var actualQty2 = 100;
-	var subSum2 = singleOption2Price * 1 * (actualQty2 * 1);
-
-	var singleOption3Title = $(`#${lang}_title_flights`).text();
-	var singleOption3Price = 50;
-	var actualQty3 = 1;
-	var subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
-
-	//Videostabilisierung Checkbox
-	var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
-	var extraOption1Price = 0;
-	var extraOption1PriceText = $(`#${lang}_title_price`).text();
-
-	//Bereitstellung Material Checkbox
-	var extraOption2Title = $(`#${lang}_title_provision`).text();
-	var extraOption2Price = 50;
-
-	var total =
-		subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
+	// Quantity inputs
+	$(".qty-input").on("keypress", function (event) {
+		if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
+			event.preventDefault();
+		}
+	});
 
 	// =====================================================
 	//      STICKY SIDEBAR SETUP
@@ -47,6 +77,55 @@ $(document).ready(function () {
 	//      CALCULATOR ELEMENTS
 	// =====================================================
 
+	renderFixedPrices();
+	renderVariablePrices();
+
+	function initRangeSlider(idRange, idInput, iMin, iMax, iStep) {
+		var $range = $(idRange),
+			$input = $(idInput),
+			instance,
+			min = iMin,
+			max = iMax;
+
+		$range.ionRangeSlider({
+			skin: "round",
+			type: "single",
+			min: min,
+			max: max,
+			from: min,
+			step: iStep,
+			hide_min_max: true,
+			onStart: function (data) {
+				$input.prop("value", data.from);
+			},
+			onChange: function (data) {
+				$input.prop("value", data.from);
+				renderVariablePrices();
+			},
+		});
+
+		instance = $range.data("ionRangeSlider");
+
+		$input.on("input", function () {
+			var val = $(this).prop("value");
+
+			// Validate
+			if (val < min) {
+				val = min;
+				$input.val(min);
+			} else if (val > max) {
+				val = max;
+				$input.val(max);
+			}
+
+			instance.update({
+				from: val,
+			});
+
+			renderVariablePrices();
+		});
+	}
+
 	// Function to format item prices usign priceFormat plugin
 	function formatItemPrice() {
 		$(".price").priceFormat({
@@ -56,8 +135,8 @@ $(document).ready(function () {
 		});
 	}
 
-	// Function to set total title and price initially
-	function setTotalOnStart() {
+	// Function to manage the fixed prices and initially set them in the overview box
+	function renderFixedPrices() {
 		$("#option1SingleSum").html(
 			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 			singleOption1Title +
@@ -67,31 +146,13 @@ $(document).ready(function () {
 			"</span>" +
 			"€"
 		);
+
 		$("#extraOption2Sum").html(
 			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 			extraOption2Title +
 			": " +
 			'<span class="price">' +
 			extraOption2Price.toFixed(2) +
-			"</span>" +
-			"€"
-		);
-		$("#option2SingleSum").html(
-			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-			singleOption2Title +
-			` x ${subSum1}km` +
-			":" +
-			'<span class="price">' +
-			subSum2.toFixed(2) +
-			"</span>" +
-			"€"
-		);
-		$("#option3SingleSum").html(
-			'<span"><i class="fa fa-arrow-circle-right"></i></span> ' +
-			singleOption3Title +
-			" x 1:" +
-			'<span class="price">' +
-			subSum3.toFixed(2) +
 			"</span>" +
 			"€"
 		);
@@ -102,52 +163,10 @@ $(document).ready(function () {
 			": " +
 			extraOption1PriceText
 		);
-
-		if (lang === "de") {
-			$("#totalTitle").val("Summe:");
-		} else {
-			$("#totalTitle").val("Total:");
-		}
-
-		$("#total").val(total.toFixed(2) + "€");
-
-		formatItemPrice();	
-		setPriceObject();
 	}
 
-	// Function to manage the calculations and update summary
-	function updateSummary() {
-		lang = Cookies.get("lang");
-
-		var singleOption1Title = $(`#${lang}_title_basis`).text();
-		var singleOption2Title = $(`#${lang}_title_journey`).text();
-		var singleOption3Title = $(`#${lang}_title_flights`).text();
-		var extraOption1Title = $(`#${lang}_title_videostabilization`).text();
-		var extraOption1PriceText = $(`#${lang}_title_price`).text();
-		var extraOption2Title = $(`#${lang}_title_provision`).text();
-
-		subSum1 = 100;
-		$("#option1SingleSum").html(
-			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-			singleOption1Title +
-			":" +
-			'<span class="price">' +
-			subSum1.toFixed(2) +
-			"</span>" +
-			"€"
-		);
-
-		extraOption2Price = 50;
-		$("#extraOption2Sum").html(
-			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
-			extraOption2Title +
-			": " +
-			'<span class="price">' +
-			extraOption2Price.toFixed(2) +
-			"</span>" +
-			"€"
-		);
-
+	// Function to manage the variable price selections and update them in the overview box
+	function renderVariablePrices() {
 		actualQty2 = $("#option1SingleQty").val();
 		if (actualQty2 != 0) {
 			subSum2 = ((actualQty2 - 100) / 50) * 20;
@@ -189,14 +208,6 @@ $(document).ready(function () {
 			);
 		}
 
-		extraOption1Price = 0;
-		$("#extraOption3Sum").html(
-			'<span id="extraOption2SumReset"><i class="fa fa-arrow-circle-right"></i></span> ' +
-			extraOption1Title +
-			": " +
-			extraOption1PriceText
-		);
-
 		// Update total in order summary
 		total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
 
@@ -208,11 +219,11 @@ $(document).ready(function () {
 		$("#total").val(total.toFixed(2) + "€");
 
 		formatItemPrice();
-		setPriceObject();
+		setEstimateData();
 	}
 
-	function setPriceObject() {
-		var priceObj = {
+	function setEstimateData() {
+		var estimateData = {
 			basis: {
 				lang: {
 					de: $('#de_title_basis').text(),
@@ -267,124 +278,6 @@ $(document).ready(function () {
 			},
 		};
 
-		localStorage.setItem("priceObj", JSON.stringify(priceObj));
+		localStorage.setItem("estimateData", JSON.stringify(estimateData));
 	}
-
-	// Set total title and price initially
-	setTotalOnStart();
-
-	// When extraOption1 is checked
-	$("#extraOption1").on("click", function () {
-		updateSummary();
-	});
-
-	// When extraOption2 is checked
-	$("#extraOption2").on("click", function () {
-		updateSummary();
-	});
-
-	// =====================================================
-	//      RANGE SLIDER 1
-	// =====================================================
-	var $range = $("#option1SingleRangeSlider"),
-		$input = $("#option1SingleQty"),
-		instance,
-		min = 100,
-		max = 1500;
-
-	$range.ionRangeSlider({
-		skin: "round",
-		type: "single",
-		min: min,
-		max: max,
-		from: 100,
-		step: 50,
-		hide_min_max: true,
-		onStart: function (data) {
-			$input.prop("value", data.from);
-		},
-		onChange: function (data) {
-			$input.prop("value", data.from);
-			updateSummary();
-		},
-	});
-
-	instance = $range.data("ionRangeSlider");
-
-	$input.on("input", function () {
-		var val = $(this).prop("value");
-
-		// Validate
-		if (val < min) {
-			val = min;
-			$input.val(min);
-		} else if (val > max) {
-			val = max;
-			$input.val(max);
-		}
-
-		instance.update({
-			from: val,
-		});
-
-		updateSummary();
-	});
-
-	// =====================================================
-	//      RANGE SLIDER 2
-	// =====================================================
-	var $range2 = $("#option2SingleRangeSlider"),
-		$input2 = $("#option2SingleQty"),
-		instance2,
-		min2 = 1,
-		max2 = 20;
-
-	$range2.ionRangeSlider({
-		skin: "round",
-		type: "single",
-		min: min2,
-		max: max2,
-		from: 1,
-		step: 1,
-		hide_min_max: true,
-		onStart: function (data) {
-			$input2.prop("value", data.from);
-		},
-		onChange: function (data) {
-			$input2.prop("value", data.from);
-			updateSummary();
-		},
-	});
-
-	instance2 = $range2.data("ionRangeSlider");
-
-	$input2.on("input", function () {
-		var val2 = $(this).prop("value");
-
-		// Validate
-		if (val2 < min2) {
-			val2 = min2;
-			$input2.val(min2);
-		} else if (val2 > max2) {
-			val2 = max2;
-			$input2.val(max2);
-		}
-
-		instance2.update({
-			from: val2,
-		});
-
-		updateSummary();
-	});
-
-	// =====================================================
-	//      FORM INPUT VALIDATION
-	// =====================================================
-
-	// Quantity inputs
-	$(".qty-input").on("keypress", function (event) {
-		if (event.which != 8 && isNaN(String.fromCharCode(event.which))) {
-			event.preventDefault();
-		}
-	});
 });
