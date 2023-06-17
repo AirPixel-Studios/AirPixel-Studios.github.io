@@ -56,15 +56,6 @@ $(document).ready(function () {
 		});
 	}
 
-	// Function to format total price usign priceFormat plugin
-	function formatTotalPrice() {
-		$("#total").priceFormat({
-			prefix: "	",
-			centsSeparator: ".",
-			thousandsSeparator: ",",
-		});
-	}
-
 	// Function to set total title and price initially
 	function setTotalOnStart() {
 		$("#option1SingleSum").html(
@@ -117,10 +108,10 @@ $(document).ready(function () {
 		} else {
 			$("#totalTitle").val("Total:");
 		}
-		$("#total").val(total.toFixed(2));
 
-		formatItemPrice();
-		formatTotalPrice();
+		$("#total").val(total.toFixed(2) + "€");
+
+		formatItemPrice();	
 		setPriceObject();
 	}
 
@@ -214,10 +205,9 @@ $(document).ready(function () {
 		} else {
 			$("#totalTitle").val("Total:");
 		}
-		$("#total").val(total.toFixed(2));
+		$("#total").val(total.toFixed(2) + "€");
 
 		formatItemPrice();
-		formatTotalPrice();
 		setPriceObject();
 	}
 

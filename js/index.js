@@ -107,15 +107,6 @@ function formatItemPrice() {
 	});
 }
 
-// Function to format total price usign priceFormat plugin
-function formatTotalPrice() {
-	$("#total").priceFormat({
-		prefix: "	",
-		centsSeparator: ".",
-		thousandsSeparator: ",",
-	});
-}
-
 // Function to manage the calculations and update summary
 function updateSummary(priceObj) {
 	lang = Cookies.get("lang");
@@ -186,8 +177,7 @@ function updateSummary(priceObj) {
 	let totalTitle = priceObj.totalSum.lang[lang];
 	let totalPrice = priceObj.totalSum.value;
 	$("#totalTitle").val(totalTitle + ":");
-	$("#total").val(totalPrice.toFixed(2));
+	$("#total").val(totalPrice.toFixed(2) + "€");
 
-	formatItemPrice();
-	formatTotalPrice();
+	formatItemPrice();	
 }
