@@ -950,8 +950,19 @@ License: https://themeforest.net/licenses/standard
 		if (disable_analytics()) $("#disable-tracking-alert").show();
 	});
 
+	//Enable GA
+	function initGA() {
+		if (window.location.hostname != "localhost") {
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-9FDJYXMY95', { 'anonymize_ip': true });
+		}
+	}
+
 	$(document).ready(function ($) {
 		$("html, body").scrollTop(0);
+		initGA();
 		ln_screenDetector();
 		ln_slider();
 		ln_fullpage();
