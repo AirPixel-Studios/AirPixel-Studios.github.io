@@ -34,8 +34,17 @@ $(document).ready(function () {
 	// fill input values of estimator after returning to calculator page
 	let estimateData = JSON.parse(localStorage.getItem('estimateData'));
 	if (estimateData != null) {
+		// range slider: journey
 		$("#option1SingleQty").val(estimateData.journey.value.km);
+		$("#option1SingleRangeSlider").data("ionRangeSlider").update({
+			from: estimateData.journey.value.km,
+		});
+
+		// range slider: flights
 		$("#option2SingleQty").val(estimateData.flights.value.count);
+		$("#option2SingleRangeSlider").data("ionRangeSlider").update({
+			from: estimateData.flights.value.count,
+		});
 	}
 
 	// language switch event
