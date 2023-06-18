@@ -176,13 +176,7 @@ $(document).ready(function () {
 
 	// Function to manage the variable price selections and update them in the overview box
 	function renderVariablePrices() {
-		// append ' km' as suffix to journey slider value
 		actualQty2 = $("#option1SingleQty").val();
-		if (actualQty2.endsWith(' km')) {
-			actualQty2 = actualQty2.replace(' km', '');
-		}
-		$("#option1SingleQty").val(actualQty2 + " km");
-
 		if (actualQty2 != 0) {
 			subSum2 = ((actualQty2 - 100) / 50) * 20;
 			$("#option2SingleSum").html(
@@ -198,13 +192,8 @@ $(document).ready(function () {
 			);
 		}
 
-		// append ' x' as suffix to flights slider value
-		actualQty3 = $("#option2SingleQty").val();
-		if (actualQty3.endsWith(' x')) {
-			actualQty3 = actualQty3.replace(' x', '');
-		}
-		$("#option2SingleQty").val(actualQty3 + " x");
 
+		actualQty3 = $("#option2SingleQty").val();
 		if (actualQty3 != 0) {
 			if (actualQty3 <= 1) {
 				subSum3 = singleOption3Price;
