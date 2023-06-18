@@ -432,11 +432,12 @@ input[type="checkbox"] {
 
 /* - Mission Image Center - */
 .mission-image-center {
-  border-radius: 3%;
+  border: 1px solid #ddd;
+  border-radius: 0.3125rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 35%;
+  width: 70%;
 }
 
 .mission-align-items {
