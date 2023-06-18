@@ -425,11 +425,6 @@ input[type="checkbox"] {
 
 /* --- Mission Section --- */
 
-/* - Mission Text - */
-.mission-text {
-  font-size: medium;
-}
-
 /* - Mission Image Center - */
 .mission-image-center {
   border: 1px solid #ddd;
@@ -437,7 +432,7 @@ input[type="checkbox"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 60%;
 }
 
 .mission-align-items {
