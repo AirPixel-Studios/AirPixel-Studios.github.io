@@ -434,6 +434,13 @@ input[type="checkbox"] {
   transform: scale(1.2);
 }
 
+/* --- Center elements vertically --- */
+.center-elements {
+  display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
 /* - Home Page - */
 
 /* --- Mission Section --- */
