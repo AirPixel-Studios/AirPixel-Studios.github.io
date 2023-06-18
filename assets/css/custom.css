@@ -421,6 +421,19 @@ input[type="checkbox"] {
   }
 }
 
+/* --- Image zoom effect --- */
+.img-hover-zoom {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.2);
+}
+
 /* - Home Page - */
 
 /* --- Mission Section --- */
