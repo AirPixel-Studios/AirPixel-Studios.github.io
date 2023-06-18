@@ -427,7 +427,7 @@ input[type="checkbox"] {
 }
 
 .img-hover-zoom img {
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .img-hover-zoom:hover img {
@@ -460,7 +460,7 @@ input[type="checkbox"] {
 }
 @media (min-width: 992px) {
   .mission-image-center {
-    width: 40% !important;
+    width: 35% !important;
   }
 }
 @media (min-width: 1700px) {
