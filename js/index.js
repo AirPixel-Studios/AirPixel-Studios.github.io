@@ -117,11 +117,11 @@ function renderVariablePrices(estimateData) {
 	$("#option1SingleSum").html(
 		'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 		singleOption1Title +
-		":" +
+		": " +
 		'<span class="price">' +
 		subSum1.toFixed(2) +
 		"</span>" +
-		"€"
+		" €"
 	);
 
 	let extraOption2Title = estimateData.provision.lang[lang];
@@ -133,7 +133,7 @@ function renderVariablePrices(estimateData) {
 		'<span class="price">' +
 		extraOption2Price.toFixed(2) +
 		"</span>" +
-		"€"
+		" €"
 	);
 
 	let singleOption2Title = estimateData.journey.lang[lang];
@@ -144,11 +144,11 @@ function renderVariablePrices(estimateData) {
 		singleOption2Title +
 		" x " +
 		actualQty2 +
-		"km:" +
+		"km: " +
 		'<span class="price">' +
 		subSum2.toFixed(2) +
 		"</span>" +
-		"€"
+		" €"
 	);
 
 	let singleOption3Title = estimateData.flights.lang[lang];
@@ -159,11 +159,11 @@ function renderVariablePrices(estimateData) {
 		singleOption3Title +
 		" x " +
 		actualQty3 +
-		":" +
+		": " +
 		'<span class="price">' +
 		subSum3.toFixed(2) +
 		"</span>" +
-		"€"
+		" €"
 	);
 
 	let extraOption1Title = estimateData.videostabilization.lang[lang];
@@ -178,7 +178,7 @@ function renderVariablePrices(estimateData) {
 	let totalTitle = estimateData.totalSum.lang[lang];
 	let totalPrice = estimateData.totalSum.value;
 	$("#totalTitle").val(totalTitle + ":");
-	$("#total").val(totalPrice.toFixed(2) + "€");
+	$("#total").val(totalPrice.toFixed(2) + " €");
 
 	formatItemPrice();
 }

@@ -856,21 +856,21 @@ License: https://themeforest.net/licenses/standard
 
 							let singleOption1Title = estimateData.basis.lang[lang];
 							let subSum1 = estimateData.basis.value;
-							strBody += "\n" + singleOption1Title + ": " + subSum1.toFixed(2) + "€";
+							strBody += "\n" + singleOption1Title + ": " + subSum1.toFixed(2) + " €";
 
 							let extraOption2Title = estimateData.provision.lang[lang];
 							let extraOption2Price = estimateData.provision.value;
-							strBody += "\n" + extraOption2Title + ": " + extraOption2Price.toFixed(2) + "€";
+							strBody += "\n" + extraOption2Title + ": " + extraOption2Price.toFixed(2) + " €";
 
 							let singleOption2Title = estimateData.journey.lang[lang];
 							let actualQty2 = estimateData.journey.value.km;
 							let subSum2 = estimateData.journey.value.price;
-							strBody += "\n" + singleOption2Title + " x " + actualQty2 + "km: " + subSum2.toFixed(2) + "€";
+							strBody += "\n" + singleOption2Title + " x " + actualQty2 + " km: " + subSum2.toFixed(2) + " €";
 
 							let singleOption3Title = estimateData.flights.lang[lang];
 							let actualQty3 = estimateData.flights.value.count;
 							let subSum3 = estimateData.flights.value.price;
-							strBody += "\n" + singleOption3Title + " x " + actualQty3 + ": " + subSum3.toFixed(2) + "€";
+							strBody += "\n" + singleOption3Title + " x " + actualQty3 + ": " + subSum3.toFixed(2) + " €";
 
 							let extraOption1Title = estimateData.videostabilization.lang[lang];
 							let extraOption1PriceText = estimateData.videostabilization.value[lang];
@@ -878,7 +878,7 @@ License: https://themeforest.net/licenses/standard
 
 							let totalTitle = estimateData.totalSum.lang[lang];
 							let totalPrice = estimateData.totalSum.value;
-							strBody += "\n" + totalTitle + ": " + totalPrice.toFixed(2) + "€";
+							strBody += "\n" + totalTitle + ": " + totalPrice.toFixed(2) + " €";
 						}
 
 						let mailLink = 'mailto:hello@airpixel-studios.com?body=' + encodeURIComponent(strBody);
