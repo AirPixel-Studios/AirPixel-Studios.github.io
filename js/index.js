@@ -8,15 +8,9 @@ $(document).ready(function () {
 		mediaQuery: "max",
 		breakpoints: {
 			1700: {
-				perPage: 3,
-			},
-			1500: {
 				perPage: 2,
 			},
 			960: {
-				perPage: 1,
-			},
-			767: {
 				perPage: 1,
 			},
 		},
