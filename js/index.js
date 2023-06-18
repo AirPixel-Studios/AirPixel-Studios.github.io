@@ -17,7 +17,6 @@ $(document).ready(function () {
   }).mount();
 
   new Splide("#splide-mission", {
-    gap: "1em",
     type: "loop",
     perPage: 3,
     focus: "center",
@@ -31,7 +30,7 @@ $(document).ready(function () {
       },
     },
     autoScroll: {
-      speed: 0.5,
+      speed: 1,
     },
   }).mount(window.splide.Extensions);
 
