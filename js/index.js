@@ -15,21 +15,25 @@ $(document).ready(function () {
       },
     },
   }).mount();
-  
+
   new Splide("#splide-mission", {
+    gap: "1em",
     type: "loop",
     perPage: 3,
     focus: "center",
     rewind: true,
     breakpoints: {
-		1700: {
-		  perPage: 2,
-		},
-		960: {
-		  perPage: 1,
-		},
-	  },
-  }).mount();
+      1700: {
+        perPage: 2,
+      },
+      960: {
+        perPage: 1,
+      },
+    },
+    autoScroll: {
+      speed: 0.5,
+    },
+  }).mount(window.splide.Extensions);
 
   //Render pricing if user has been on pricing page before
   let estimateData = JSON.parse(localStorage.getItem("estimateData"));
