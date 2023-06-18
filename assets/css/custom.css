@@ -438,11 +438,6 @@ input[type="checkbox"] {
 
 /* --- Mission Section --- */
 
-/* - Mission Text - */
-.mission-text {
-  font-size: medium;
-}
-
 /* - Mission Image Center - */
 .mission-image-center {
   /* border: 1px solid #ddd; */
@@ -450,7 +445,28 @@ input[type="checkbox"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 45%;
+}
+
+@media (min-width: 576px) {
+  .mission-image-center {
+    width: 42% !important;
+  }
+}
+@media (min-width: 768px) {
+  .mission-image-center {
+    width: 32% !important;
+  }
+}
+@media (min-width: 992px) {
+  .mission-image-center {
+    width: 40% !important;
+  }
+}
+@media (min-width: 1700px) {
+  .mission-image-center {
+    width: 50% !important;
+  }
 }
 
 .mission-align-items {
