@@ -481,6 +481,9 @@ input[type="checkbox"] {
 @media (max-width: 992px) {
   .arrow-small-screen {
     transform: rotate(90deg);
+    margin-bottom: 0 !important;
+    /* center arrow icons that are not centered */
+    margin-left: -10px;
   }
 }
 
