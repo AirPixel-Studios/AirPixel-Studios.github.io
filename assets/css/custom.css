@@ -836,22 +836,27 @@ input[type="checkbox"] {
 /* --- Image Container --- */
 
 .portfolio-item-container {
+  position: relative;
   width: 480px !important;
   height: 350px !important;
-  position: relative;
+  margin-right: 1rem;
   text-align: center;
   color: white;
-  margin-right: 1rem;
 }
 
 .portfolio-item-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-top: 5px;
   font-family: "LatoRegular";
   text-transform: uppercase;
   font-size: 25px;
   text-align: left;
-  position: absolute;
-  bottom: 18px;
-  left: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .portfolio-item-image {
