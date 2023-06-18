@@ -318,10 +318,6 @@ ul {
   display: flex;
 }
 
-.text-bold {
-  font-weight: bold;
-}
-
 /* Checkboxes and Radios */
 input[type="radio"],
 input[type="checkbox"] {
