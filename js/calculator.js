@@ -149,11 +149,11 @@ $(document).ready(function () {
 		$("#option1SingleSum").html(
 			'<span><i class="fa fa-arrow-circle-right"></i></span> ' +
 			singleOption1Title +
-			":" +
+			": " +
 			'<span class="price">' +
 			subSum1.toFixed(2) +
 			"</span>" +
-			"€"
+			" €"
 		);
 
 		$("#extraOption2Sum").html(
@@ -163,7 +163,7 @@ $(document).ready(function () {
 			'<span class="price">' +
 			extraOption2Price.toFixed(2) +
 			"</span>" +
-			"€"
+			" €"
 		);
 
 		$("#extraOption3Sum").html(
@@ -176,7 +176,13 @@ $(document).ready(function () {
 
 	// Function to manage the variable price selections and update them in the overview box
 	function renderVariablePrices() {
+		// append ' km' as suffix to journey slider value
 		actualQty2 = $("#option1SingleQty").val();
+		if (actualQty2.endsWith(' km')) {
+			actualQty2 = actualQty2.replace(' km', '');
+		}
+		$("#option1SingleQty").val(actualQty2 + " km");
+
 		if (actualQty2 != 0) {
 			subSum2 = ((actualQty2 - 100) / 50) * 20;
 			$("#option2SingleSum").html(
@@ -184,15 +190,21 @@ $(document).ready(function () {
 				singleOption2Title +
 				" x " +
 				actualQty2 +
-				"km:" +
+				" km: " +
 				'<span class="price">' +
 				subSum2.toFixed(2) +
 				"</span>" +
-				"€"
+				" €"
 			);
 		}
 
+		// append ' x' as suffix to flights slider value
 		actualQty3 = $("#option2SingleQty").val();
+		if (actualQty3.endsWith(' x')) {
+			actualQty3 = actualQty3.replace(' x', '');
+		}
+		$("#option2SingleQty").val(actualQty3 + " x");
+
 		if (actualQty3 != 0) {
 			if (actualQty3 <= 1) {
 				subSum3 = singleOption3Price;
@@ -209,11 +221,11 @@ $(document).ready(function () {
 				singleOption3Title +
 				" x " +
 				actualQty3 +
-				":" +
+				": " +
 				'<span class="price">' +
 				subSum3.toFixed(2) +
 				"</span>" +
-				"€"
+				" €"
 			);
 		}
 
@@ -225,7 +237,7 @@ $(document).ready(function () {
 		} else {
 			$("#totalTitle").val("Total:");
 		}
-		$("#total").val(total.toFixed(2) + "€");
+		$("#total").val(total.toFixed(2) + " €");
 
 		formatItemPrice();
 		setEstimateData();
