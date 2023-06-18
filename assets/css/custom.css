@@ -423,6 +423,27 @@ input[type="checkbox"] {
 
 /* - Home Page - */
 
+/* --- Mission Section --- */
+
+/* - Mission Text - */
+.mission-text {
+  font-size: medium;
+}
+
+/* - Mission Image Center - */
+.mission-image-center {
+  border-radius: 3%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.mission-align-items {
+  display: flex;
+  align-items: center;
+}
+
 /* --- Services Section - Icons --- */
 
 .icon-box {

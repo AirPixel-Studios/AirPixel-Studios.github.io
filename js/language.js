@@ -2,9 +2,6 @@
 $(document).ready(function () {
   "use strict";
 
-  const titleDe = document.getElementsByTagName("title").namedItem("de").getInnerHTML();
-  const titleEn = document.getElementsByTagName("title").namedItem("en").getInnerHTML();
-
   if (Cookies.get("lang") === undefined) {
     //Get language of browser
     var usrlang = navigator.language || navigator.userLanguage;
@@ -39,7 +36,7 @@ $(document).ready(function () {
       $("#lang-de-btn").addClass("focus");
       $("#lang-en-btn").removeClass("focus");
 
-      document.title = titleDe;
+      document.title = document.getElementById("deTitle").textContent;;
     } else if (lang === "en") {
       $('[lang="de"]').hide();
       $('[lang="en"]').show();
@@ -47,7 +44,7 @@ $(document).ready(function () {
       $("#lang-en-btn").addClass("focus");
       $("#lang-de-btn").removeClass("focus");
 
-      document.title = titleEn;
+      document.title = document.getElementById("enTitle").textContent;;
     }
   }
 });
