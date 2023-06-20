@@ -47,6 +47,7 @@ License: https://themeforest.net/licenses/standard
 			? $siteNavbar.attr("data-navbar-scrolled")
 			: "",
 		$backtotop = $("a.backtotop"),
+		mailLink,
 		animationsRepeat = true, // true, false - Only when you use Fullpage.js
 		target,
 		trueMobile;
@@ -822,7 +823,7 @@ License: https://themeforest.net/licenses/standard
 	}
 
 	// [12. Contact Form]
-	function ln_contactForm() {
+	function ln_contactForm () {
 		var $contactForm = $(".contact-form");
 
 		if ($contactForm.length > 0) {
@@ -832,6 +833,9 @@ License: https://themeforest.net/licenses/standard
 
 				el.find("form").validate({
 					submitHandler: function (form) {
+
+						$('#modalSubmitFormInfo').modal('show');				
+
 						elResult.fadeOut(500);
 
 						let lang = Cookies.get("lang");
@@ -881,7 +885,7 @@ License: https://themeforest.net/licenses/standard
 							strBody += "\n" + totalTitle + ": " + totalPrice.toFixed(2) + " €";
 						}
 
-						let mailLink = 'mailto:hello@airpixel-studios.com?body=' + encodeURIComponent(strBody);
+						mailLink = 'mailto:hello@airpixel-studios.com?body=' + encodeURIComponent(strBody);
 
 						// Optional inputs
 						let inputSubject = $("#" + lang + "-cf-subject").val();
@@ -889,7 +893,7 @@ License: https://themeforest.net/licenses/standard
 							mailLink += '&subject=' + encodeURIComponent(inputSubject);
 						}
 
-						window.location.href = mailLink;
+						//window.location.href = mailLink;
 
 						// can't be executed without PHP
 						// $(form).ajaxSubmit({
@@ -948,6 +952,19 @@ License: https://themeforest.net/licenses/standard
 
 	$("#disable_analytics").click(function () {
 		if (disable_analytics()) $("#disable-tracking-alert").show();
+	});
+
+	$('#modalSubmitFormInfo').on('shown.bs.modal', function (event) {
+		let buttons = this.querySelectorAll('.btn'); // or others selectors
+		buttons.forEach(btn => {
+			btn.onclick = () => {
+				console.log(btn);
+				if (btn.textContent === "Ok") {
+					window.location.href = mailLink;
+					$('#modalSubmitFormInfo').modal('hide');				
+				}
+			}
+		})
 	});
 
 	//Enable GA
