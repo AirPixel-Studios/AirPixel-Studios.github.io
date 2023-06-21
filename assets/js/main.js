@@ -893,7 +893,7 @@ License: https://themeforest.net/licenses/standard
 							mailLink += '&subject=' + encodeURIComponent(inputSubject);
 						}
 
-						//window.location.href = mailLink;
+						window.location.href = mailLink;
 
 						// can't be executed without PHP
 						// $(form).ajaxSubmit({
@@ -952,18 +952,6 @@ License: https://themeforest.net/licenses/standard
 
 	$("#disable_analytics").click(function () {
 		if (disable_analytics()) $("#disable-tracking-alert").show();
-	});
-
-	$('#modalSubmitFormInfo').on('shown.bs.modal', function (event) {
-		let buttons = this.querySelectorAll('.btn'); // or others selectors
-		buttons.forEach(btn => {
-			btn.onclick = () => {
-				if (btn.textContent === "OK") {
-					window.location.href = mailLink;
-					$('#modalSubmitFormInfo').modal('hide');
-				}
-			}
-		})
 	});
 
 	//Enable GA
