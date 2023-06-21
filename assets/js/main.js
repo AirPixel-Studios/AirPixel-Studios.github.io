@@ -823,7 +823,7 @@ License: https://themeforest.net/licenses/standard
 	}
 
 	// [12. Contact Form]
-	function ln_contactForm () {
+	function ln_contactForm() {
 		var $contactForm = $(".contact-form");
 
 		if ($contactForm.length > 0) {
@@ -834,7 +834,7 @@ License: https://themeforest.net/licenses/standard
 				el.find("form").validate({
 					submitHandler: function (form) {
 
-						$('#modalSubmitFormInfo').modal('show');				
+						$('#modalSubmitFormInfo').modal('show');
 
 						elResult.fadeOut(500);
 
@@ -876,8 +876,8 @@ License: https://themeforest.net/licenses/standard
 							let subSum3 = estimateData.flights.value.price;
 							strBody += "\n" + singleOption3Title + " x " + actualQty3 + ": " + subSum3.toFixed(2) + " €";
 
-							let extraOption1Title = estimateData.videostabilization.lang[lang];
-							let extraOption1PriceText = estimateData.videostabilization.value[lang];
+							let extraOption1Title = estimateData.videoStabilization.lang[lang];
+							let extraOption1PriceText = estimateData.videoStabilization.value[lang];
 							strBody += "\n" + extraOption1Title + ": " + extraOption1PriceText;
 
 							let totalTitle = estimateData.totalSum.lang[lang];
@@ -958,10 +958,9 @@ License: https://themeforest.net/licenses/standard
 		let buttons = this.querySelectorAll('.btn'); // or others selectors
 		buttons.forEach(btn => {
 			btn.onclick = () => {
-				console.log(btn);
-				if (btn.textContent === "Ok") {
+				if (btn.textContent === "OK") {
 					window.location.href = mailLink;
-					$('#modalSubmitFormInfo').modal('hide');				
+					$('#modalSubmitFormInfo').modal('hide');
 				}
 			}
 		})

@@ -19,7 +19,7 @@ $(document).ready(function () {
 	let actualQty3 = 1;
 	let subSum3 = singleOption3Price * 1 * (actualQty3 * 1);
 
-	// fixed (free): videostabilization
+	// fixed (free): video stabilization
 	let extraOption1Price = 0;
 
 	// fixed: provision
@@ -59,7 +59,7 @@ $(document).ready(function () {
 		singleOption1Title = $(`#${lang}_title_basis`).text();
 		singleOption2Title = $(`#${lang}_title_journey`).text();
 		singleOption3Title = $(`#${lang}_title_flights`).text();
-		extraOption1Title = $(`#${lang}_title_videostabilization`).text();
+		extraOption1Title = $(`#${lang}_title_video_stabilization`).text();
 		extraOption1PriceText = $(`#${lang}_title_price`).text();
 		extraOption2Title = $(`#${lang}_title_provision`).text();
 	}
@@ -269,10 +269,10 @@ $(document).ready(function () {
 					price: subSum3,
 				},
 			},
-			videostabilization: {
+			videoStabilization: {
 				lang: {
-					de: $('#de_title_videostabilization').text(),
-					en: $('#en_title_videostabilization').text(),
+					de: $('#de_title_video_stabilization').text(),
+					en: $('#en_title_video_stabilization').text(),
 				},
 				value: {
 					de: $('#de_title_price').text(),

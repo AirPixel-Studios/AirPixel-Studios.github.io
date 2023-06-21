@@ -301,6 +301,11 @@ ul {
   }
 }
 
+/* Footer */
+footer p {
+  margin-bottom: 0 !important;
+}
+
 /* Display */
 .display-none {
   display: none;
