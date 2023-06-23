@@ -3,15 +3,10 @@
 	<url>
 		<loc>https://www.airpixel-studios.com</loc>
 		<priority>1.00</priority>
-		<lastmod>2023-06-21</lastmod>
+		<lastmod>2023-06-23</lastmod>
 	</url>
 	<url>
-		<loc>https://www.airpixel-studios.com/maintenance.html</loc>
-		<priority>0.80</priority>
-		<lastmod>2023-06-18</lastmod>
-	</url>
-	<url>
-		<loc>https://www.airpixel-studios.com/legalinformation.html</loc>
+		<loc>https://www.airpixel-studios.com/calculator.html</loc>
 		<priority>0.80</priority>
 		<lastmod>2023-06-21</lastmod>
 	</url>
@@ -21,12 +16,17 @@
 		<lastmod>2023-06-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.airpixel-studios.com/calculator.html</loc>
+		<loc>https://www.airpixel-studios.com/legalinformation.html</loc>
 		<priority>0.80</priority>
 		<lastmod>2023-06-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.airpixel-studios.com/portfolio/filmpalast_am_zkm_karlsruhe.html</loc>
+		<loc>https://www.airpixel-studios.com/maintenance.html</loc>
+		<priority>0.80</priority>
+		<lastmod>2023-06-18</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/portfolio/alpenchalet_valentin_sautens.html</loc>
 		<priority>0.60</priority>
 		<lastmod>2023-06-18</lastmod>
 	</url>
@@ -36,7 +36,7 @@
 		<lastmod>2023-06-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.airpixel-studios.com/portfolio/alpenchalet_valentin_sautens.html</loc>
+		<loc>https://www.airpixel-studios.com/portfolio/filmpalast_am_zkm_karlsruhe.html</loc>
 		<priority>0.60</priority>
 		<lastmod>2023-06-18</lastmod>
 	</url>
