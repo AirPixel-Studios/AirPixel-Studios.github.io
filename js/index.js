@@ -202,9 +202,10 @@ function renderVariablePrices(estimateData) {
 
 	let totalTitle = estimateData.totalSum.lang[lang];
 	let totalPrice = estimateData.totalSum.value;
-	let grossText = lang === "de" ? "brutto" : "gross";
+	// let grossText = lang === "de" ? "brutto" : "gross";
+	let netText = lang === "de" ? "netto" : "net";
 	$("#totalTitle").val(totalTitle + ":");
-	$("#total").val(totalPrice.toFixed(2) + " € (" + grossText + ")");
+	$("#total").val(totalPrice.toFixed(2) + " € (" + netText + ")");
 
 	formatItemPrice();
 }

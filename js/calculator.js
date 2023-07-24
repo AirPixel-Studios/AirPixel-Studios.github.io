@@ -220,14 +220,15 @@ $(document).ready(function () {
 
 		// Update total in order summary
 		total = subSum1 + subSum2 + subSum3 + extraOption1Price + extraOption2Price;
-		let grossText = lang === "de" ? "brutto" : "gross";
+		//let grossText = lang === "de" ? "brutto" : "gross";
+		let netText = lang === "de" ? "netto" : "net";
 
 		if (lang === "de") {
 			$("#totalTitle").val("Summe:");
 		} else {
 			$("#totalTitle").val("Total:");
 		}
-		$("#total").val(total.toFixed(2) + " € (" + grossText + ")");
+		$("#total").val(total.toFixed(2) + " € (" + netText + ")");
 
 		formatItemPrice();
 		setEstimateData();
