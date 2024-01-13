@@ -306,6 +306,10 @@ footer p {
   margin-bottom: 0 !important;
 }
 
+#hubspot-messages-iframe-container iframe {
+  margin-right: 40px !important;
+}
+
 /* Display */
 .display-none {
   display: none;
