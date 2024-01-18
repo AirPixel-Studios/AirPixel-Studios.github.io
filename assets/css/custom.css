@@ -307,7 +307,8 @@ footer p {
 }
 
 #hubspot-messages-iframe-container iframe {
-  margin-right: 40px !important;
+	margin-bottom: 3.7rem;
+  margin-right: 4.5rem;
 }
 
 /* Display */
