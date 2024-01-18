@@ -150,7 +150,6 @@ License: https://themeforest.net/licenses/standard
 						easingcss3: "cubic-bezier(0.54, 0.18, 0.36, 0.81)",
 						loopBottom: false,
 						loopTop: false,
-						scrollOverflow: true,
 
 						//Accessibility
 						animateAnchor: true,

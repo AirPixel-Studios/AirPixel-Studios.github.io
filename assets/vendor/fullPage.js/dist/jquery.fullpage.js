@@ -133,10 +133,6 @@
             resetSliders: false,
             fadingEffect: false,
             normalScrollElements: null,
-            scrollOverflow: false,
-            scrollOverflowReset: false,
-            scrollOverflowHandler: $.fn.fp_scrolloverflow ? $.fn.fp_scrolloverflow.iscrollHandler : null,
-            scrollOverflowOptions: null,
             touchSensitivity: 5,
             normalScrollElementTouchThreshold: 5,
             bigSectionsDestination: null,
@@ -462,10 +458,6 @@
                 }
             });
 
-            if(options.scrollOverflow){
-                scrollBarHandler.createScrollBarForAll();
-            }
-
             var activeSection = $(SECTION_ACTIVE_SEL);
             var sectionIndex = activeSection.index(SECTION_SEL);
 
@@ -684,11 +676,7 @@
 
             enableYoutubeAPI();
 
-            if(options.scrollOverflow){
-                scrollBarHandler = options.scrollOverflowHandler.init(options);
-            }else{
-                afterRenderActions();
-            }
+            afterRenderActions();
         }
 
         /**
@@ -878,10 +866,6 @@
             lazyLoad(section);
             playMedia(section);
 
-            if(options.scrollOverflow){
-                options.scrollOverflowHandler.afterLoad();
-            }
-
             if(isDestinyTheStartingSection()){
                 $.isFunction( options.afterLoad ) && options.afterLoad.call(section, section.data('anchor'), (section.index(SECTION_SEL) + 1));
             }
@@ -1059,25 +1043,7 @@
 
             var scrollSection = (type === 'down') ? moveSectionDown : moveSectionUp;
 
-            if(options.scrollOverflow){
-                var scrollable = options.scrollOverflowHandler.scrollable($(SECTION_ACTIVE_SEL));
-                var check = (type === 'down') ? 'bottom' : 'top';
-
-                if(scrollable.length > 0 ){
-                    //is the scrollbar at the start/end of the scroll?
-                    if(options.scrollOverflowHandler.isScrolled(check, scrollable)){
-                        scrollSection();
-                    }else{
-                        return true;
-                    }
-                }else{
-                    // moved up/down
-                    scrollSection();
-                }
-            }else{
-                // moved up/down
-                scrollSection();
-            }
+            scrollSection();
         }
 
         /*
@@ -1411,16 +1377,8 @@
                 stopMedia(v.activeSection);
             }
 
-            if(options.scrollOverflow){
-                options.scrollOverflowHandler.beforeLeave();
-            }
-
             element.addClass(ACTIVE).siblings().removeClass(ACTIVE);
             lazyLoad(element);
-
-            if(options.scrollOverflow){
-                options.scrollOverflowHandler.onLeave();
-            }
 
             //preventing from activating the MouseWheelHandler event
             //more than once if the page is scrolling
@@ -1570,10 +1528,6 @@
 
             //callback (afterLoad) if the site is not just resizing and readjusting the slides
             $.isFunction(options.afterLoad) && !v.localIsResizing && options.afterLoad.call(v.element, v.anchorLink, (v.sectionIndex + 1));
-
-            if(options.scrollOverflow){
-                options.scrollOverflowHandler.afterLoad();
-            }
 
             if(!v.localIsResizing){
                 playMedia(v.element);
@@ -2799,9 +2753,6 @@
 
             //removing added classes
             $(SECTION_SEL + ', ' + SLIDE_SEL).each(function(){
-                if(options.scrollOverflowHandler){
-                    options.scrollOverflowHandler.remove($(this));
-                }
                 $(this).removeClass(TABLE + ' ' + ACTIVE);
                 $(this).attr('style', $(this).data('fp-styles'));
             });
@@ -2847,7 +2798,7 @@
         * Displays warnings
         */
         function displayWarnings(){
-            var extensions = ['fadingEffect', 'continuousHorizontal', 'scrollHorizontally', 'interlockedSlides', 'resetSliders', 'responsiveSlides', 'offsetSections', 'dragAndMove', 'scrollOverflowReset', 'parallax'];
+            var extensions = ['fadingEffect', 'continuousHorizontal', 'scrollHorizontally', 'interlockedSlides', 'resetSliders', 'responsiveSlides', 'offsetSections', 'dragAndMove', 'parallax'];
             if($('html').hasClass(ENABLED)){
                 showError('error', 'Fullpage.js can only be initialized once and you are doing it multiple times!');
                 return;
@@ -2860,18 +2811,9 @@
                 showError('warn', 'Option `loopTop/loopBottom` is mutually exclusive with `continuousVertical`; `continuousVertical` disabled');
             }
 
-            if(options.scrollBar && options.scrollOverflow){
-                showError('warn', 'Option `scrollBar` is mutually exclusive with `scrollOverflow`. Sections with scrollOverflow might not work well in Firefox');
-            }
-
             if(options.continuousVertical && (options.scrollBar || !options.autoScrolling)){
                 options.continuousVertical = false;
                 showError('warn', 'Scroll bars (`scrollBar:true` or `autoScrolling:false`) are mutually exclusive with `continuousVertical`; `continuousVertical` disabled');
-            }
-
-            if(options.scrollOverflow && !options.scrollOverflowHandler){
-                options.scrollOverflow = false;
-                showError('error', 'The option `scrollOverflow:true` requires the file `scrolloverflow.min.js`. Please include it before fullPage.js.');
             }
 
             //using extensions? Wrong file!
