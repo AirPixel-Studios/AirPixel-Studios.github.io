@@ -92,7 +92,7 @@ $(document).ready(function () {
             {
               title: "Cookie Nutzung 📢",
               description:
-                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Dein Online-Erlebnis zu verbessern. Du kannst jederzeit für jede Kategorie wählen, ob Du zustimmen oder ablehnen möchtest. Für weitere Details zu Cookies und anderen sensiblen Daten lese bitte unsere vollständige <a href="dataprivacy.html" class="cc-link">Datenschutzrichtlinie</a>.',
+                'Wir verwenden Cookies, um die grundlegenden Funktionen der Website sicherzustellen und Dein Online-Erlebnis zu verbessern. Du kannst jederzeit für jede Kategorie wählen, ob Du zustimmen oder ablehnen möchtest. Für weitere Details zu Cookies und anderen sensiblen Daten lese bitte unsere vollständige <a href="privacy.html" class="cc-link">Datenschutzrichtlinie</a>.',
             },
             {
               title: "Notwendige Cookies",
@@ -160,7 +160,7 @@ $(document).ready(function () {
             {
               title: "Cookie usage 📢",
               description:
-                'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="dataprivacy.html" class="cc-link">privacy policy</a>.',
+                'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="privacy.html" class="cc-link">privacy policy</a>.',
             },
             {
               title: "Strictly necessary cookies",
