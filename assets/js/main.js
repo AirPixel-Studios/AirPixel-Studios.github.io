@@ -783,41 +783,12 @@ License: https://themeforest.net/licenses/standard
 					'<button title="%title%" type="button" class="mfp-close"><i class="ion-android-close"></i></button>',
 				removalDelay: 300,
 				mainClass: "mfp-fade",
-				callbacks: {
-					ajaxContentAdded: function (mfpResponse) {
-						ln_Slider();
-					},
-				},
 			});
 
 			$(".popup-modal-dismiss").on("click", function (e) {
 				e.preventDefault();
 				$.magnificPopup.close();
 			});
-		}
-	}
-
-	// [11. Slider]
-	function ln_slider() {
-		var slider = $(".slider");
-
-		if (slider.length > 0) {
-			if (getWindowWidth() >= 992 && getWindowHeight() >= 768) {
-				if (!slider.hasClass("slick-initialized")) {
-					slider.slick({
-						slidesToShow: 1,
-						infinite: true,
-						nextArrow:
-							'<button type="button" class="slick-next"><i class="fas fa-angle-right"></i></button>',
-						prevArrow:
-							'<button type="button" class="slick-prev"><i class="fas fa-angle-left"></i></button>',
-					});
-				}
-			} else {
-				if (slider.hasClass("slick-initialized")) {
-					slider.slick("unslick");
-				}
-			}
 		}
 	}
 
@@ -967,7 +938,6 @@ License: https://themeforest.net/licenses/standard
 		$("html, body").scrollTop(0);
 		initGA();
 		ln_screenDetector();
-		ln_slider();
 		ln_fullpage();
 		ln_navigation();
 		ln_backgrounds();
@@ -984,7 +954,6 @@ License: https://themeforest.net/licenses/standard
 
 	$(window).on("resize", function () {
 		ln_screenDetector();
-		ln_slider();
 		ln_navigation();
 		ln_navigationResize();
 		ln_fullpage();
