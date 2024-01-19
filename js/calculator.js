@@ -59,6 +59,7 @@ $(document).ready(function () {
 		singleOption1Title = $(`#${lang}_title_basis`).text();
 		singleOption2Title = $(`#${lang}_title_journey`).text();
 		singleOption3Title = $(`#${lang}_title_flights`).text();
+		singleOption3Title = singleOption3Title.substring(0, singleOption3Title.indexOf(')') + 1);
 		extraOption1Title = $(`#${lang}_title_video_stabilization`).text();
 		extraOption1PriceText = $(`#${lang}_title_price`).text();
 		extraOption2Title = $(`#${lang}_title_provision`).text();
