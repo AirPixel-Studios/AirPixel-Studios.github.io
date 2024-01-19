@@ -302,9 +302,11 @@ footer p {
   margin-bottom: 0 !important;
 }
 
-#hubspot-messages-iframe-container iframe {
-	margin-bottom: 3.7rem;
-  margin-right: 4.5rem;
+@media (min-width: 992px) {
+  #hubspot-messages-iframe-container iframe {
+		margin-bottom: 3.7rem;
+		margin-right: 4.5rem;
+	}
 }
 
 /* Display */
