@@ -11,6 +11,7 @@
     url("../fonts/Lato/Lato-Regular/LatoRegular.woff") format("woff"),
     url("../fonts/Lato/Lato-Regular/LatoRegular.ttf") format("truetype"),
     url("../fonts/Lato/Lato-Regular/LatoRegular.svg#LatoRegular") format("svg");
+	font-display: fallback;
 }
 
 body {
