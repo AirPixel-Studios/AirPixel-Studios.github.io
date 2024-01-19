@@ -4,7 +4,7 @@ module.exports = {
 					preset: 'default',
 			}),
 			require('@fullhuman/postcss-purgecss')({
-				content: ['./**/*.html']
+				content: ['*.html', '*/**/*.html']
 		}),
 	],
 };
