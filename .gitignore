@@ -1,6 +1,8 @@
 
 #Ignore random files
 .DS_Store
+node_modules
+package-lock.json
 
 #Ignore folders
 .vscode
