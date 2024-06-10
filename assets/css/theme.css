@@ -17807,11 +17807,7 @@ a.backtotop:focus {
 a.backtotop span {
   display: block;
   white-space: nowrap;
-  font-family: "Montserrat", Helvetica, sans-serif;
-  font-variant-ligatures: common-ligatures;
   font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0;
   transform: translate(0, -47px) rotate(-90deg);
 }
 

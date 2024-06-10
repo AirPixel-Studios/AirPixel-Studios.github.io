@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+	font-family: "LatoRegular";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -35,7 +35,6 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Montserrat", sans-serif;
   font-variant-ligatures: common-ligatures;
   margin-top: 0;
   margin-bottom: 15px;
@@ -298,6 +297,10 @@ ul {
 }
 
 /* Footer */
+footer {
+	font-size: 12px;
+}
+
 footer p {
   margin-bottom: 0 !important;
 }
@@ -307,6 +310,10 @@ footer p {
 		margin-bottom: 3.7rem;
 		margin-right: 4.5rem;
 	}
+}
+
+.ln-copyright {
+  bottom: 4.5rem !important;
 }
 
 /* Display */

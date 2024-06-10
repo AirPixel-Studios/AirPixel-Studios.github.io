@@ -97,7 +97,7 @@ body.layout-mobile .scroll-progress,
 a.backtotop {
   display: none;
   position: fixed;
-  bottom: 4.5rem;
+  bottom: 5.5rem;
   right: -4.5rem;
   width: 4.5rem;
   z-index: 1000;
@@ -115,11 +115,7 @@ a.backtotop:focus {
 a.backtotop span {
   display: block;
   white-space: nowrap;
-  font-family: 'Montserrat', Helvetica, sans-serif;
-  font-variant-ligatures: common-ligatures;
   font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0;
   transform: translate(0,-47px) rotate(-90deg);
 }
 
