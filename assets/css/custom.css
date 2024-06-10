@@ -394,10 +394,8 @@ input[type="checkbox"] {
 
 /* --- Spacing --- */
 
-@media (max-width: 1200px) {
-  section {
-    padding: 6rem 0 1rem 0 !important;
-  }
+section {
+	padding: 6rem 0 1rem 0 !important;
 }
 
 @media (min-width: 1400px) {
