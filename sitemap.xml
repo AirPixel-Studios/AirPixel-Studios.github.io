@@ -77,4 +77,10 @@
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/portfolio/europabad</loc>
+		<priority>0.7</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2024-06-10</lastmod>
+	</url>
 </urlset>

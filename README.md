@@ -13,11 +13,3 @@
    ```sh
    arch -arm64 brew install sass/sass/sass
    ```
-
-### CSS Styling
-
-Generate `theme.css` file after updating SCSS files:
-
-   ```sh
-   sass --watch assets/scss/theme.scss assets/css/theme.css
-   ```

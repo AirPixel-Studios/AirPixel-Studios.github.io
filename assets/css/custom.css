@@ -396,7 +396,7 @@ input[type="checkbox"] {
 
 @media (max-width: 1200px) {
   section {
-    padding: 7.8rem 0 1rem 0 !important;
+    padding: 6rem 0 1rem 0 !important;
   }
 }
 
@@ -907,9 +907,14 @@ input[type="checkbox"] {
 }
 
 .portfolio-item-image {
-  width: 480px !important;
-  height: 350px !important;
+	height: 350px !important;
+	width: 480px !important;
   object-fit: cover;
+}
+
+.card-img-top {
+	height: 350px;
+	object-fit: cover;
 }
 
 /* --- Card --- */

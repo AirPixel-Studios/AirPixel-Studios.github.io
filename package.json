@@ -1,5 +1,6 @@
 {
 	"scripts": {
+		"generate-css": "sass --watch assets/scss/theme.scss assets/css/theme.css",
 		"minify-css": "postcss assets/css/custom.css > assets/css/custom.min.css"
 	},
 	"devDependencies": {
