@@ -254,14 +254,10 @@ ul {
 .navbar-brand-img {
   max-height: 3rem !important;
 }
-
-.bg-black .navbar-brand-img {
-  content: url("../images/logo/bg-black-0.5x.png") !important;
-}
-
+ 
 .navbar-dark .navbar-brand-img {
-  content: url("../images/logo/bg-transparent-0.5x.png");
-}
+  content: url("../images/logo/bg-black-0.5x.png");
+} 
 
 .navbar-light .navbar-brand-img {
   content: url("../images/logo/bg-white-0.5x.png");
