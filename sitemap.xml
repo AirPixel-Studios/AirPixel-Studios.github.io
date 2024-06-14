@@ -2,85 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://www.airpixel-studios.com</loc>
-		<priority>1.0</priority>
+		<priority>1.00</priority>
 		<changefreq>weekly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2024-06-14</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/calculator</loc>
-		<priority>0.8</priority>
+		<priority>0.80</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2023-06-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.airpixel-studios.com/privacy</loc>
-		<priority>0.3</priority>
-		<changefreq>never</changefreq>
-		<lastmod>2024-01-18</lastmod>
-	</url>
-	<url>
-		<loc>https://www.airpixel-studios.com/legalinformation</loc>
-		<priority>0.3</priority>
-		<changefreq>never</changefreq>
-		<lastmod>2024-01-18</lastmod>
-	</url>
-	<!-- <url>
-		<loc>https://www.airpixel-studios.com/maintenance</loc>
-		<priority>1</priority>
-		<lastmod>2024-01-19</lastmod>
-	</url> -->
-	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/alpenchalet-valentin</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/cantina-majolika</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/cofvie</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/ettlinger-tor</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/filmpalast-am-zkm</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/sap-factory</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/seehaus-forst</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/tsv-schoenau</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-01-19</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/europabad</loc>
-		<priority>0.7</priority>
+		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-06-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/privacy</loc>
+		<priority>0.30</priority>
+		<changefreq>never</changefreq>
+		<lastmod>2024-01-18</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/legalinformation</loc>
+		<priority>0.30</priority>
+		<changefreq>never</changefreq>
+		<lastmod>2024-01-18</lastmod>
 	</url>
 </urlset>
