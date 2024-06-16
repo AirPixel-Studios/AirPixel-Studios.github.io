@@ -284,6 +284,48 @@ ul {
   }
 }
 
+.navbar-dark .btn-lang {
+  color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+	border-color: transparent;
+	box-shadow: none;
+}
+
+.navbar-dark .btn-lang:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #fff;
+}
+
+.navbar-dark .btn-lang:focus, .navbar-dark .btn-lang.focus, .navbar-dark .btn-lang.active {
+	color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.navbar-light .btn-lang {
+  color: #000;
+	background: rgba(0, 0, 0, 0.1);
+	border-color: transparent;
+	box-shadow: none;
+}
+
+.navbar-light .btn-lang:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.35);
+  border-color: #000;
+}
+
+.navbar-light .btn-lang:focus, .navbar-light .btn-lang.focus, .navbar-light .btn-lang.active {
+	color: #000;
+  background-color: transparent;
+  border-color: #000;
+}
+
+.layout-mobile .nav-item {
+  text-align: center;
+}
+
 /* Footer */
 footer {
 	font-size: 12px;
