@@ -17857,7 +17857,7 @@ body:not(.layout-mobile).ln-fullpage-intro-active .ln-copyright {
 .ln-social-icons ul {
   margin: 0;
   padding: 0;
-  list-style: nnoe;
+  list-style: none;
 }
 .ln-social-icons li:not(:first-child) {
   margin-top: 2rem;
