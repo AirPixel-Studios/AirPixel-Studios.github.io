@@ -4,7 +4,7 @@
 		<loc>https://www.airpixel-studios.com</loc>
 		<priority>1.00</priority>
 		<changefreq>weekly</changefreq>
-		<lastmod>2024-06-14</lastmod>
+		<lastmod>2024-08-24</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/calculator</loc>
@@ -65,6 +65,16 @@
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
 		<lastmod>2024-06-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/stuttgart.html</loc>
+		<priority>0.67</priority>
+		<lastmod>2024-08-24</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/portfolio/tsv-schoenau_.html</loc>
+		<priority>0.33</priority>
+		<lastmod>2024-06-14</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/privacy</loc>
