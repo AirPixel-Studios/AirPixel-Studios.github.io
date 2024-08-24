@@ -900,7 +900,7 @@ section {
 /* --- Image Container --- */
 
 .card-img-top {
-	height: 350px;
+	height: 400px;
 	object-fit: cover;
 }
 
