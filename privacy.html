@@ -39,110 +39,79 @@
 	<meta name="twitter:label1" content="Lesedauer" />
 	<meta name="twitter:data1" content="30 Minuten" />
 
-	<!-- Libs CSS -->
-	<link rel="stylesheet" href="assets/vendor/fullPage.js/dist/jquery.fullpage.min.css" type='text/css' media='all' />
-	<link rel="stylesheet" href="assets/vendor/animate.css/animate.min.css" type='text/css' media='all' />
-	<link rel="stylesheet" href="assets/vendor/themify-icons/css/themify-icons.css" type='text/css' media='all' />
+	<!-- Icon font (themify) -->
+	<link rel="stylesheet" href="assets/vendor/themify-icons/css/themify-icons.css" type="text/css" media="all" />
 
-	<!-- Theme CSS -->
-	<link rel="stylesheet" href="assets/css/theme.min.css" type='text/css' media='all' />
-
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="assets/css/custom.min.css" type='text/css' media='all' />
+	<!-- Apple-design system -->
+	<link rel="stylesheet" href="assets/css/apple.css" type="text/css" media="all" />
 
 	<!-- cookieconsent-->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css" type='text/css' media='all' />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
+		type="text/css" media="all" />
 
+	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 
 <body>
 
-	<!-- Site navigation -->
-	<nav class="site-navbar navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
-		data-navbar-base="navbar-dark" data-navbar-toggled="navbar-dark" data-navbar-scrolled="navbar-dark">
+	<div id="top"></div>
 
-		<!-- Brand -->
-		<a class="navbar-brand" href="index.html#contact" title="Contact">
-			<img alt="Home | AirPixel Studios" class="navbar-brand-img" />
+	<!-- Site navigation -->
+	<nav class="nav is-scrolled" id="nav" aria-label="Hauptnavigation">
+		<a class="nav-brand press" href="index.html" title="AirPixel Studios">
+			<img alt="AirPixel Studios" src="assets/images/logo/bg-black-0.5x.png" />
 		</a>
 
-		<!-- Toggler -->
-		<button class="navbar-toggler-alternative calc-nav" type="button" data-toggle="collapse"
-			data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-alternative-icon"></span>
+		<ul class="nav-links" id="navLinks">
+			<li><a class="nav-link" href="index.html#home" title="Home">Home</a></li>
+			<li><a class="nav-link" href="index.html#showreel" title="Showreel">Showreel</a></li>
+			<li><a class="nav-link" href="index.html#mission" title="Mission">Mission</a></li>
+			<li>
+				<a lang="de" class="nav-link" href="index.html#services" title="Leistungen">Leistungen</a>
+				<a lang="en" class="nav-link" href="index.html#services" title="Services">Services</a>
+			</li>
+			<li>
+				<a lang="de" class="nav-link" href="index.html#process" title="Prozess">Prozess</a>
+				<a lang="en" class="nav-link" href="index.html#process" title="Process">Process</a>
+			</li>
+			<li><a class="nav-link" href="index.html#portfolio" title="Portfolio">Portfolio</a></li>
+			<li><a class="nav-link" href="index.html#team" title="Team">Team</a></li>
+			<li>
+				<a lang="de" class="nav-link nav-cta press" href="index.html#contact" title="Kontakt">Kontakt</a>
+				<a lang="en" class="nav-link nav-cta press" href="index.html#contact" title="Contact">Contact</a>
+			</li>
+
+			<li class="lang" id="switch-lang" role="group" aria-label="Sprache / Language">
+					<span class="lang-thumb" aria-hidden="true"></span>
+				<button type="button" id="lang-en-btn" data-lang="en">EN</button>
+				<button type="button" id="lang-de-btn" data-lang="de">DE</button>
+			</li>
+		</ul>
+
+		<button class="nav-toggle" id="navToggle" type="button" aria-label="Menü umschalten" aria-expanded="false"
+			aria-controls="navLinks">
+			<span></span>
 		</button>
-
-		<!-- Collapse -->
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-
-			<!-- Navigation Buttons -->
-			<ul class="navbar-nav ml-auto" id="navigation">
-				<li class="nav-item" data-menuanchor="home">
-					<a class="nav-link heading-uppercase" href="index.html#home" title="Home">Home</a>
-				</li>
-				<li class="nav-item" data-menuanchor="mission">
-					<a class="nav-link heading-uppercase" href="index.html#mission" title="Mission">Mission</a>
-				</li>
-				<li class="nav-item" data-menuanchor="services">
-					<!-- Deutsch -->
-					<a lang="de" class="nav-link heading-uppercase" href="index.html#services" title="Leistungen">Leistungen</a>
-					<!-- Englisch -->
-					<a lang="en" class="nav-link heading-uppercase" href="index.html#services" title="Services">Services</a>
-				</li>
-				<li class="nav-item" data-menuanchor="process">
-					<!-- Deutsch -->
-					<a lang="de" class="nav-link heading-uppercase" href="index.html#process" title="Prozess">Prozess</a>
-					<!-- Englisch -->
-					<a lang="en" class="nav-link heading-uppercase" href="index.html#process" title="Process">Process</a>
-				</li>
-				<li class="nav-item" data-menuanchor="portfolio">
-					<a class="nav-link heading-uppercase" href="index.html#portfolio" title="Portfolio">Portfolio</a>
-				</li>
-				<li class="nav-item" data-menuanchor="team">
-					<a class="nav-link heading-uppercase" href="index.html#team" title="Team">Team</a>
-				</li>
-				<!-- <li class="nav-item" data-menuanchor="pricing"> -->
-				<!-- Deutsch -->
-				<!-- <a lang="de" class="nav-link heading-uppercase" href="calculator.html" title="Preise">Preise</a> -->
-				<!-- Englisch -->
-				<!-- <a lang="en" class="nav-link heading-uppercase" href="calculator.html" title="Pricing">Pricing</a> -->
-				<!-- </li> -->
-				<!-- Contact Button -->
-				<!-- Deutsch -->
-				<li lang="de" class="nav-item" data-menuanchor="contact">
-					<a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-						href="index.html#contact" title="Kontakt">Kontakt</a>
-				</li>
-				<!-- Englisch -->
-				<li lang="en" class="nav-item" data-menuanchor="contact">
-					<a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-						href="index.html#contact" title="Contact">Contact</a>
-				</li>
-			</ul>
-
-			<div class="btn-group btn-group-toggle ml-lg-4" data-toggle="buttons" id="switch-lang">
-				<label id="lang-en-btn" class="btn btn-secondary btn-sm">
-					<input type="radio" name="options"> EN
-				</label>
-				<label id="lang-de-btn" class="btn btn-secondary btn-sm">
-					<input type="radio" name="options"> DE
-				</label>
-			</div>
-		</div>
 	</nav>
 
-	<section>
-		<div class="container text-center py-0 mt-6 my-lg-8">
-			<h1 lang="de">Datenschutzerklärung</h1>
-			<h1 lang="en">Data Privacy</h1>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 pr-lg-8">
-					<article class="article">
-						<h3>1. Datenschutz auf einen Blick</h3>
+	<main class="legal-main">
+		<div class="wrap">
+			<a class="detail-back press" href="index.html">
+				<i class="fa fa-angle-left" aria-hidden="true"></i>
+				<span lang="de">Zurück zur Startseite</span><span lang="en">Back to home</span>
+			</a>
 
-						<h5>Allgemeine Hinweise</h5>
+			<div class="legal-head">
+				<h1 class="h2" lang="de">Datenschutzerklärung</h1>
+				<h1 class="h2" lang="en">Data Privacy</h1>
+				<div class="rule"></div>
+			</div>
+
+			<div class="legal-layout">
+				<article class="prose">
+						<h2>1. Datenschutz auf einen Blick</h2>
+
+						<h3>Allgemeine Hinweise</h3>
 						<p>
 							Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
 							personenbezogenen Daten
@@ -153,8 +122,8 @@
 							unserer unter diesem Text aufgeführten Datenschutzerklärung.
 						</p>
 
-						<h4>Datenerfassung auf dieser Website</h4>
-						<h5>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h5>
+						<h3>Datenerfassung auf dieser Website</h3>
+						<h3>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h3>
 						<p>
 							Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen
 							Kontaktdaten können
@@ -162,7 +131,7 @@
 							entnehmen.
 						</p>
 
-						<h5>Wie erfassen wir Ihre Daten?</h5>
+						<h3>Wie erfassen wir Ihre Daten?</h3>
 						<p>
 							Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es
 							sich z. B. um
@@ -175,14 +144,14 @@
 							erfolgt automatisch, sobald Sie diese Website betreten.
 						</p>
 
-						<h5>Wofür nutzen wir Ihre Daten?</h5>
+						<h3>Wofür nutzen wir Ihre Daten?</h3>
 						<p>
 							Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
 							gewährleisten. Andere
 							Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
 						</p>
 
-						<h5>Welche Rechte haben Sie bezüglich Ihrer Daten?</h5>
+						<h3>Welche Rechte haben Sie bezüglich Ihrer Daten?</h3>
 						<p>
 							Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck
 							Ihrer
@@ -197,7 +166,7 @@
 							Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
 						</p>
 
-						<h4>Analyse-Tools und Tools von Drittanbietern</h4>
+						<h3>Analyse-Tools und Tools von Drittanbietern</h3>
 						<p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das
 							geschieht vor
 							allem mit sogenannten Analyseprogrammen.</p>
@@ -205,9 +174,9 @@
 							Datenschutzerklärung.
 						</p>
 
-						<h3>2. Hosting</h3>
+						<h2>2. Hosting</h2>
 						<p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
-						<h4>Externes Hosting</h4>
+						<h3>Externes Hosting</h3>
 						<p>
 							Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website
 							erfasst werden,
@@ -236,8 +205,8 @@
 						<p>Wir setzen folgende(n) Hoster ein:</p>
 						<p>Github <br>88 Colin P Kelly Jr St <br>San Francisco <br>California 94107</p>
 
-						<h3>3. Allgemeine Hinweise und Pflichtinformationen</h3>
-						<h4>Datenschutz</h4>
+						<h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+						<h3>Datenschutz</h3>
 						<p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir
 							behandeln Ihre
 							personenbezogenen Daten vertraulich und entsprechend den gesetzlichen
@@ -255,7 +224,7 @@
 							Dritte ist nicht
 							möglich.</p>
 
-						<h4>Hinweis zur verantwortlichen Stelle</h4>
+						<h3>Hinweis zur verantwortlichen Stelle</h3>
 						<p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
 						<p>AirPixel Studios<br>
 							Lachnerstraße 5<br>
@@ -275,7 +244,7 @@
 							E-Mail-Adressen o.
 							Ä.) entscheidet.</p>
 
-						<h4>Speicherdauer</h4>
+						<h3>Speicherdauer</h3>
 						<p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde,
 							verbleiben
 							Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn
@@ -288,7 +257,7 @@
 							im
 							letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
 
-						<h4>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h4>
+						<h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3>
 						<p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre
 							personenbezogenen Daten auf
 							Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere
@@ -315,7 +284,7 @@
 							in den
 							folgenden Absätzen dieser Datenschutzerklärung informiert.</p>
 
-						<h4>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h4>
+						<h3>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h3>
 						<p>Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA oder sonstigen
 							datenschutzrechtlich
 							nicht sicheren Drittstaaten. Wenn diese Tools aktiv sind, können Ihre personenbezogene Daten
@@ -334,16 +303,16 @@
 							keinen
 							Einfluss.</p>
 
-						<h4>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h4>
+						<h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
 						<p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie
 							können eine
 							bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf
 							erfolgten
 							Datenverarbeitung bleibt vom Widerruf unberührt.</p>
 
-						<h4>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung
+						<h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung
 							(Art. 21 DSGVO)
-						</h4>
+						</h3>
 						<p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN
 							SIE
 							JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE
@@ -372,7 +341,7 @@
 							NICHT MEHR ZUM
 							ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
 
-						<h4>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h4>
+						<h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
 						<p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer
 							Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres
 							Arbeitsplatzes
@@ -380,7 +349,7 @@
 							anderweitiger
 							verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
 
-						<h4>Recht auf Datenübertragbarkeit</h4>
+						<h3>Recht auf Datenübertragbarkeit</h3>
 						<p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines
 							Vertrags
 							automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen,
@@ -390,7 +359,7 @@
 							verlangen, erfolgt dies nur, soweit es technisch machbar ist.
 						</p>
 
-						<h4>Auskunft, Berichtigung und Löschung</h4>
+						<h3>Auskunft, Berichtigung und Löschung</h3>
 						<p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf
 							unentgeltliche
 							Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und
@@ -399,7 +368,7 @@
 							sowie zu weiteren
 							Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.</p>
 
-						<h4>Recht auf Einschränkung der Verarbeitung</h4>
+						<h3>Recht auf Einschränkung der Verarbeitung</h3>
 						<p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu
 							verlangen.
 							Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung
@@ -438,7 +407,7 @@
 							Mitgliedstaats verarbeitet werden.
 						</p>
 
-						<h4>SSL- bzw. TLS-Verschlüsselung</h4>
+						<h3>SSL- bzw. TLS-Verschlüsselung</h3>
 						<p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher
 							Inhalte, wie zum
 							Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-
@@ -451,8 +420,8 @@
 							übermitteln, nicht
 							von Dritten mitgelesen werden.</p>
 
-						<h3>4. Datenerfassung auf dieser Website</h3>
-						<h4>Cookies</h4>
+						<h2>4. Datenerfassung auf dieser Website</h2>
+						<h3>Cookies</h3>
 						<p>Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Datenpakete und
 							richten auf
 							Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer
@@ -504,12 +473,12 @@
 							Datenschutzerklärung
 							entnehmen.</p>
 
-						<h4>Spracheinstellung</h4>
+						<h3>Spracheinstellung</h3>
 						<p>Wir speichern für unsere Webseite einen Cookie, welche die Spracheinstellung beinhaltet um
 							Ihnen die
 							korrekte Sprache anzuzeigen.</p>
 
-						<h4>Anfrage per E-Mail, Telefon oder Telefax</h4>
+						<h3>Anfrage per E-Mail, Telefon oder Telefax</h3>
 						<p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller
 							daraus
 							hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres
@@ -534,8 +503,8 @@
 							–
 							insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.</p>
 
-						<h3>5. Soziale Medien</h3>
-						<h4>Instagram</h4>
+						<h2>5. Soziale Medien</h2>
+						<h3>Instagram</h3>
 						<p>Auf dieser Website sind Funktionen des Dienstes Instagram eingebunden. Diese Funktionen
 							werden angeboten
 							durch die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin
@@ -606,9 +575,9 @@
 								title="Instagram privacy">https://instagram.com/about/legal/privacy/</a>.
 						</p>
 
-						<h3>6. Plugins und Tools</h3>
+						<h2>6. Plugins und Tools</h2>
 
-						<h4>Google Fonts (lokales Hosting)</h4>
+						<h3>Google Fonts (lokales Hosting)</h3>
 						<p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts,
 							die von Google
 							bereitgestellt werden. Die Google Fonts sind lokal installiert. Eine Verbindung zu Servern
@@ -621,7 +590,7 @@
 								title="Google privacy">https://policies.google.com/privacy?hl=de</a>.
 						</p>
 
-						<h4>Google Analytics</h4>
+						<h3>Google Analytics</h3>
 						<p>
 							Soweit Sie Ihre Einwilligung erklärt haben, wird auf dieser Website Google Analytics 4
 							eingesetzt, ein
@@ -631,7 +600,7 @@
 							(„Google“).
 						</p>
 
-						<h4>Umfang der Verarbeitung</h4>
+						<h3>Umfang der Verarbeitung</h3>
 						<p>Google Analytics verwendet Cookies, die eine Analyse der Benutzung unserer Webseiten durch
 							Sie
 							ermöglichen. Die mittels der Cookies erhobenen Informationen über Ihre Benutzung dieser
@@ -680,7 +649,7 @@
 						</ul>
 						<br>
 
-						<h4>Zwecke der Verarbeitung</h4>
+						<h3>Zwecke der Verarbeitung</h3>
 						<p>Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre
 							Nutzung der
 							Website auszuwerten und um Reports über die
@@ -688,7 +657,7 @@
 							dienen der
 							Analyse der Leistung unserer Website.</p>
 
-						<h4>Empfänger</h4>
+						<h3>Empfänger</h3>
 						<p>Empfänger der Daten sind/können sein</p>
 
 						<ul class="a">
@@ -704,7 +673,7 @@
 							Daten
 							zugreifen.</p>
 
-						<h4>Drittlandtransfer</h4>
+						<h3>Drittlandtransfer</h3>
 						<p>Soweit Daten außerhalb der EU/des EWR verarbeitet werden und kein dem europäischen Standard
 							entsprechendes
 							Datenschutzniveau besteht, haben wir zur Herstellung eines angemessenen Datenschutzniveaus
@@ -723,19 +692,19 @@
 							zu.
 						</p>
 
-						<h4>Speicherdauer</h4>
+						<h3>Speicherdauer</h3>
 						<p>Die von uns gesendeten und mit Cookies verknüpften Daten werden nach 2 [ODER: 14 Monaten]
 							automatisch
 							gelöscht. Die Löschung von Daten, deren Aufbewahrungsdauer erreicht ist, erfolgt automatisch
 							einmal im
 							Monat.</p>
 
-						<h4>Rechtsgrundlage</h4>
+						<h3>Rechtsgrundlage</h3>
 						<p>Rechtsgrundlage für diese Datenverarbeitung ist Ihre Einwilligung gem. Art.6 Abs.1 S.1 lit.a
 							DSGVO [FALLS
 							EINSCHLÄGIG: Art. 49a DSGVO].</p>
 
-						<h4>Widerruf</h4>
+						<h3>Widerruf</h3>
 						<p>Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie <a
 								id="disable_analytics" title="Disable analytics">hier</a> klicken. Die Rechtmäßigkeit der aufgrund der
 							Einwilligung bis zum
@@ -776,92 +745,63 @@
 						<p>Quelle: <a href="https://www.e-recht24.de" title="e-Recht24">
 								https://www.e-recht24.de</a></p>
 
-					</article>
-				</div>
-				<div class="col-lg-4">
-					<div class="card shadow-light-lg">
-						<div class="card-body p-7">
-							<h5>Du hast Fragen?</h5>
-							<p>Falls Du Fragen zum Impressum oder unserer Datenschutzerklärung hast, kontaktiere uns
-								gerne: <br> <a href="mailto:hello@airpixel-studios.com" class="text-reset"
-									title="Email address">hello[at]airpixel-studios[dot]com</a></p>
-						</div>
+				</article>
+				<aside class="legal-aside">
+					<div class="card">
+						<h3 lang="de">Du hast Fragen?</h3>
+						<h3 lang="en">Any questions?</h3>
+						<p lang="de">Falls Du Fragen zum Impressum oder unserer Datenschutzerklärung hast, kontaktiere uns
+							gerne:<br /><br />
+							<a href="mailto:hello@airpixel-studios.com" title="Email address">hello[at]airpixel-studios[dot]com</a>
+						</p>
+						<p lang="en">If you have any questions about our legal information or privacy policy, feel free to
+							contact us:<br /><br />
+							<a href="mailto:hello@airpixel-studios.com" title="Email address">hello[at]airpixel-studios[dot]com</a>
+						</p>
 					</div>
-				</div>
+				</aside>
 			</div>
 		</div>
-	</section>
 
-	<!-- Footer -->
-	<footer class="position-relative bg-black text-white py-3">
-		<div class="container">
-			<div class="row">
-				<div class="social-icons col-lg-10 col-xl-12 col-xxl-10 mx-auto text-center">
-					<ul class="list-inline">
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.instagram.com/airpixel.studios" target="_blank"
-								rel="noopener" tabindex="0" title="Instagram">
-								<i class="fa-brands fa-instagram btn-icon-inner"></i>
-							</a>
-						</li>
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.tiktok.com/@airpixel.studios" target="_blank"
-								rel="noopener" tabindex="0" title="TikTok">
-								<i class="fa-brands fa-tiktok btn-icon-inner"></i>
-							</a>
-						</li>
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.linkedin.com/company/airpixel-studios"
-								target="_blank" rel="noopener" tabindex="0" title="LinkedIn">
-								<i class="fa-brands fa-linkedin btn-icon-inner"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="wrap">
+				<nav class="footer-social" aria-label="Social Media">
+					<a href="https://www.instagram.com/airpixel.studios" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.tiktok.com/@airpixel.studios" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+					<a href="https://www.linkedin.com/company/airpixel-studios" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+				</nav>
+				<p class="footer-legal">
+					© 2024 AirPixel Studios
+					<a lang="de" href="legalinformation.html" title="Impressum">Impressum</a>
+					<a lang="de" href="privacy.html" title="Datenschutzerklärung">Datenschutzerklärung</a>
+					<a lang="en" href="legalinformation.html" title="Legal Information">Legal Information</a>
+					<a lang="en" href="privacy.html" title="Data Privacy">Data Privacy</a>
+				</p>
 			</div>
-			<div class="row">
-				<div class="mx-auto text-center">
-					<p lang="de">© 2024 AirPixel Studios</p>
-					<a lang="de" href="legalinformation.html" class="light mr-2" title="Impressum">Impressum</a>
-					<a lang="de" href="privacy.html" class="light" title="Datenschutzerklärung">Datenschutzerklärung</a>
-					<p lang="en">© 2024 AirPixel Studios</p>
-					<a lang="en" href="legalinformation.html" class="light mr-2" title="Legal Information">Legal
-						Information</a>
-					<a lang="en" href="privacy.html" class="light" title="Data Privacy">Data Privacy</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+		</footer>
+	</main>
 
-	<!-- Libs JS -->
-	<script type="text/javascript" src="assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/vendor/fullPage.js/dist/jquery.fullpage.min.js"></script>
-	<script type="text/javascript" src="assets/vendor/popper.js/dist/popper.min.js"></script>
-	<script type="text/javascript" src="assets/vendor/bootstrap/dist/js/bootstrap.min.js" async></script>
-	<script type="text/javascript" src="assets/vendor/waypoints/lib/jquery.waypoints.min.js" defer></script>
-	<script type="text/javascript" src="assets/vendor/jquery-smooth-scroll/jquery.smooth-scroll.min.js" defer></script>
-	<script type="text/javascript" src="assets/vendor/jquery-form/dist/jquery.form.min.js" defer></script>
-	<script type="text/javascript" src="assets/vendor/jQuery.countdown/dist/jquery.countdown.min.js" defer></script>
-	<script type="text/javascript" src="assets/vendor/granim.js/dist/granim.min.js" defer></script>
-
-	<!-- Google tag (gtag.js) -->
-	<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95" async></script>
-
-	<!-- Theme JS -->
-	<script type="text/javascript" type="module" src="assets/js/main.js" async></script>
-
-	<!-- Custom JS -->
-	<script type="text/javascript" src="js/language.js" async></script>
-
-	<!-- Icon Packs -->
-	<script type="text/javascript" src="https://kit.fontawesome.com/7c3b00ac15.js" defer></script>
+	<!-- Back to top -->
+	<a href="#top" class="to-top press" id="toTop" title="Back to top" aria-label="Back to top">
+		<i class="fa fa-angle-up" aria-hidden="true"></i>
+	</a>
 
 	<!-- js-cookie -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+	<!-- App -->
+	<script src="js/app.js" defer></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95" async></script>
+
+	<!-- Icon Packs -->
+	<script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous" defer></script>
 
 	<!-- cookieconsent -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js" defer></script>
-	<script type="text/javascript" src="js/cookieconsent.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js" defer></script>
+	<script src="js/cookieconsent.js" defer></script>
 </body>
 
 </html>

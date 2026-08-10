@@ -16,6 +16,7 @@
 	<meta name="robots" content="follow, noindex" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="theme-color" content="#0b0b0d" />
 	<meta name="description"
 		content="In Zusammenarbeit mit der SAP Industrie 4.0 Fabrik ermöglichte unsere FPV-Drohne ein außergewöhnliches Flugerlebnis innerhalb der Fabrikanlagen und erzeugte faszinierende Aufnahmen." />
 	<meta name="author" content="co-authored by Anh Duc Tran, Tom Bendrath" />
@@ -60,249 +61,168 @@
 	<meta name="twitter:label2" content="Verfasst von" />
 	<meta name="twitter:data2" content="Tom Bendrath" />
 
-	<!-- Libs CSS -->
-	<link rel="stylesheet" href="../assets/vendor/fullPage.js/dist/jquery.fullpage.min.css" type='text/css' media='all' />
-	<link rel="stylesheet" href="../assets/vendor/range-slider/css/ion.rangeSlider.css" type='text/css' media='all' />
+	<!-- Icon font (themify) -->
+	<link rel="stylesheet" href="../assets/vendor/themify-icons/css/themify-icons.css" type="text/css" media="all" />
 
-	<!-- Theme CSS -->
-	<link rel="stylesheet" href="../assets/css/theme.min.css" type='text/css' media='all' />
-
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="../assets/css/custom.min.css" type='text/css' media='all' />
+	<!-- Apple-design system -->
+	<link rel="stylesheet" href="../assets/css/apple.css" type="text/css" media="all" />
 
 	<!-- cookieconsent-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css"
-		type='text/css' media='all' />
+		type="text/css" media="all" />
 
+	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 
 <body>
 
-	<!-- Site navigation -->
-	<nav class="site-navbar navbar navbar-expand-lg fixed-top bg-black shadow-light p-lg-4"
-		data-navbar-base="navbar-dark" data-navbar-toggled="navbar-dark" data-navbar-scrolled="navbar-dark">
+	<div id="top"></div>
 
-		<!-- Brand -->
-		<a class="navbar-brand" href="../index.html">
-			<img alt="Home | AirPixel Studios" class="navbar-brand-img" />
+	<!-- Site navigation -->
+	<nav class="nav is-scrolled" id="nav" aria-label="Hauptnavigation">
+		<a class="nav-brand press" href="../index.html" title="AirPixel Studios">
+			<img alt="AirPixel Studios" src="../assets/images/logo/bg-black-0.5x.png" />
 		</a>
 
-		<!-- Toggler -->
-		<button class="navbar-toggler-alternative calc-nav" type="button" data-toggle="collapse"
-			data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-alternative-icon"></span>
+		<ul class="nav-links" id="navLinks">
+			<li><a class="nav-link" href="../index.html#home" title="Home">Home</a></li>
+			<li><a class="nav-link" href="../index.html#showreel" title="Showreel">Showreel</a></li>
+			<li><a class="nav-link" href="../index.html#mission" title="Mission">Mission</a></li>
+			<li>
+				<a lang="de" class="nav-link" href="../index.html#services" title="Leistungen">Leistungen</a>
+				<a lang="en" class="nav-link" href="../index.html#services" title="Services">Services</a>
+			</li>
+			<li>
+				<a lang="de" class="nav-link" href="../index.html#process" title="Prozess">Prozess</a>
+				<a lang="en" class="nav-link" href="../index.html#process" title="Process">Process</a>
+			</li>
+			<li><a class="nav-link is-active" href="../index.html#portfolio" title="Portfolio">Portfolio</a></li>
+			<li><a class="nav-link" href="../index.html#team" title="Team">Team</a></li>
+			<li>
+				<a lang="de" class="nav-link nav-cta press" href="../index.html#contact" title="Kontakt">Kontakt</a>
+				<a lang="en" class="nav-link nav-cta press" href="../index.html#contact" title="Contact">Contact</a>
+			</li>
+
+			<li class="lang" id="switch-lang" role="group" aria-label="Sprache / Language">
+					<span class="lang-thumb" aria-hidden="true"></span>
+				<button type="button" id="lang-en-btn" data-lang="en">EN</button>
+				<button type="button" id="lang-de-btn" data-lang="de">DE</button>
+			</li>
+		</ul>
+
+		<button class="nav-toggle" id="navToggle" type="button" aria-label="Menü umschalten" aria-expanded="false"
+			aria-controls="navLinks">
+			<span></span>
 		</button>
-
-		<!-- Collapse -->
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-
-			<!-- Navigation Buttons -->
-			<ul class="navbar-nav ml-auto" id="navigation">
-				<li class="nav-item" data-menuanchor="home">
-					<a class="nav-link heading-uppercase" href="../index.html#home" title="Home">Home</a>
-				</li>
-				<li class="nav-item" data-menuanchor="mission">
-					<a class="nav-link heading-uppercase" href="../index.html#mission" title="Mission">Mission</a>
-				</li>
-				<li class="nav-item" data-menuanchor="services">
-					<!-- Deutsch -->
-					<a lang="de" class="nav-link heading-uppercase" href="../index.html#services"
-						title="Leistungen">Leistungen</a>
-					<!-- Englisch -->
-					<a lang="en" class="nav-link heading-uppercase" href="../index.html#services" title="Services">Services</a>
-				</li>
-				<li class="nav-item" data-menuanchor="process">
-					<!-- Deutsch -->
-					<a lang="de" class="nav-link heading-uppercase" href="../index.html#process" title="Prozess">Prozess</a>
-					<!-- Englisch -->
-					<a lang="en" class="nav-link heading-uppercase" href="../index.html#process" title="Process">Process</a>
-				</li>
-				<li class="nav-item active" data-menuanchor="portfolio">
-					<a class="nav-link heading-uppercase" href="../index.html#portfolio" title="Portfolio">Portfolio</a>
-				</li>
-				<li class="nav-item" data-menuanchor="team">
-					<a class="nav-link heading-uppercase" href="../index.html#team" title="Team">Team</a>
-				</li>
-				<!-- <li class="nav-item" data-menuanchor="pricing">
-					<a lang="de" class="nav-link heading-uppercase" href="../calculator.html" title="Preise">Preise</a>
-					<a lang="en" class="nav-link heading-uppercase" href="../calculator.html" title="Pricing">Pricing</a>
-				</li> -->
-				<!-- Contact Button -->
-				<!-- Deutsch -->
-				<li lang="de" class="nav-item" data-menuanchor="contact">
-					<a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-						href="../index.html#contact" title="Kontakt">Kontakt</a>
-				</li>
-				<!-- Englisch -->
-				<li lang="en" class="nav-item" data-menuanchor="contact">
-					<a class="nav-link heading-uppercase btn btn-soft-white btn-transparent d-block d-lg-inline-block ml-lg-3"
-						href="../index.html#contact" title="Contact">Contact</a>
-				</li>
-			</ul>
-
-			<div class="btn-group btn-group-toggle ml-lg-4" data-toggle="buttons" id="switch-lang">
-				<label id="lang-en-btn" class="btn btn-secondary btn-sm">
-					<input type="radio" name="options"> EN
-				</label>
-				<label id="lang-de-btn" class="btn btn-secondary btn-sm">
-					<input type="radio" name="options"> DE
-				</label>
-			</div>
-		</div>
 	</nav>
 
-	<section>
-		<div class="container text-center py-0 mt-6 my-lg-8">
-			<div class="row">
-				<div class="col-sm card-pos">
-					<div class="card">
+	<main class="detail-main">
+		<section class="section section--auto bg-ink" style="min-height:auto">
+			<div class="wrap">
+				<a class="detail-back press" href="../index.html#portfolio">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+					<span lang="de">Zurück zum Portfolio</span><span lang="en">Back to portfolio</span>
+				</a>
+
+				<div class="detail-grid">
+					<!-- Media -->
+					<figure class="detail-media reveal" style="margin:0">
 						<img alt="SAP Industry 4.0 Factory Walldorf" src="../assets/images/portfolio/sap-factory.jpg"
-							class="card-img-top" width="600" height="400" decoding="async" />
-						<div lang="de" class="card-body">
-							<div class="card-img-top-source">
-								<a class="dark" target="_blank"
-									href="https://news.sap.com/germany/files/2022/11/02/1049-SAP-Pop-Up-Factory_2022-Oct-05.jpg">Quelle</a>
-							</div>
-							<h3 class="card-title card-font">SAP Industry 4.0 Factory</h3>
-							<p class="card-text card-p card-font"><span class="text-body">Datum:</span>
-								Juni 2023</p>
-							<p class="card-text card-p card-font"><span class="text-body">Lokation:</span>
-								Walldorf, Deutschland</p>
-							<p class="card-text card-p card-font"><span class="text-body">FPV Drohne:</span>
-								GEPRC CineBot 30</p>
-							<p class="card-text card-p card-font"><span class="text-body">Kamera:</span>
-								GoPro HERO 11 Black
-							</p>
-							<p class="card-text card-p card-font"><span class="text-body">Videobearbeitung:</span>
-								Customer
-							<p class="card-text card-p card-font"><span class="text-body">Projektbeschreibung:</span><br />
-								In Zusammenarbeit mit dem SAP Industrie 4.0 Fabrik Team in Walldorf haben
-								wir an einem einzigartigen Projekt zusammengearbeitet. Unsere FPV-Drohne ermöglichte ein
-								außergewöhnliches Flugerlebnis innerhalb der Fabrikanlagen und erzeugte faszinierende
-								Aufnahmen. Diese Kooperation erlaubte uns, ein unvergessliches Erlebnis zu gestalten und das Publikum
-								mit beeindruckenden Drohnenaufnahmen zu begeistern.</p>
-							<p class="card-text card-p card-font"><span class="text-body">Zusätzliche Information</span><br />
-								<a href="https://news.sap.com/germany/2022/11/industry-4-0-pop-up-factory/" target=”_blank”
-									title="Social post">Industry 4.0
-									Pop-Up Factory: Wie macht man SAP-Lösungen anfassbar?</a>
-							</p>
+							width="600" height="400" decoding="async" />
+						<a class="detail-source" target="_blank" rel="noopener"
+							href="https://news.sap.com/germany/files/2022/11/02/1049-SAP-Pop-Up-Factory_2022-Oct-05.jpg"><span
+								lang="de">Quelle</span><span lang="en">Source</span></a>
+					</figure>
+
+					<!-- Body -->
+					<div class="detail-body reveal">
+						<!-- Deutsch -->
+						<div lang="de">
+							<h1>SAP Industry 4.0 Factory</h1>
+							<dl class="detail-meta">
+								<div><dt>Datum</dt><dd>Juni 2023</dd></div>
+								<div><dt>Lokation</dt><dd>Walldorf, Deutschland</dd></div>
+								<div><dt>FPV Drohne</dt><dd>GEPRC CineBot 30</dd></div>
+								<div><dt>Kamera</dt><dd>GoPro HERO 11 Black</dd></div>
+								<div><dt>Videobearbeitung</dt><dd>Customer</dd></div>
+								<div><dt>Weitere Info</dt><dd><a href="https://news.sap.com/germany/2022/11/industry-4-0-pop-up-factory/" target="_blank" rel="noopener">Industry 4.0 Pop-Up Factory: Wie macht man SAP-Lösungen anfassbar?</a></dd></div>
+							</dl>
+							<p class="detail-desc"><span class="detail-desc-label">Projektbeschreibung</span>
+								In Zusammenarbeit mit dem SAP Industrie 4.0 Fabrik Team in Walldorf haben wir an einem einzigartigen
+								Projekt zusammengearbeitet. Unsere FPV-Drohne ermöglichte ein außergewöhnliches Flugerlebnis innerhalb
+								der Fabrikanlagen und erzeugte faszinierende Aufnahmen. Diese Kooperation erlaubte uns, ein
+								unvergessliches Erlebnis zu gestalten und das Publikum mit beeindruckenden Drohnenaufnahmen zu
+								begeistern.</p>
 						</div>
-						<div lang="en" class="card-body">
-							<div class="card-img-top-source">
-								<a class="dark" target="_blank"
-									href="https://news.sap.com/germany/files/2022/11/02/1049-SAP-Pop-Up-Factory_2022-Oct-05.jpg">Source</a>
-							</div>
-							<h3 class="card-title card-font">SAP Industry 4.0 Factory</h3>
-							<p class="card-text card-p card-font"><span class="text-body">Date:</span>
-								June 2023</p>
-							<p class="card-text card-p card-font"><span class="text-body">Location:</span>
-								Walldorf, Germany</p>
-							<p class="card-text card-p card-font"><span class="text-body">FPV drone:</span>
-								GEPRC CineBot 30</p>
-							<p class="card-text card-p card-font"><span class="text-body">Camera:</span>
-								GoPro HERO 11 Black
-							</p>
-							<p class="card-text card-p card-font"><span class="text-body">Video editing:</span>
-								Customer
-							</p>
-							<p class="card-text card-p card-font"><span class="text-body">Project
-									description:</span><br />
-								In collaboration with the SAP Industry 4.0 Factory team in Walldorf, we worked together
-								on a unique project. Our FPV drone enabled an extraordinary flight experience inside the
-								factory facilities and produced fascinating footage. This cooperation allowed us to
-								create an unforgettable experience and to present impressive drone footage to the
-								audience.</p>
-							<p class="card-text card-p card-font"><span class="text-body">Additional
-									information</span><br />
-								<a href="https://news.sap.com/germany/2022/11/industry-4-0-pop-up-factory/" target=”_blank”
-									title="Social post">Industry 4.0
-									Pop-Up Factory: Wie macht man SAP-Lösungen anfassbar?</a>
-							</p>
+						<!-- Englisch -->
+						<div lang="en">
+							<h1>SAP Industry 4.0 Factory</h1>
+							<dl class="detail-meta">
+								<div><dt>Date</dt><dd>June 2023</dd></div>
+								<div><dt>Location</dt><dd>Walldorf, Germany</dd></div>
+								<div><dt>FPV drone</dt><dd>GEPRC CineBot 30</dd></div>
+								<div><dt>Camera</dt><dd>GoPro HERO 11 Black</dd></div>
+								<div><dt>Video editing</dt><dd>Customer</dd></div>
+								<div><dt>More info</dt><dd><a href="https://news.sap.com/germany/2022/11/industry-4-0-pop-up-factory/" target="_blank" rel="noopener">Industry 4.0 Pop-Up Factory: Wie macht man SAP-Lösungen anfassbar?</a></dd></div>
+							</dl>
+							<p class="detail-desc"><span class="detail-desc-label">Project description</span>
+								In collaboration with the SAP Industry 4.0 Factory team in Walldorf, we worked together on a unique
+								project. Our FPV drone enabled an extraordinary flight experience inside the factory facilities and
+								produced fascinating footage. This cooperation allowed us to create an unforgettable experience and to
+								present impressive drone footage to the audience.</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm card-pos">
-					<iframe width="520" height="315" src="https://www.youtube.com/embed/qRVSwTEHmiY?si=uPJMlZhCml9x82xB"
-						title="SAP Industry 4.0 Fabrik Video" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
-					<script type="text/javascript" src="//www.instagram.com/embed.js" async></script>
+
+				<!-- Embed -->
+				<div class="detail-embed reveal">
+					<div class="video-frame"><iframe src="https://www.youtube.com/embed/qRVSwTEHmiY" title="SAP Industry 4.0 Factory Video" loading="lazy" allow="accelerator; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 				</div>
 			</div>
-	</section>
+		</section>
 
-	<!-- Footer -->
-	<footer class="position-relative bg-black text-white py-3">
-		<div class="container">
-			<div class="row">
-				<div class="social-icons col-lg-10 col-xl-12 col-xxl-10 mx-auto text-center">
-					<ul class="list-inline">
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.instagram.com/airpixel.studios" target="_blank"
-								rel="noopener" tabindex="0" title="Instagram">
-								<i class="fa-brands fa-instagram btn-icon-inner"></i>
-							</a>
-						</li>
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.tiktok.com/@airpixel.studios" target="_blank"
-								rel="noopener" tabindex="0" title="TikTok">
-								<i class="fa-brands fa-tiktok btn-icon-inner"></i>
-							</a>
-						</li>
-						<li class="list-inline-item mx-0">
-							<a class="btn btn-icon" href="https://www.linkedin.com/company/airpixel-studios"
-								target="_blank" rel="noopener" tabindex="0" title="LinkedIn">
-								<i class="fa-brands fa-linkedin btn-icon-inner"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="wrap">
+				<nav class="footer-social" aria-label="Social Media">
+					<a href="https://www.instagram.com/airpixel.studios" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.tiktok.com/@airpixel.studios" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+					<a href="https://www.linkedin.com/company/airpixel-studios" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+				</nav>
+				<p class="footer-legal">
+					© 2024 AirPixel Studios
+					<a lang="de" href="../legalinformation.html" title="Impressum">Impressum</a>
+					<a lang="de" href="../privacy.html" title="Datenschutzerklärung">Datenschutzerklärung</a>
+					<a lang="en" href="../legalinformation.html" title="Legal Information">Legal Information</a>
+					<a lang="en" href="../privacy.html" title="Data Privacy">Data Privacy</a>
+				</p>
 			</div>
-			<div class="row">
-				<div class="mx-auto text-center">
-					<p lang="de">© 2024 AirPixel Studios</p>
-					<a lang="de" href="../legalinformation.html" class="light mr-2" title="Impressum">Impressum</a>
-					<a lang="de" href="../privacy.html" class="light" title="Datenschutzerklärung">Datenschutzerklärung</a>
-					<p lang="en">© 2024 AirPixel Studios</p>
-					<a lang="en" href="../legalinformation.html" class="light mr-2" title="Legal Information">Legal
-						Information</a>
-					<a lang="en" href="../privacy.html" class="light" title="Data Privacy">Data Privacy</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+		</footer>
+	</main>
 
-	<!-- Libs JS -->
-	<script type="text/javascript" src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="../assets/vendor/fullPage.js/dist/jquery.fullpage.min.js"></script>
-	<script type="text/javascript" src="../assets/vendor/popper.js/dist/popper.min.js"></script>
-	<script type="text/javascript" src="../assets/vendor/bootstrap/dist/js/bootstrap.min.js" async></script>
-	<script type="text/javascript" src="../assets/vendor/waypoints/lib/jquery.waypoints.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/jquery-smooth-scroll/jquery.smooth-scroll.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/jquery-validation/dist/jquery.validate.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/jquery-form/dist/jquery.form.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/jQuery.countdown/dist/jquery.countdown.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/granim.js/dist/granim.min.js" defer></script>
-	<script type="text/javascript" src="../assets/vendor/typed.js/typed.min.js" defer></script>
+	<!-- Back to top -->
+	<a href="#top" class="to-top press" id="toTop" title="Back to top" aria-label="Back to top">
+		<i class="fa fa-angle-up" aria-hidden="true"></i>
+	</a>
 
-	<!-- Google tag (gtag.js) -->
-	<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95" async></script>
-
-	<!-- Theme JS -->
-	<script type="text/javascript" src="../assets/js/main.js" async></script>
-
-	<!-- Custom JS -->
-	<script type="text/javascript" src="../js/language.js" async></script>
-
-	<!-- Icon Packs -->
-	<script type="text/javascript" src="https://kit.fontawesome.com/7c3b00ac15.js" defer></script>
+	<!-- Motion (spring engine) -->
+	<script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.min.js"></script>
 
 	<!-- js-cookie -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+	<!-- App -->
+	<script src="../js/app.js" defer></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script src="https://www.googletagmanager.com/gtag/js?id=G-9FDJYXMY95" async></script>
+
+	<!-- Icon Packs -->
+	<script src="https://kit.fontawesome.com/7c3b00ac15.js" crossorigin="anonymous" defer></script>
 
 	<!-- cookieconsent -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js" defer></script>
-	<script type="text/javascript" src="../js/cookieconsent.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js" defer></script>
+	<script src="../js/cookieconsent.js" defer></script>
 </body>
 
 </html>

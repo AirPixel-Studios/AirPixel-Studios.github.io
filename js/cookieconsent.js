@@ -1,4 +1,4 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   var cc = initCookieConsent();
@@ -203,7 +203,10 @@ $(document).ready(function () {
   });
 
   //Language switch event
-  $("#switch-lang").click(function (event) {
-    cc.updateLanguage(Cookies.get("lang"));
-  });
+  var langGroup = document.getElementById("switch-lang");
+  if (langGroup) {
+    langGroup.addEventListener("click", function () {
+      cc.updateLanguage(Cookies.get("lang"));
+    });
+  }
 });
