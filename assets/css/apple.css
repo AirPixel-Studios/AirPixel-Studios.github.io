@@ -427,6 +427,19 @@ p {
 		opacity var(--resp-fast) var(--ease-out);
 }
 
+/* Center the middle bar in the circle; the pseudo-bars are the same width and
+   anchor to the span's box (left:0), so all three share one vertical axis. */
+.nav-toggle span {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+	left: 0;
+}
+
 .nav-toggle span::before {
 	transform: translateY(-6px);
 }
