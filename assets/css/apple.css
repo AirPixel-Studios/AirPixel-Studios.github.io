@@ -1268,6 +1268,33 @@ body.menu-open .nav-toggle span::after {
 	color: var(--text);
 }
 
+/* ---------- Footer locations — wrapping list of service-area links ---------- */
+.footer-locations {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.4rem 0.9rem;
+	margin: 1.25rem auto 0.5rem;
+	max-width: 60rem;
+	font-size: 0.85rem;
+	color: var(--text-faint);
+}
+
+.footer-locations span {
+	color: var(--text-faint);
+	font-weight: 500;
+}
+
+.footer-locations a {
+	color: var(--text-dim);
+	transition: color var(--resp) var(--ease-out);
+}
+
+.footer-locations a:hover {
+	color: var(--text);
+}
+
 /* ---------- Modal — materialises with blur + scale (§12) ---------- */
 .modal {
 	position: fixed;

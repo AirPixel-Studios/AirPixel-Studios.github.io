@@ -62,8 +62,13 @@
 			toggle.classList.toggle("is-de", lang === "de");
 			toggle.classList.toggle("is-en", lang === "en");
 		}
-		var t = document.getElementById(lang + "Title");
-		if (t) document.title = t.textContent;
+		// Single <title> element carries both languages via data attributes
+		// (two <title> tags are invalid HTML). Swap its text on language change.
+		var titleEl = document.querySelector("title");
+		if (titleEl) {
+			var localized = titleEl.getAttribute("data-title-" + lang);
+			if (localized) document.title = localized;
+		}
 
 		// Language duplicates that were display:none never got revealed by the
 		// IntersectionObserver. On a language SWITCH, reveal everything in the
