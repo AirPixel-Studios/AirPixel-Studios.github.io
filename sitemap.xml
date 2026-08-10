@@ -4,78 +4,174 @@
 		<loc>https://www.airpixel-studios.com</loc>
 		<priority>1.00</priority>
 		<changefreq>weekly</changefreq>
-		<lastmod>2024-06-14</lastmod>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/heidelberg</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/karlsruhe</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/mannheim</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/ludwigshafen</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/speyer</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/hockenheim</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/sinsheim</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/neckarsulm</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/heilbronn</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/stuttgart</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/frankfurt</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/freiburg</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/baden-baden</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/muenchen</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/locations/koeln</loc>
+		<priority>0.80</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
+	</url>
+	<url>
+		<loc>https://www.airpixel-studios.com/team</loc>
+		<priority>0.60</priority>
+		<changefreq>monthly</changefreq>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/calculator</loc>
 		<priority>0.80</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2023-06-21</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/alpenchalet-valentin</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/cantina-majolika</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/cofvie</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/ettlinger-tor</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/filmpalast-am-zkm</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/sap-factory</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/seehaus-forst</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/tsv-schoenau</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-01-19</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/portfolio/europabad</loc>
 		<priority>0.70</priority>
 		<changefreq>monthly</changefreq>
-		<lastmod>2024-06-10</lastmod>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/privacy</loc>
 		<priority>0.30</priority>
-		<changefreq>never</changefreq>
-		<lastmod>2024-01-18</lastmod>
+		<changefreq>yearly</changefreq>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 	<url>
 		<loc>https://www.airpixel-studios.com/legalinformation</loc>
 		<priority>0.30</priority>
-		<changefreq>never</changefreq>
-		<lastmod>2024-01-18</lastmod>
+		<changefreq>yearly</changefreq>
+		<lastmod>2026-08-10</lastmod>
 	</url>
 </urlset>

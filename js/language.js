@@ -36,7 +36,9 @@ $(document).ready(function () {
       $("#lang-de-btn").addClass("focus");
       $("#lang-en-btn").removeClass("focus");
 
-      document.title = document.getElementById("deTitle").textContent;;
+      var titleDe = document.querySelector("title");
+      if (titleDe && titleDe.getAttribute("data-title-de"))
+        document.title = titleDe.getAttribute("data-title-de");
     } else if (lang === "en") {
       $('[lang="de"]').hide();
       $('[lang="en"]').show();
@@ -44,7 +46,9 @@ $(document).ready(function () {
       $("#lang-en-btn").addClass("focus");
       $("#lang-de-btn").removeClass("focus");
 
-      document.title = document.getElementById("enTitle").textContent;;
+      var titleEn = document.querySelector("title");
+      if (titleEn && titleEn.getAttribute("data-title-en"))
+        document.title = titleEn.getAttribute("data-title-en");
     }
   }
 });
