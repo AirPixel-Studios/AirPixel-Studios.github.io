@@ -95,7 +95,7 @@
 
 	<main class="legal-main">
 		<div class="wrap">
-			<a class="detail-back press" href="index.html">
+			<a class="detail-back press" href="index.html" onclick="event.preventDefault(); history.length > 1 ? history.back() : location.href='index.html'">
 				<i class="fa fa-angle-left" aria-hidden="true"></i>
 				<span lang="de">Zurück zur Startseite</span><span lang="en">Back to home</span>
 			</a>
